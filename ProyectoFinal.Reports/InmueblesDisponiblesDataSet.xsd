@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InmueblesDisponiblesDataSet" targetNamespace="http://tempuri.org/InmueblesDisponiblesDataSet.xsd" xmlns:mstns="http://tempuri.org/InmueblesDisponiblesDataSet.xsd" xmlns="http://tempuri.org/InmueblesDisponiblesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InmueblesDisponiblesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="InmueblesDisponiblesDataSet" msprop:Generator_DataSetName="InmueblesDisponiblesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="InmueblesDisponibles" msprop:Generator_RowEvHandlerName="InmueblesDisponiblesRowChangeEventHandler" msprop:Generator_RowDeletedName="InmueblesDisponiblesRowDeleted" msprop:Generator_RowDeletingName="InmueblesDisponiblesRowDeleting" msprop:Generator_RowEvArgName="InmueblesDisponiblesRowChangeEvent" msprop:Generator_TablePropName="InmueblesDisponibles" msprop:Generator_RowChangedName="InmueblesDisponiblesRowChanged" msprop:Generator_RowChangingName="InmueblesDisponiblesRowChanging" msprop:Generator_TableClassName="InmueblesDisponiblesDataTable" msprop:Generator_RowClassName="InmueblesDisponiblesRow" msprop:Generator_TableVarName="tableInmueblesDisponibles" msprop:Generator_UserTableName="InmueblesDisponibles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdInmueble" msprop:Generator_ColumnPropNameInRow="IdInmueble" msprop:Generator_ColumnPropNameInTable="IdInmuebleColumn" msprop:Generator_ColumnVarNameInTable="columnIdInmueble" msprop:Generator_UserColumnName="IdInmueble" type="xs:int" />
+              <xs:element name="Direccion" msprop:Generator_ColumnPropNameInRow="Direccion" msprop:Generator_ColumnPropNameInTable="DireccionColumn" msprop:Generator_ColumnVarNameInTable="columnDireccion" msprop:Generator_UserColumnName="Direccion" type="xs:string" minOccurs="0" />
+              <xs:element name="Ciudad" msprop:Generator_ColumnPropNameInRow="Ciudad" msprop:Generator_ColumnPropNameInTable="CiudadColumn" msprop:Generator_ColumnVarNameInTable="columnCiudad" msprop:Generator_UserColumnName="Ciudad" type="xs:string" minOccurs="0" />
+              <xs:element name="Precio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_UserColumnName="Precio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TipoOperacion" msprop:Generator_ColumnPropNameInRow="TipoOperacion" msprop:Generator_ColumnPropNameInTable="TipoOperacionColumn" msprop:Generator_ColumnVarNameInTable="columnTipoOperacion" msprop:Generator_UserColumnName="TipoOperacion" type="xs:string" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_UserColumnName="Estado" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaAlta" msprop:Generator_ColumnPropNameInRow="FechaAlta" msprop:Generator_ColumnPropNameInTable="FechaAltaColumn" msprop:Generator_ColumnVarNameInTable="columnFechaAlta" msprop:Generator_UserColumnName="FechaAlta" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

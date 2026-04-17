@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9dfca31f608647ee82d7997bbb91d1e7" Name="Diagram1">
+        <EntityTypeShape EntityType="ClubPolideportivoDBModel.Cuotas" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubPolideportivoDBModel.Instalaciones" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubPolideportivoDBModel.PagosReserva" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubPolideportivoDBModel.Reservas" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubPolideportivoDBModel.Socios" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubPolideportivoDBModel.TiposInstalacion" Width="1.5" PointX="1.5" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="ClubPolideportivoDBModel.FK_Cuotas_Socios" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubPolideportivoDBModel.FK_Instalaciones_TiposInstalacion" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubPolideportivoDBModel.FK_Reservas_Instalaciones" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubPolideportivoDBModel.FK_PagosReserva_Reservas" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubPolideportivoDBModel.FK_Reservas_Socios" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

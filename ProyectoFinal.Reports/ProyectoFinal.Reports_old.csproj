@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7EDC572A-AB63-4636-9832-6BF52B00EB4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoFinal.Reports</RootNamespace>
+    <AssemblyName>ProyectoFinal.Reports</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InformeInmueblesDisponibles.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeInmueblesDisponibles.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InformeOperacionesPorAgente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeOperacionesPorAgente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InformeRentabilidadPorCiudad.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeRentabilidadPorCiudad.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InmueblesDisponiblesDataSet.cs">
+      <DependentUpon>InmueblesDisponiblesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InmueblesDisponiblesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InmueblesDisponiblesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InmueblesDisponiblesReportBuilder.cs" />
+    <Compile Include="RentabilidadPorCiudadReportBuilder.cs" />
+    <Compile Include="OperacionesPorAgenteDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperacionesPorAgenteDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesPorAgenteReportBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentabilidadPorCiudadDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentabilidadPorCiudadDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProyectoFinal.controller\ProyectoFinal.controller_old.csproj">
+      <Project>{e5c03269-69b2-434f-b166-4e9514c9919c}</Project>
+      <Name>ProyectoFinal.controller_old</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProyectoFinal.model\ProyectoFinal.model_old.csproj">
+      <Project>{6fa68456-39d9-4162-8341-0290ca9e5348}</Project>
+      <Name>ProyectoFinal.model_old</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InmueblesDisponiblesDataSet.xsc">
+      <DependentUpon>InmueblesDisponiblesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InmueblesDisponiblesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InmueblesDisponiblesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="InmueblesDisponiblesDataSet.xss">
+      <DependentUpon>InmueblesDisponiblesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OperacionesPorAgenteDataSet.xsc">
+      <DependentUpon>OperacionesPorAgenteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OperacionesPorAgenteDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OperacionesPorAgenteDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="OperacionesPorAgenteDataSet.xss">
+      <DependentUpon>OperacionesPorAgenteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentabilidadPorCiudadDataSet.xsc">
+      <DependentUpon>RentabilidadPorCiudadDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentabilidadPorCiudadDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RentabilidadPorCiudadDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RentabilidadPorCiudadDataSet.xss">
+      <DependentUpon>RentabilidadPorCiudadDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InformeInmueblesDisponibles.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeInmueblesDisponibles.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeOperacionesPorAgente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeOperacionesPorAgente.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeRentabilidadPorCiudad.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeRentabilidadPorCiudad.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

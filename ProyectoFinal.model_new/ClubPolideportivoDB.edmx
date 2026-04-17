@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ClubPolideportivoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cuotas">
+          <Key>
+            <PropertyRef Name="CuotaId" />
+          </Key>
+          <Property Name="CuotaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SocioId" Type="int" Nullable="false" />
+          <Property Name="Anio" Type="int" Nullable="false" />
+          <Property Name="Mes" Type="int" Nullable="false" />
+          <Property Name="Importe" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="date" Nullable="false" />
+          <Property Name="FechaPago" Type="date" />
+          <Property Name="Pagada" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Instalaciones">
+          <Key>
+            <PropertyRef Name="InstalacionId" />
+          </Key>
+          <Property Name="InstalacionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoInstalacionId" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PrecioHora" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Disponible" Type="bit" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="PagosReserva">
+          <Key>
+            <PropertyRef Name="PagoReservaId" />
+          </Key>
+          <Property Name="PagoReservaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReservaId" Type="int" Nullable="false" />
+          <Property Name="FechaPago" Type="datetime" Nullable="false" />
+          <Property Name="Importe" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="MetodoPago" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Reservas">
+          <Key>
+            <PropertyRef Name="ReservaId" />
+          </Key>
+          <Property Name="ReservaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SocioId" Type="int" Nullable="false" />
+          <Property Name="InstalacionId" Type="int" Nullable="false" />
+          <Property Name="FechaHoraInicio" Type="datetime" Nullable="false" />
+          <Property Name="FechaHoraFin" Type="datetime" Nullable="false" />
+          <Property Name="PrecioTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Socios">
+          <Key>
+            <PropertyRef Name="SocioId" />
+          </Key>
+          <Property Name="SocioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Apellidos" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Dni" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="FechaAlta" Type="date" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposInstalacion">
+          <Key>
+            <PropertyRef Name="TipoInstalacionId" />
+          </Key>
+          <Property Name="TipoInstalacionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_Cuotas_Socios">
+          <End Role="Socios" Type="Self.Socios" Multiplicity="1" />
+          <End Role="Cuotas" Type="Self.Cuotas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Socios">
+              <PropertyRef Name="SocioId" />
+            </Principal>
+            <Dependent Role="Cuotas">
+              <PropertyRef Name="SocioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Instalaciones_TiposInstalacion">
+          <End Role="TiposInstalacion" Type="Self.TiposInstalacion" Multiplicity="1" />
+          <End Role="Instalaciones" Type="Self.Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposInstalacion">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosReserva_Reservas">
+          <End Role="Reservas" Type="Self.Reservas" Multiplicity="1" />
+          <End Role="PagosReserva" Type="Self.PagosReserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reservas">
+              <PropertyRef Name="ReservaId" />
+            </Principal>
+            <Dependent Role="PagosReserva">
+              <PropertyRef Name="ReservaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservas_Instalaciones">
+          <End Role="Instalaciones" Type="Self.Instalaciones" Multiplicity="1" />
+          <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instalaciones">
+              <PropertyRef Name="InstalacionId" />
+            </Principal>
+            <Dependent Role="Reservas">
+              <PropertyRef Name="InstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservas_Socios">
+          <End Role="Socios" Type="Self.Socios" Multiplicity="1" />
+          <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Socios">
+              <PropertyRef Name="SocioId" />
+            </Principal>
+            <Dependent Role="Reservas">
+              <PropertyRef Name="SocioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClubPolideportivoDBModelStoreContainer">
+          <EntitySet Name="Cuotas" EntityType="Self.Cuotas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Instalaciones" EntityType="Self.Instalaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PagosReserva" EntityType="Self.PagosReserva" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservas" EntityType="Self.Reservas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Socios" EntityType="Self.Socios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiposInstalacion" EntityType="Self.TiposInstalacion" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cuotas_Socios" Association="Self.FK_Cuotas_Socios">
+            <End Role="Socios" EntitySet="Socios" />
+            <End Role="Cuotas" EntitySet="Cuotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Instalaciones_TiposInstalacion" Association="Self.FK_Instalaciones_TiposInstalacion">
+            <End Role="TiposInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosReserva_Reservas" Association="Self.FK_PagosReserva_Reservas">
+            <End Role="Reservas" EntitySet="Reservas" />
+            <End Role="PagosReserva" EntitySet="PagosReserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservas_Instalaciones" Association="Self.FK_Reservas_Instalaciones">
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+            <End Role="Reservas" EntitySet="Reservas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservas_Socios" Association="Self.FK_Reservas_Socios">
+            <End Role="Socios" EntitySet="Socios" />
+            <End Role="Reservas" EntitySet="Reservas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClubPolideportivoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cuotas">
+          <Key>
+            <PropertyRef Name="CuotaId" />
+          </Key>
+          <Property Name="CuotaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SocioId" Type="Int32" Nullable="false" />
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+          <Property Name="Mes" Type="Int32" Nullable="false" />
+          <Property Name="Importe" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaPago" Type="DateTime" Precision="0" />
+          <Property Name="Pagada" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Socios" Relationship="Self.FK_Cuotas_Socios" FromRole="Cuotas" ToRole="Socios" />
+        </EntityType>
+        <EntityType Name="Instalaciones">
+          <Key>
+            <PropertyRef Name="InstalacionId" />
+          </Key>
+          <Property Name="InstalacionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoInstalacionId" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrecioHora" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Disponible" Type="Boolean" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TiposInstalacion" Relationship="Self.FK_Instalaciones_TiposInstalacion" FromRole="Instalaciones" ToRole="TiposInstalacion" />
+          <NavigationProperty Name="Reservas" Relationship="Self.FK_Reservas_Instalaciones" FromRole="Instalaciones" ToRole="Reservas" />
+        </EntityType>
+        <EntityType Name="PagosReserva">
+          <Key>
+            <PropertyRef Name="PagoReservaId" />
+          </Key>
+          <Property Name="PagoReservaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReservaId" Type="Int32" Nullable="false" />
+          <Property Name="FechaPago" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Importe" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="MetodoPago" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Reservas" Relationship="Self.FK_PagosReserva_Reservas" FromRole="PagosReserva" ToRole="Reservas" />
+        </EntityType>
+        <EntityType Name="Reservas">
+          <Key>
+            <PropertyRef Name="ReservaId" />
+          </Key>
+          <Property Name="ReservaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SocioId" Type="Int32" Nullable="false" />
+          <Property Name="InstalacionId" Type="Int32" Nullable="false" />
+          <Property Name="FechaHoraInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaHoraFin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PrecioTotal" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Instalaciones" Relationship="Self.FK_Reservas_Instalaciones" FromRole="Reservas" ToRole="Instalaciones" />
+          <NavigationProperty Name="PagosReserva" Relationship="Self.FK_PagosReserva_Reservas" FromRole="Reservas" ToRole="PagosReserva" />
+          <NavigationProperty Name="Socios" Relationship="Self.FK_Reservas_Socios" FromRole="Reservas" ToRole="Socios" />
+        </EntityType>
+        <EntityType Name="Socios">
+          <Key>
+            <PropertyRef Name="SocioId" />
+          </Key>
+          <Property Name="SocioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dni" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cuotas" Relationship="Self.FK_Cuotas_Socios" FromRole="Socios" ToRole="Cuotas" />
+          <NavigationProperty Name="Reservas" Relationship="Self.FK_Reservas_Socios" FromRole="Socios" ToRole="Reservas" />
+        </EntityType>
+        <EntityType Name="TiposInstalacion">
+          <Key>
+            <PropertyRef Name="TipoInstalacionId" />
+          </Key>
+          <Property Name="TipoInstalacionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Instalaciones" Relationship="Self.FK_Instalaciones_TiposInstalacion" FromRole="TiposInstalacion" ToRole="Instalaciones" />
+        </EntityType>
+        <Association Name="FK_Cuotas_Socios">
+          <End Role="Socios" Type="Self.Socios" Multiplicity="1" />
+          <End Role="Cuotas" Type="Self.Cuotas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Socios">
+              <PropertyRef Name="SocioId" />
+            </Principal>
+            <Dependent Role="Cuotas">
+              <PropertyRef Name="SocioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Instalaciones_TiposInstalacion">
+          <End Role="TiposInstalacion" Type="Self.TiposInstalacion" Multiplicity="1" />
+          <End Role="Instalaciones" Type="Self.Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposInstalacion">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservas_Instalaciones">
+          <End Role="Instalaciones" Type="Self.Instalaciones" Multiplicity="1" />
+          <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instalaciones">
+              <PropertyRef Name="InstalacionId" />
+            </Principal>
+            <Dependent Role="Reservas">
+              <PropertyRef Name="InstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosReserva_Reservas">
+          <End Role="Reservas" Type="Self.Reservas" Multiplicity="1" />
+          <End Role="PagosReserva" Type="Self.PagosReserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reservas">
+              <PropertyRef Name="ReservaId" />
+            </Principal>
+            <Dependent Role="PagosReserva">
+              <PropertyRef Name="ReservaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservas_Socios">
+          <End Role="Socios" Type="Self.Socios" Multiplicity="1" />
+          <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Socios">
+              <PropertyRef Name="SocioId" />
+            </Principal>
+            <Dependent Role="Reservas">
+              <PropertyRef Name="SocioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClubPolideportivoDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cuotas" EntityType="Self.Cuotas" />
+          <EntitySet Name="Instalaciones" EntityType="Self.Instalaciones" />
+          <EntitySet Name="PagosReserva" EntityType="Self.PagosReserva" />
+          <EntitySet Name="Reservas" EntityType="Self.Reservas" />
+          <EntitySet Name="Socios" EntityType="Self.Socios" />
+          <EntitySet Name="TiposInstalacion" EntityType="Self.TiposInstalacion" />
+          <AssociationSet Name="FK_Cuotas_Socios" Association="Self.FK_Cuotas_Socios">
+            <End Role="Socios" EntitySet="Socios" />
+            <End Role="Cuotas" EntitySet="Cuotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Instalaciones_TiposInstalacion" Association="Self.FK_Instalaciones_TiposInstalacion">
+            <End Role="TiposInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservas_Instalaciones" Association="Self.FK_Reservas_Instalaciones">
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+            <End Role="Reservas" EntitySet="Reservas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosReserva_Reservas" Association="Self.FK_PagosReserva_Reservas">
+            <End Role="Reservas" EntitySet="Reservas" />
+            <End Role="PagosReserva" EntitySet="PagosReserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservas_Socios" Association="Self.FK_Reservas_Socios">
+            <End Role="Socios" EntitySet="Socios" />
+            <End Role="Reservas" EntitySet="Reservas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClubPolideportivoDBModelStoreContainer" CdmEntityContainer="ClubPolideportivoDBEntities">
+          <EntitySetMapping Name="Cuotas">
+            <EntityTypeMapping TypeName="ClubPolideportivoDBModel.Cuotas">
+              <MappingFragment StoreEntitySet="Cuotas">
+                <ScalarProperty Name="CuotaId" ColumnName="CuotaId" />
+                <ScalarProperty Name="SocioId" ColumnName="SocioId" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="Pagada" ColumnName="Pagada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instalaciones">
+            <EntityTypeMapping TypeName="ClubPolideportivoDBModel.Instalaciones">
+              <MappingFragment StoreEntitySet="Instalaciones">
+                <ScalarProperty Name="InstalacionId" ColumnName="InstalacionId" />
+                <ScalarProperty Name="TipoInstalacionId" ColumnName="TipoInstalacionId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrecioHora" ColumnName="PrecioHora" />
+                <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagosReserva">
+            <EntityTypeMapping TypeName="ClubPolideportivoDBModel.PagosReserva">
+              <MappingFragment StoreEntitySet="PagosReserva">
+                <ScalarProperty Name="PagoReservaId" ColumnName="PagoReservaId" />
+                <ScalarProperty Name="ReservaId" ColumnName="ReservaId" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="MetodoPago" ColumnName="MetodoPago" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservas">
+            <EntityTypeMapping TypeName="ClubPolideportivoDBModel.Reservas">
+              <MappingFragment StoreEntitySet="Reservas">
+                <ScalarProperty Name="ReservaId" ColumnName="ReservaId" />
+                <ScalarProperty Name="SocioId" ColumnName="SocioId" />
+                <ScalarProperty Name="InstalacionId" ColumnName="InstalacionId" />
+                <ScalarProperty Name="FechaHoraInicio" ColumnName="FechaHoraInicio" />
+                <ScalarProperty Name="FechaHoraFin" ColumnName="FechaHoraFin" />
+                <ScalarProperty Name="PrecioTotal" ColumnName="PrecioTotal" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Socios">
+            <EntityTypeMapping TypeName="ClubPolideportivoDBModel.Socios">
+              <MappingFragment StoreEntitySet="Socios">
+                <ScalarProperty Name="SocioId" ColumnName="SocioId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposInstalacion">
+            <EntityTypeMapping TypeName="ClubPolideportivoDBModel.TiposInstalacion">
+              <MappingFragment StoreEntitySet="TiposInstalacion">
+                <ScalarProperty Name="TipoInstalacionId" ColumnName="TipoInstalacionId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

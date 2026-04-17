@@ -1,0 +1,234 @@
+﻿<Window x:Class="ProyectoFinal.view_new.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ProyectoFinal"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#F3F4F6"
+        Width="1200"
+        Height="800"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- Borde general para dar sensación de ventana -->
+    <Border BorderBrush="#D1D5DB" BorderThickness="1">
+
+        <Grid>
+
+            <!-- ================= DEFINICIÓN GENERAL ================= -->
+            <!-- Fila superior: barra personalizada -->
+            <!-- Fila inferior: contenido -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Columna izquierda: menú -->
+            <!-- Columna derecha: contenido dinámico -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="MenuColumn" Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ================= BARRA SUPERIOR ================= -->
+            <DockPanel Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       Background="#1E3A8A"
+                       MouseLeftButtonDown="BarraSuperior_MouseLeftButtonDown">
+
+                <!-- Botón cerrar ventana -->
+                <Button Content="✕"
+                        DockPanel.Dock="Right"
+                        Width="40"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Background="Transparent"
+                        Foreground="#F8FAFC"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="BtnCerrar_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#DC2626"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <!-- Botón Hamburguesa -->
+                <Button x:Name="BtnHamburguesa"
+                        Content="☰"
+                        DockPanel.Dock="Left"
+                        Width="40"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Background="Transparent"
+                        Foreground="#F8FAFC"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="BtnHamburguesa_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1D4ED8"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <!-- Título dinámico -->
+                <TextBlock x:Name="tbTitulo"
+                           Text="Inicio"
+                           VerticalAlignment="Center"
+                           Margin="12,0,0,0"
+                           Foreground="#F8FAFC"
+                           FontSize="15"
+                           FontWeight="SemiBold"/>
+            </DockPanel>
+
+            <!-- ================= MENÚ LATERAL ================= -->
+            <StackPanel Grid.Row="1"
+                        Grid.Column="0"
+                        Background="#1E3A8A">
+
+                <!-- Opción Inicio -->
+                <Border x:Name="ItemInicio"
+                        Style="{StaticResource MenuItem}"
+                        MouseLeftButtonUp="AbrirInicio"
+                        ToolTip="Inicio">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="56"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Barra indicadora -->
+                        <Border x:Name="IndicadorInicio"
+                                Background="Transparent"/>
+
+                        <!-- Icono -->
+                        <TextBlock Grid.Column="1"
+                                   Text="🏠"
+                                   FontSize="20"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+
+                        <!-- Texto del menú -->
+                        <TextBlock x:Name="TextoInicio"
+                                   Grid.Column="2"
+                                   Text="Inicio"
+                                   VerticalAlignment="Center"
+                                   Margin="8,0,0,0"
+                                   Foreground="#E5E7EB"
+                                   FontSize="14"
+                                   Visibility="Collapsed"/>
+                    </Grid>
+                </Border>
+
+                <!-- Opción Socios -->
+                <Border x:Name="ItemClientes"
+                        Style="{StaticResource MenuItem}"
+                        MouseLeftButtonUp="AbrirSocios"
+                        ToolTip="Socios">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="56"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Barra indicadora -->
+                        <Border x:Name="IndicadorClientes"
+                                Background="Transparent"/>
+
+                        <!-- Icono -->
+                        <TextBlock Grid.Column="1"
+                                   Text="👥"
+                                   FontSize="20"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+
+                        <!-- Texto del menú -->
+                        <TextBlock x:Name="TextoClientes"
+                                   Grid.Column="2"
+                                   Text="Socios"
+                                   VerticalAlignment="Center"
+                                   Margin="8,0,0,0"
+                                   Foreground="#E5E7EB"
+                                   FontSize="14"
+                                   Visibility="Collapsed"/>
+                    </Grid>
+                </Border>
+
+                <!-- Opción Instalaciones -->
+                <Border x:Name="ItemInstalaciones"
+                        Style="{StaticResource MenuItem}"
+                        MouseLeftButtonUp="AbrirInstalaciones"
+                        ToolTip="Instalaciones">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="56"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Barra indicadora -->
+                        <Border x:Name="IndicadorInstalaciones"
+                                Background="Transparent"/>
+
+                        <!-- Icono -->
+                        <TextBlock Grid.Column="1"
+                                   Text="🏟"
+                                   FontSize="20"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+
+                        <!-- Texto del menú -->
+                        <TextBlock x:Name="TextoInstalaciones"
+                                   Grid.Column="2"
+                                   Text="Instalaciones"
+                                   VerticalAlignment="Center"
+                                   Margin="8,0,0,0"
+                                   Foreground="#E5E7EB"
+                                   FontSize="14"
+                                   Visibility="Collapsed"/>
+                    </Grid>
+                </Border>
+
+            </StackPanel>
+
+            <!-- ================= CONTENIDO DERECHO ================= -->
+            <!-- Aquí se irán cargando los UserControl -->
+            <ContentControl x:Name="MainContent"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="20"/>
+
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,479 @@
+<UserControl x:Class="ProyectoFinal.view.VistaOperaciones"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:comun="clr-namespace:Comun;assembly=Comun"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1200">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <comun:PrecioConverter x:Key="PrecioConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="#F9FAFB">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <!-- PANEL SUPERIOR: FORMULARIO HORIZONTAL COMPACTO -->
+        <Border Grid.Row="0"
+                Background="White"
+                Margin="0,0,0,10"
+                CornerRadius="12"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1"
+                Padding="24,20">
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Titulo del formulario -->
+                    <TextBlock Grid.Row="0"
+                               Text="Datos de la Operacion"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               Foreground="#1E3A8A"
+                               Margin="0,0,0,16"/>
+
+                    <!-- FILA 1: Tipo Operacion, Inmueble, Cliente, Agente -->
+                    <Grid Grid.Row="1" Margin="0,0,0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Tipo de Operacion -->
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Tipo de Operacion *"
+                                       FontSize="12"
+                                       Foreground="#374151"
+                                       Margin="0,0,0,4"/>
+
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton x:Name="rbVenta"
+                                             Content="Venta"
+                                             IsChecked="True"
+                                             FontSize="13"
+                                             Margin="0,0,16,0"
+                                             Checked="RbTipoOperacion_Changed"/>
+                                <RadioButton x:Name="rbAlquiler"
+                                             Content="Alquiler"
+                                             FontSize="13"
+                                             Checked="RbTipoOperacion_Changed"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!-- Inmueble -->
+                        <StackPanel Grid.Column="2">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                                <TextBlock Text="Inmueble *"
+                                           FontSize="12"
+                                           Foreground="#374151"
+                                           VerticalAlignment="Center"/>
+                                <Button x:Name="btnBuscarInmueble"
+                                        Content="🔍"
+                                        Width="18"
+                                        Height="18"
+                                        FontSize="10"
+                                        Margin="6,0,0,0"
+                                        Padding="0"
+                                        Background="#005BBB"
+                                        Foreground="White"
+                                        BorderThickness="0"
+                                        Cursor="Hand"
+                                        ToolTip="Buscar inmueble"
+                                        Click="BtnBuscarInmueble_Click">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border Background="{TemplateBinding Background}"
+                                                                CornerRadius="4">
+                                                            <ContentPresenter HorizontalAlignment="Center"
+                                                                              VerticalAlignment="Center"/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#004A99"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </StackPanel>
+
+                            <ComboBox x:Name="cmbInmueble"
+                                      Height="40"
+                                      Style="{StaticResource ComboBoxRedondeado}"/>
+                        </StackPanel>
+
+                        <!-- Cliente -->
+                        <StackPanel Grid.Column="4">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                                <TextBlock Text="Cliente *"
+                                           FontSize="12"
+                                           Foreground="#374151"
+                                           VerticalAlignment="Center"/>
+                                <Button x:Name="btnBuscarCliente"
+                                        Content="🔍"
+                                        Width="18"
+                                        Height="18"
+                                        FontSize="10"
+                                        Margin="6,0,0,0"
+                                        Padding="0"
+                                        Background="#005BBB"
+                                        Foreground="White"
+                                        BorderThickness="0"
+                                        Cursor="Hand"
+                                        ToolTip="Buscar cliente"
+                                        Click="BtnBuscarCliente_Click">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border Background="{TemplateBinding Background}"
+                                                                CornerRadius="4">
+                                                            <ContentPresenter HorizontalAlignment="Center"
+                                                                              VerticalAlignment="Center"/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#004A99"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </StackPanel>
+
+                            <ComboBox x:Name="cmbCliente"
+                                      Height="40"
+                                      Style="{StaticResource ComboBoxRedondeado}"/>
+                        </StackPanel>
+
+                        <!-- Agente -->
+                        <StackPanel Grid.Column="6">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                                <TextBlock Text="Agente *"
+                                           FontSize="12"
+                                           Foreground="#374151"
+                                           VerticalAlignment="Center"/>
+                                <Button x:Name="btnBuscarAgente"
+                                        Content="🔍"
+                                        Width="18"
+                                        Height="18"
+                                        FontSize="10"
+                                        Margin="6,0,0,0"
+                                        Padding="0"
+                                        Background="#005BBB"
+                                        Foreground="White"
+                                        BorderThickness="0"
+                                        Cursor="Hand"
+                                        ToolTip="Buscar agente"
+                                        Click="BtnBuscarAgente_Click">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border Background="{TemplateBinding Background}"
+                                                                CornerRadius="4">
+                                                            <ContentPresenter HorizontalAlignment="Center"
+                                                                              VerticalAlignment="Center"/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#004A99"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </StackPanel>
+
+                            <ComboBox x:Name="cmbAgente"
+                                      Height="40"
+                                      Style="{StaticResource ComboBoxRedondeado}"/>
+                        </StackPanel>
+
+                    </Grid>
+
+                    <!-- FILA 2: Fecha, Precio Final, Observaciones -->
+                    <Grid Grid.Row="2" Margin="0,0,0,16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Fecha -->
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Fecha de Operacion *"
+                                       FontSize="12"
+                                       Foreground="#374151"
+                                       Margin="0,0,0,4"/>
+
+                            <Border CornerRadius="10"
+                                    BorderBrush="#D1D5DB"
+                                    BorderThickness="1"
+                                    Background="White"
+                                    Height="40">
+                                <DatePicker x:Name="dpFechaOperacion"
+                                            BorderThickness="0"
+                                            Padding="8"
+                                            FontSize="14"
+                                            VerticalContentAlignment="Center"/>
+                            </Border>
+                        </StackPanel>
+
+                        <!-- Precio Final -->
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="Precio Final *"
+                                       FontSize="12"
+                                       Foreground="#374151"
+                                       Margin="0,0,0,4"/>
+
+                            <TextBox x:Name="txtPrecioFinal"
+                                     Style="{StaticResource TextBoxRedondeado}"
+                                     Height="40"/>
+                        </StackPanel>
+
+                        <!-- Observaciones -->
+                        <StackPanel Grid.Column="4" Grid.ColumnSpan="3">
+                            <TextBlock Text="Observaciones"
+                                       FontSize="12"
+                                       Foreground="#374151"
+                                       Margin="0,0,0,4"/>
+
+                            <Border CornerRadius="10"
+                                    BorderBrush="#D1D5DB"
+                                    BorderThickness="1"
+                                    Background="White">
+                                <TextBox x:Name="txtObservaciones"
+                                         Height="40"
+                                         TextWrapping="Wrap"
+                                         AcceptsReturn="True"
+                                         VerticalScrollBarVisibility="Auto"
+                                         Padding="8"
+                                         FontSize="13"
+                                         BorderThickness="0"
+                                         Background="Transparent"/>
+                            </Border>
+                        </StackPanel>
+
+                    </Grid>
+
+                    <!-- FILA 3: Botones centrados -->
+                    <StackPanel Grid.Row="3"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="0,8,0,0">
+
+                        <Button x:Name="btnGuardar"
+                                Content="Guardar"
+                                Width="120"
+                                Height="36"
+                                Margin="0,0,12,0"
+                                Style="{StaticResource BotonPrimario}"
+                                Click="BtnGuardar_Click"/>
+
+                        <Button x:Name="btnCancelar"
+                                Content="Cancelar"
+                                Width="120"
+                                Height="36"
+                                Style="{StaticResource BotonCancelar}"
+                                Click="BtnCancelar_Click"/>
+
+                        <TextBlock Text="* Campos obligatorios"
+                                   FontSize="10"
+                                   Foreground="#9CA3AF"
+                                   VerticalAlignment="Center"
+                                   Margin="20,0,0,0"/>
+
+                    </StackPanel>
+
+                </Grid>
+            </ScrollViewer>
+
+        </Border>
+
+        <!-- PANEL INFERIOR: LISTA DE OPERACIONES -->
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="12"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Cabecera -->
+                <Grid Grid.Row="0"
+                      Margin="24,20,24,12">
+
+                    <StackPanel>
+                        <TextBlock Text="Operaciones Registradas"
+                                   FontSize="18"
+                                   FontWeight="SemiBold"
+                                   Foreground="#1E3A8A"/>
+
+                        <TextBlock x:Name="txtTotalOperaciones"
+                                   Text="0 operaciones"
+                                   FontSize="12"
+                                   Foreground="#6B7280"
+                                   Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <!-- Barra de botones -->
+                <Border Grid.Row="1"
+                        Background="#F9FAFB"
+                        Padding="20,10"
+                        Margin="24,0,24,12"
+                        CornerRadius="8"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1">
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left">
+
+                        <Button x:Name="btnEditarSeleccionado"
+                                Content="Editar"
+                                Width="85"
+                                Height="34"
+                                Margin="0,0,6,0"
+                                Style="{StaticResource BotonEditar}"
+                                IsEnabled="False"
+                                Click="BtnEditarSeleccionado_Click"/>
+
+                        <Button x:Name="btnEliminarSeleccionado"
+                                Content="Eliminar"
+                                Width="95"
+                                Height="34"
+                                Margin="0,0,6,0"
+                                Style="{StaticResource BotonBorrar}"
+                                IsEnabled="False"
+                                Click="BtnEliminarSeleccionado_Click"/>
+
+                        <Border Width="1"
+                                Background="#D1D5DB"
+                                Margin="6,0,12,0"/>
+
+                        <Button x:Name="btnRefrescar"
+                                Content="Refrescar"
+                                Width="100"
+                                Height="34"
+                                Style="{StaticResource BotonRefrescar}"
+                                Click="BtnRefrescar_Click"/>
+
+                    </StackPanel>
+
+                </Border>
+
+                <!-- DataGrid -->
+                <Border Grid.Row="2"
+                        Margin="24,0,24,24"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1"
+                        CornerRadius="8">
+
+                    <DataGrid x:Name="dgOperaciones"
+                              Style="{StaticResource ModernDataGrid}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              CanUserAddRows="False"
+                              RowHeaderWidth="0"
+                              SelectionChanged="DgOperaciones_SelectionChanged">
+
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Id"
+                                                Binding="{Binding IdOperacion}"
+                                                Width="50"/>
+                            <DataGridTextColumn Header="Tipo"
+                                                Binding="{Binding TipoOperacion}"
+                                                Width="100"/>
+                            <DataGridTextColumn Header="Inmueble"
+                                                Binding="{Binding Inmuebles.DireccionCompleta}"
+                                                Width="*"
+                                                MinWidth="200"/>
+							<DataGridTextColumn Header="Precio Ori."
+                                                Binding="{Binding Inmuebles.Precio, Converter={StaticResource PrecioConverter}}"
+                                                Width="*"
+                                                MinWidth="100"/>
+
+                            <DataGridTextColumn Header="Cliente"
+                                                Binding="{Binding Clientes.Nombre}"
+                                                Width="150"
+                                                MinWidth="120"/>
+
+                            <DataGridTextColumn Header="Agente"
+                                                Binding="{Binding Agentes.Nombre}"
+                                                Width="150"
+                                                MinWidth="120"/>
+
+                            <DataGridTextColumn Header="Precio Final"
+                                                Binding="{Binding PrecioFinal, Converter={StaticResource PrecioConverter}}"
+                                                Width="120"/>
+
+                            <DataGridTextColumn Header="Fecha"
+                                                Binding="{Binding FechaOperacion, StringFormat=dd/MM/yyyy}"
+                                                Width="100"/>
+
+                            <DataGridTextColumn Header="ID Oferta"
+                                                Binding="{Binding IdOferta}"
+                                                Width="80"/>
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+
+</UserControl>

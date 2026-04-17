@@ -1,0 +1,208 @@
+﻿<Window x:Class="ProyectoFinal.view.ModalBuscarCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="Buscar Cliente"
+        Height="550" Width="750"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border Background="White"
+            CornerRadius="12"
+            BorderBrush="#D1D5DB"
+            BorderThickness="1">
+        
+        <Border.Effect>
+            <DropShadowEffect Color="#000000" 
+                              Opacity="0.2" 
+                              BlurRadius="20" 
+                              ShadowDepth="0"/>
+        </Border.Effect>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Cabecera arrastrable -->
+            <Border Grid.Row="0"
+                    Background="#EFF6FF"
+                    CornerRadius="12,12,0,0"
+                    Padding="24,20"
+                    MouseLeftButtonDown="Header_MouseLeftButtonDown"
+                    Cursor="Hand">
+                
+                <Grid>
+                    <TextBlock Text="Buscar Cliente"
+                               FontSize="20"
+                               FontWeight="SemiBold"
+                               Foreground="#1E3A8A"
+                               VerticalAlignment="Center"/>
+                    
+                    <Button Content="✕"
+                            FontSize="18"
+                            Width="32"
+                            Height="32"
+                            HorizontalAlignment="Right"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="#6B7280"
+                            Cursor="Hand"
+                            Click="BtnCancelar_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}"
+                                                    CornerRadius="6">
+                                                <ContentPresenter HorizontalAlignment="Center"
+                                                                  VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#E5E7EB"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <!-- Contenido -->
+            <Grid Grid.Row="1" Margin="24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Buscador -->
+                <Border Grid.Row="0"
+                        Background="#F9FAFB"
+                        CornerRadius="8"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1"
+                        Padding="12"
+                        Margin="0,0,0,16">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox x:Name="txtBuscar"
+                                 Grid.Column="0"
+                                 Style="{StaticResource TextBoxRedondeado}"
+                                 Margin="0,0,8,0"
+                                 TextChanged="TxtBuscar_TextChanged"/>
+
+                        <TextBlock Grid.Column="0"
+                                   Text="Buscar por nombre, email o telefono..."
+                                   FontSize="14"
+                                   Foreground="#9CA3AF"
+                                   Margin="14,0,0,0"
+                                   VerticalAlignment="Center"
+                                   IsHitTestVisible="False">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtBuscar}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+
+                        <Button x:Name="btnLimpiar"
+                                Grid.Column="1"
+                                Content="Limpiar"
+                                Width="80"
+                                Style="{StaticResource BotonCancelar}"
+                                Click="BtnLimpiar_Click"/>
+                    </Grid>
+                </Border>
+
+                <!-- DataGrid -->
+                <Border Grid.Row="1"
+                        Background="White"
+                        CornerRadius="8"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1">
+
+                    <DataGrid x:Name="dgClientes"
+                              Style="{StaticResource ModernDataGrid}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              CanUserAddRows="False"
+                              RowHeaderWidth="0"
+                              MouseDoubleClick="DgClientes_MouseDoubleClick">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nombre"
+                                                Binding="{Binding Nombre}"
+                                                Width="*"
+                                                MinWidth="150"/>
+
+                            <DataGridTextColumn Header="Email"
+                                                Binding="{Binding Email}"
+                                                Width="*"
+                                                MinWidth="180"/>
+
+                            <DataGridTextColumn Header="Telefono"
+                                                Binding="{Binding Telefono}"
+                                                Width="120"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Border>
+
+                <!-- Botones -->
+                <StackPanel Grid.Row="2"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0,16,0,0">
+
+                    <Button x:Name="btnCancelar"
+                            Content="Cancelar"
+                            Width="100"
+                            Margin="0,0,8,0"
+                            Style="{StaticResource BotonCancelar}"
+                            Click="BtnCancelar_Click"/>
+
+                    <Button x:Name="btnSeleccionar"
+                            Content="Seleccionar"
+                            Width="120"
+                            Style="{StaticResource BotonPrimario}"
+                            Click="BtnSeleccionar_Click"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+
+    </Border>
+
+</Window>

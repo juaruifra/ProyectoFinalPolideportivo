@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OperacionesPorAgenteDataSet" targetNamespace="http://tempuri.org/OperacionesPorAgenteDataSet.xsd" xmlns:mstns="http://tempuri.org/OperacionesPorAgenteDataSet.xsd" xmlns="http://tempuri.org/OperacionesPorAgenteDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OperacionesPorAgenteDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="OperacionesPorAgenteDataSet" msprop:Generator_DataSetName="OperacionesPorAgenteDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OperacionesPorAgente" msprop:Generator_RowEvHandlerName="OperacionesPorAgenteRowChangeEventHandler" msprop:Generator_RowDeletedName="OperacionesPorAgenteRowDeleted" msprop:Generator_RowDeletingName="OperacionesPorAgenteRowDeleting" msprop:Generator_RowEvArgName="OperacionesPorAgenteRowChangeEvent" msprop:Generator_TablePropName="OperacionesPorAgente" msprop:Generator_RowChangedName="OperacionesPorAgenteRowChanged" msprop:Generator_RowChangingName="OperacionesPorAgenteRowChanging" msprop:Generator_TableClassName="OperacionesPorAgenteDataTable" msprop:Generator_RowClassName="OperacionesPorAgenteRow" msprop:Generator_TableVarName="tableOperacionesPorAgente" msprop:Generator_UserTableName="OperacionesPorAgente">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAgente" msprop:Generator_ColumnPropNameInRow="IdAgente" msprop:Generator_ColumnPropNameInTable="IdAgenteColumn" msprop:Generator_ColumnVarNameInTable="columnIdAgente" msprop:Generator_UserColumnName="IdAgente" type="xs:int" minOccurs="0" />
+              <xs:element name="NombreAgente" msprop:Generator_ColumnPropNameInRow="NombreAgente" msprop:Generator_ColumnPropNameInTable="NombreAgenteColumn" msprop:Generator_ColumnVarNameInTable="columnNombreAgente" msprop:Generator_UserColumnName="NombreAgente" type="xs:string" minOccurs="0" />
+              <xs:element name="IdOperacion" msprop:Generator_ColumnPropNameInRow="IdOperacion" msprop:Generator_ColumnPropNameInTable="IdOperacionColumn" msprop:Generator_ColumnVarNameInTable="columnIdOperacion" msprop:Generator_UserColumnName="IdOperacion" type="xs:int" minOccurs="0" />
+              <xs:element name="FechaOperacion" msprop:Generator_ColumnPropNameInRow="FechaOperacion" msprop:Generator_ColumnPropNameInTable="FechaOperacionColumn" msprop:Generator_ColumnVarNameInTable="columnFechaOperacion" msprop:Generator_UserColumnName="FechaOperacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NombreCliente" msprop:Generator_ColumnPropNameInRow="NombreCliente" msprop:Generator_ColumnPropNameInTable="NombreClienteColumn" msprop:Generator_ColumnVarNameInTable="columnNombreCliente" msprop:Generator_UserColumnName="NombreCliente" type="xs:string" minOccurs="0" />
+              <xs:element name="DireccionInmueble" msprop:Generator_ColumnPropNameInRow="DireccionInmueble" msprop:Generator_ColumnPropNameInTable="DireccionInmuebleColumn" msprop:Generator_ColumnVarNameInTable="columnDireccionInmueble" msprop:Generator_UserColumnName="DireccionInmueble" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoOperacion" msprop:Generator_ColumnPropNameInRow="TipoOperacion" msprop:Generator_ColumnPropNameInTable="TipoOperacionColumn" msprop:Generator_ColumnVarNameInTable="columnTipoOperacion" msprop:Generator_UserColumnName="TipoOperacion" type="xs:string" minOccurs="0" />
+              <xs:element name="PrecioFinal" msprop:Generator_ColumnPropNameInRow="PrecioFinal" msprop:Generator_ColumnPropNameInTable="PrecioFinalColumn" msprop:Generator_ColumnVarNameInTable="columnPrecioFinal" msprop:Generator_UserColumnName="PrecioFinal" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

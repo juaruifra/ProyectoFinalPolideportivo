@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HistorialReservasPorSocioDataSet" targetNamespace="http://tempuri.org/HistorialReservasPorSocioDataSet.xsd" xmlns:mstns="http://tempuri.org/HistorialReservasPorSocioDataSet.xsd" xmlns="http://tempuri.org/HistorialReservasPorSocioDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HistorialReservasPorSocioDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="HistorialReservasPorSocioDataSet" msprop:Generator_DataSetName="HistorialReservasPorSocioDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HistorialReservas" msprop:Generator_RowEvHandlerName="HistorialReservasRowChangeEventHandler" msprop:Generator_RowDeletedName="HistorialReservasRowDeleted" msprop:Generator_RowDeletingName="HistorialReservasRowDeleting" msprop:Generator_RowEvArgName="HistorialReservasRowChangeEvent" msprop:Generator_TablePropName="HistorialReservas" msprop:Generator_RowChangedName="HistorialReservasRowChanged" msprop:Generator_RowChangingName="HistorialReservasRowChanging" msprop:Generator_TableClassName="HistorialReservasDataTable" msprop:Generator_RowClassName="HistorialReservasRow" msprop:Generator_TableVarName="tableHistorialReservas" msprop:Generator_UserTableName="HistorialReservas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreSocio" msprop:Generator_ColumnPropNameInRow="NombreSocio" msprop:Generator_ColumnPropNameInTable="NombreSocioColumn" msprop:Generator_ColumnVarNameInTable="columnNombreSocio" msprop:Generator_UserColumnName="NombreSocio" type="xs:string" minOccurs="0" />
+              <xs:element name="NombreActividad" msprop:Generator_ColumnPropNameInRow="NombreActividad" msprop:Generator_ColumnPropNameInTable="NombreActividadColumn" msprop:Generator_ColumnVarNameInTable="columnNombreActividad" msprop:Generator_UserColumnName="NombreActividad" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaReserva" msprop:Generator_ColumnPropNameInRow="FechaReserva" msprop:Generator_ColumnPropNameInTable="FechaReservaColumn" msprop:Generator_ColumnVarNameInTable="columnFechaReserva" msprop:Generator_UserColumnName="FechaReserva" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
