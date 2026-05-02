@@ -65,13 +65,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ModalBuscarInstalacion.xaml.cs">
+      <DependentUpon>ModalBuscarInstalacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModalBuscarSocio.xaml.cs">
+      <DependentUpon>ModalBuscarSocio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ModalMessage.cs" />
     <Compile Include="ModalMessageType.cs" />
+    <Compile Include="VistaCuotas.xaml.cs">
+      <DependentUpon>VistaCuotas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VistaInicio.xaml.cs">
       <DependentUpon>VistaInicio.xaml</DependentUpon>
     </Compile>
     <Compile Include="VistaInstalaciones.xaml.cs">
       <DependentUpon>VistaInstalaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VistaReservas.xaml.cs">
+      <DependentUpon>VistaReservas.xaml</DependentUpon>
     </Compile>
     <Compile Include="VistaSocios.xaml.cs">
       <DependentUpon>VistaSocios.xaml</DependentUpon>
@@ -91,6 +103,12 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ModalBuscarInstalacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModalBuscarSocio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,11 +117,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="VistaCuotas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VistaInicio.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="VistaInstalaciones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VistaReservas.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VistaSocios.xaml">

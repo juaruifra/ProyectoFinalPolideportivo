@@ -36,6 +36,8 @@ namespace ProyectoFinal.view_new
             if (TextoInicio != null) TextoInicio.Visibility = Visibility.Collapsed; // Oculta inicio.
             if (TextoClientes != null) TextoClientes.Visibility = Visibility.Collapsed; // Oculta socios.
             if (TextoInstalaciones != null) TextoInstalaciones.Visibility = Visibility.Collapsed; // Oculta instalaciones.
+            if (TextoCuotas != null) TextoCuotas.Visibility = Visibility.Collapsed; // Oculta cuotas.
+            if (TextoReservas != null) TextoReservas.Visibility = Visibility.Collapsed; // Oculta reservas.
         }
 
         private void MostrarTextos()
@@ -43,6 +45,8 @@ namespace ProyectoFinal.view_new
             if (TextoInicio != null) TextoInicio.Visibility = Visibility.Visible; // Muestra inicio.
             if (TextoClientes != null) TextoClientes.Visibility = Visibility.Visible; // Muestra socios.
             if (TextoInstalaciones != null) TextoInstalaciones.Visibility = Visibility.Visible; // Muestra instalaciones.
+            if (TextoCuotas != null) TextoCuotas.Visibility = Visibility.Visible; // Muestra cuotas.
+            if (TextoReservas != null) TextoReservas.Visibility = Visibility.Visible; // Muestra reservas.
         }
 
         private void CargarInicio()
@@ -85,6 +89,8 @@ namespace ProyectoFinal.view_new
             ItemInicio.Tag = null; // Limpia.
             ItemClientes.Tag = null; // Limpia.
             if (ItemInstalaciones != null) ItemInstalaciones.Tag = null; // Limpia.
+            if (ItemCuotas != null) ItemCuotas.Tag = null; // Limpia cuotas.
+            if (ItemReservas != null) ItemReservas.Tag = null; // Limpia reservas.
         }
 
         private void BarraSuperior_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -95,6 +101,30 @@ namespace ProyectoFinal.view_new
         private void BtnCerrar_Click(object sender, RoutedEventArgs e)
         {
             Close(); // Cierra.
+        }
+
+        /// <summary>
+        /// Evento click de Cuotas.
+        /// </summary>
+        private void AbrirCuotas(object sender, MouseButtonEventArgs e)
+        {
+            ResetMenu(); // Quitamos selección.
+
+            ItemCuotas.Tag = "Activo"; // Marcamos menú.
+            tbTitulo.Text = "Gestion de Cuotas"; // Título.
+            MainContent.Content = new VistaCuotas(); // Cargamos vista.
+        }
+
+        /// <summary>
+        /// Evento click de Reservas.
+        /// </summary>
+        private void AbrirReservas(object sender, MouseButtonEventArgs e)
+        {
+            ResetMenu(); // Quitamos seleccion.
+
+            ItemReservas.Tag = "Activo"; // Marcamos menu.
+            tbTitulo.Text = "Gestion de Reservas"; // Titulo.
+            MainContent.Content = new VistaReservas(); // Cargamos vista.
         }
     }
 }

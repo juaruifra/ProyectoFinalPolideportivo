@@ -362,7 +362,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DatePicker">
-                    <Border CornerRadius="10"
+                    <Border x:Name="PART_Root"
+                            CornerRadius="10"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
@@ -371,7 +372,7 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            
+
                             <!-- TextBox para mostrar la fecha -->
                             <DatePickerTextBox x:Name="PART_TextBox"
                                              Grid.Column="0"
@@ -380,22 +381,30 @@
                                              Background="Transparent"
                                              BorderThickness="0"
                                              Focusable="True"/>
-                            
-                            <!-- Botón calendario -->
+
+                            <!-- Boton calendario: DEBE llamarse PART_Button para que WPF abra el Popup -->
                             <Button x:Name="PART_Button"
-                                  Grid.Column="1"
-                                  Width="30"
-                                  Height="30"
-                                  Margin="0,0,5,0"
-                                  Background="Transparent"
-                                  BorderThickness="0"
-                                  Focusable="False">
+                                    Grid.Column="1"
+                                    Width="30"
+                                    Height="30"
+                                    Margin="0,0,5,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Focusable="False">
                                 <Path Data="M19,4H5C3.89,4 3,4.89 3,6V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V6C21,4.89 20.1,4 19,4M19,20H5V9H19V20Z"
                                       Fill="#6B7280"
                                       Stretch="Uniform"
                                       Width="16"
                                       Height="16"/>
                             </Button>
+
+                            <!-- Popup del calendario: DEBE llamarse PART_Popup para que WPF lo gestione -->
+                            <Popup x:Name="PART_Popup"
+                                   Grid.Column="0"
+                                   AllowsTransparency="True"
+                                   Placement="Bottom"
+                                   PlacementTarget="{Binding ElementName=PART_Root}"
+                                   StaysOpen="False"/>
                         </Grid>
                     </Border>
                 </ControlTemplate>

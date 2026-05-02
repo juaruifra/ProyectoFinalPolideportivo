@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\CuotasAPI.cs" />
     <Compile Include="API\InstalacionesAPI.cs" />
+    <Compile Include="API\ReservasAPI.cs" />
     <Compile Include="API\SociosAPI.cs" />
     <Compile Include="API\TiposInstalacionAPI.cs" />
+    <Compile Include="CONTROLLER\CuotasController.cs" />
     <Compile Include="CONTROLLER\InstalacionesController.cs" />
+    <Compile Include="CONTROLLER\ReservasController.cs" />
     <Compile Include="CONTROLLER\SociosController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

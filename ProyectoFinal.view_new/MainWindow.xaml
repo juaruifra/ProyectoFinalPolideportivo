@@ -201,9 +201,9 @@
                         <Border x:Name="IndicadorInstalaciones"
                                 Background="Transparent"/>
 
-                        <!-- Icono -->
+                        <!-- Icono: raqueta de tenis, reconocible para instalaciones deportivas -->
                         <TextBlock Grid.Column="1"
-                                   Text="🏟"
+                                   Text="🎾"
                                    FontSize="20"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"/>
@@ -212,6 +212,76 @@
                         <TextBlock x:Name="TextoInstalaciones"
                                    Grid.Column="2"
                                    Text="Instalaciones"
+                                   VerticalAlignment="Center"
+                                   Margin="8,0,0,0"
+                                   Foreground="#E5E7EB"
+                                   FontSize="14"
+                                   Visibility="Collapsed"/>
+                    </Grid>
+                </Border>
+
+                <!-- Opción Cuotas -->
+                <Border x:Name="ItemCuotas"
+                        Style="{StaticResource MenuItem}"
+                        MouseLeftButtonUp="AbrirCuotas"
+                        ToolTip="Cuotas">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="56"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Barra indicadora -->
+                        <Border x:Name="IndicadorCuotas"
+                                Background="Transparent"/>
+
+                        <!-- Icono -->
+                        <TextBlock Grid.Column="1"
+                                   Text="💰"
+                                   FontSize="20"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+
+                        <!-- Texto del menú -->
+                        <TextBlock x:Name="TextoCuotas"
+                                   Grid.Column="2"
+                                   Text="Cuotas"
+                                   VerticalAlignment="Center"
+                                   Margin="8,0,0,0"
+                                   Foreground="#E5E7EB"
+                                   FontSize="14"
+                                   Visibility="Collapsed"/>
+                    </Grid>
+                </Border>
+
+                <!-- Opcion Reservas -->
+                <Border x:Name="ItemReservas"
+                        Style="{StaticResource MenuItem}"
+                        MouseLeftButtonUp="AbrirReservas"
+                        ToolTip="Reservas">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="56"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Barra indicadora -->
+                        <Border x:Name="IndicadorReservas"
+                                Background="Transparent"/>
+
+                        <!-- Icono -->
+                        <TextBlock Grid.Column="1"
+                                   Text="&#128197;"
+                                   FontSize="20"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+
+                        <!-- Texto del menu -->
+                        <TextBlock x:Name="TextoReservas"
+                                   Grid.Column="2"
+                                   Text="Reservas"
                                    VerticalAlignment="Center"
                                    Margin="8,0,0,0"
                                    Foreground="#E5E7EB"

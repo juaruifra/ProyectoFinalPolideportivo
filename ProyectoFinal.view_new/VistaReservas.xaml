@@ -1,0 +1,453 @@
+<UserControl x:Class="ProyectoFinal.view_new.VistaReservas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="1100">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="#F9FAFB">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <!-- PANEL SUPERIOR: LISTA DE RESERVAS -->
+        <Border Grid.Row="0"
+                Background="White"
+                Margin="0,0,0,10"
+                CornerRadius="12"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Cabecera con filtros -->
+                <Grid Grid.Row="0" Margin="24,24,24,16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Reservas"
+                                   FontSize="20"
+                                   FontWeight="SemiBold"
+                                   Foreground="#1E3A8A"/>
+                        <TextBlock x:Name="txtTotalReservas"
+                                   Text="0 reservas"
+                                   FontSize="13"
+                                   Foreground="#6B7280"
+                                   Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <!-- Filtros alineados a la derecha -->
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                VerticalAlignment="Center">
+
+                        <TextBlock Text="Socio:"
+                                   FontSize="13"
+                                   Foreground="#374151"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,8,0"/>
+
+                        <ComboBox x:Name="cmbFiltroSocio"
+                                  Style="{StaticResource ComboBoxRedondeado}"
+                                  Width="200"
+                                  Margin="0,0,16,0"
+                                  DisplayMemberPath="NombreCompleto"
+                                  SelectionChanged="FiltroChanged"/>
+
+                        <TextBlock Text="Instalacion:"
+                                   FontSize="13"
+                                   Foreground="#374151"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,8,0"/>
+
+                        <ComboBox x:Name="cmbFiltroInstalacion"
+                                  Style="{StaticResource ComboBoxRedondeado}"
+                                  Width="200"
+                                  Margin="0,0,16,0"
+                                  DisplayMemberPath="Nombre"
+                                  SelectionChanged="FiltroChanged"/>
+
+                        <CheckBox x:Name="chkSoloActivas"
+                                  Content="Solo activas"
+                                  FontSize="13"
+                                  Foreground="#374151"
+                                  VerticalAlignment="Center"
+                                  Checked="FiltroChanged"
+                                  Unchecked="FiltroChanged"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Barra de acciones -->
+                <Border Grid.Row="1"
+                        Background="#F9FAFB"
+                        Padding="24,12"
+                        Margin="24,0,24,16"
+                        CornerRadius="8"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+
+                        <Button x:Name="btnEditarSeleccionado"
+                                Content="Editar"
+                                Width="90"
+                                Height="36"
+                                Margin="0,0,8,0"
+                                Style="{StaticResource BotonEditar}"
+                                Click="BtnEditarSeleccionado_Click"/>
+
+                        <Button x:Name="btnCancelarReserva"
+                                Content="Cancelar reserva"
+                                Width="140"
+                                Height="36"
+                                Margin="0,0,8,0"
+                                Style="{StaticResource BotonBorrar}"
+                                Click="BtnCancelarReserva_Click"/>
+
+                        <Border Width="1"
+                                Background="#D1D5DB"
+                                Margin="8,0,16,0"/>
+
+                        <Button x:Name="btnRefrescar"
+                                Content="Refrescar"
+                                Width="100"
+                                Height="36"
+                                Margin="0,0,8,0"
+                                Style="{StaticResource BotonRefrescar}"
+                                Click="BtnRefrescar_Click"/>
+
+                    </StackPanel>
+
+                </Border>
+
+                <!-- DataGrid de reservas -->
+                <Border Grid.Row="2"
+                        Margin="24,0,24,24"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1"
+                        CornerRadius="8">
+
+                    <DataGrid x:Name="dgReservas"
+                              Style="{StaticResource ModernDataGrid}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              CanUserAddRows="False"
+                              RowHeaderWidth="0"
+                              HeadersVisibility="Column"
+                              SelectionChanged="DgReservas_SelectionChanged">
+
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Style.Triggers>
+                                    <!-- Reservas canceladas se muestran atenuadas -->
+                                    <DataTrigger Binding="{Binding Estado}" Value="Cancelada">
+                                        <Setter Property="Opacity" Value="0.55"/>
+                                        <Setter Property="Foreground" Value="#6B7280"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Socio"
+                                                Binding="{Binding Socios.NombreCompleto}"
+                                                Width="*"
+                                                MinWidth="180"/>
+
+                            <DataGridTextColumn Header="Instalacion"
+                                                Binding="{Binding Instalaciones.Nombre}"
+                                                Width="*"
+                                                MinWidth="140"/>
+
+                            <DataGridTextColumn Header="Inicio"
+                                                Binding="{Binding FechaHoraInicio, StringFormat=dd/MM/yyyy HH:mm}"
+                                                Width="140"/>
+
+                            <DataGridTextColumn Header="Fin"
+                                                Binding="{Binding FechaHoraFin, StringFormat=dd/MM/yyyy HH:mm}"
+                                                Width="140"/>
+
+                            <DataGridTextColumn Header="Precio"
+                                                Binding="{Binding PrecioTotal, Converter={StaticResource PrecioConverter}}"
+                                                Width="90"/>
+
+                            <DataGridTextColumn Header="Estado"
+                                                Binding="{Binding Estado}"
+                                                Width="90"/>
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+        <!-- PANEL INFERIOR: FORMULARIO -->
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="12"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <Grid Margin="24">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Text="Datos de la Reserva"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           Foreground="#1E3A8A"
+                           Margin="0,0,0,12"/>
+
+                <!-- Fila 1: Socio / Instalacion -->
+                <Grid Grid.Row="1" Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Socio con lupa -->
+                    <StackPanel Grid.Column="0">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                            <TextBlock Text="Socio *" FontSize="12" Foreground="#374151" VerticalAlignment="Center"/>
+                            <Button x:Name="btnBuscarSocio"
+                                    Content="&#128269;"
+                                    FontSize="14"
+                                    Width="28"
+                                    Height="24"
+                                    Margin="6,0,0,0"
+                                    Padding="0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Cursor="Hand"
+                                    ToolTip="Buscar socio"
+                                    Click="BtnBuscarSocio_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}"
+                                                            CornerRadius="4"
+                                                            Padding="2">
+                                                        <ContentPresenter HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#DBEAFE"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </StackPanel>
+                        <TextBox x:Name="txtSocio"
+                                 Style="{StaticResource TextBoxRedondeado}"
+                                 Height="42"
+                                 IsReadOnly="True"
+                                 Background="#F9FAFB"/>
+                    </StackPanel>
+
+                    <!-- Instalacion con lupa -->
+                    <StackPanel Grid.Column="2">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                            <TextBlock Text="Instalacion *" FontSize="12" Foreground="#374151" VerticalAlignment="Center"/>
+                            <Button x:Name="btnBuscarInstalacion"
+                                    Content="&#128269;"
+                                    FontSize="14"
+                                    Width="28"
+                                    Height="24"
+                                    Margin="6,0,0,0"
+                                    Padding="0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Cursor="Hand"
+                                    ToolTip="Buscar instalacion"
+                                    Click="BtnBuscarInstalacion_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}"
+                                                            CornerRadius="4"
+                                                            Padding="2">
+                                                        <ContentPresenter HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#DBEAFE"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </StackPanel>
+                        <TextBox x:Name="txtInstalacion"
+                                 Style="{StaticResource TextBoxRedondeado}"
+                                 Height="42"
+                                 IsReadOnly="True"
+                                 Background="#F9FAFB"/>
+                    </StackPanel>
+
+                    <!-- Precio (calculado automaticamente) -->
+                    <StackPanel Grid.Column="4">
+                        <TextBlock Text="Precio (EUR)" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtPrecio"
+                                 Style="{StaticResource TextBoxRedondeado}"
+                                 Height="42"
+                                 IsReadOnly="True"
+                                 Background="#F3F4F6"/>
+                    </StackPanel>
+
+                    <!-- Estado -->
+                    <StackPanel Grid.Column="6">
+                        <TextBlock Text="Estado" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
+                        <ComboBox x:Name="cmbEstado"
+                                  Style="{StaticResource ComboBoxRedondeado}"
+                                  Height="42">
+                            <ComboBoxItem Content="Activa" IsSelected="True"/>
+                            <ComboBoxItem Content="Cancelada"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                </Grid>
+
+                <!-- Fila 2: Fechas y horas -->
+                <Grid Grid.Row="2" Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="32"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Fecha inicio -->
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Fecha inicio *" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
+                        <DatePicker x:Name="dpFechaInicio"
+                                    Style="{StaticResource DatePickerRedondeado}"
+                                    Height="42"
+                                    SelectedDateChanged="FechaHoraChanged"/>
+                    </StackPanel>
+
+                    <!-- Hora inicio -->
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Hora inicio *" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtHoraInicio"
+                                 Style="{StaticResource TextBoxRedondeado}"
+                                 Height="42"
+                                 TextChanged="FechaHoraChangedText"/>
+                    </StackPanel>
+
+                    <!-- Separador visual -->
+                    <TextBlock Grid.Column="3"
+                               Text="&#8594;"
+                               FontSize="20"
+                               Foreground="#9CA3AF"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+
+                    <!-- Fecha fin -->
+                    <StackPanel Grid.Column="4">
+                        <TextBlock Text="Fecha fin *" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
+                        <DatePicker x:Name="dpFechaFin"
+                                    Style="{StaticResource DatePickerRedondeado}"
+                                    Height="42"
+                                    SelectedDateChanged="FechaHoraChanged"/>
+                    </StackPanel>
+
+                    <!-- Hora fin -->
+                    <StackPanel Grid.Column="6">
+                        <TextBlock Text="Hora fin *" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
+                        <TextBox x:Name="txtHoraFin"
+                                 Style="{StaticResource TextBoxRedondeado}"
+                                 Height="42"
+                                 TextChanged="FechaHoraChangedText"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <!-- Fila 3: Botones -->
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0"
+                               Text="* Campos obligatorios. Hora en formato HH:mm"
+                               FontSize="11"
+                               Foreground="#9CA3AF"
+                               VerticalAlignment="Center"/>
+
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Right">
+                        <Button x:Name="btnCancelarFormulario"
+                                Content="Cancelar"
+                                Width="100"
+                                Margin="0,0,8,0"
+                                Style="{StaticResource BotonCancelar}"
+                                Click="BtnCancelarFormulario_Click"/>
+                        <Button x:Name="btnGuardar"
+                                Content="Guardar"
+                                Width="100"
+                                Style="{StaticResource BotonPrimario}"
+                                Click="BtnGuardar_Click"/>
+                    </StackPanel>
+
+                </Grid>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+
+</UserControl>

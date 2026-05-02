@@ -78,6 +78,7 @@
       <DependentUpon>ClubPolideportivoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CuotasRepository.cs" />
     <Compile Include="Repositories\InstalacionesRepository.cs" />
     <Compile Include="Repositories\ReservasRepository.cs" />
     <Compile Include="Repositories\SociosRepository.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Socios.cs">
       <DependentUpon>ClubPolideportivoDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="SociosExtensions.cs" />
     <Compile Include="TiposInstalacion.cs">
       <DependentUpon>ClubPolideportivoDB.tt</DependentUpon>
     </Compile>
