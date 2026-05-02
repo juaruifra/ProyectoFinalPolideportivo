@@ -172,5 +172,32 @@ namespace ProyectoFinal.model_new.Repositories
             // Buscamos cualquier reserva asociada.
             return Context.Reservas.Any(r => r.InstalacionId == instalacionId);
         }
+
+        /// <summary>
+        /// Borra una reserva fisicamente de la base de datos.
+        /// </summary>
+        /// <param name="reservaId">Id de la reserva a borrar.</param>
+        public void Delete(int reservaId)
+        {
+            try
+            {
+                // Buscamos la reserva por su Id.
+                var r = Context.Reservas.FirstOrDefault(x => x.ReservaId == reservaId);
+
+                // Si no existe, no hacemos nada.
+                if (r == null) return;
+
+                // Eliminamos el registro de la base de datos.
+                Context.Reservas.Remove(r);
+
+                // Persistimos el borrado.
+                Context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                // Envolvemos el error.
+                throw new Exception("Error al borrar la reserva.", ex);
+            }
+        }
     }
 }

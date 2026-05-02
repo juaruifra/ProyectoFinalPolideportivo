@@ -120,5 +120,23 @@ namespace ProyectoFinal.controller_new.api
                 throw new Exception("Error al cancelar la reserva.", ex);
             }
         }
+
+        /// <summary>
+        /// Borra una reserva fisicamente por su ID.
+        /// </summary>
+        /// <param name="reservaId">Id de la reserva.</param>
+        public void Borrar(int reservaId)
+        {
+            try
+            {
+                // Delegamos en el repositorio.
+                _repo.Delete(reservaId);
+            }
+            catch (Exception ex)
+            {
+                // Envolvemos.
+                throw new Exception("Error al borrar la reserva.", ex);
+            }
+        }
     }
 }

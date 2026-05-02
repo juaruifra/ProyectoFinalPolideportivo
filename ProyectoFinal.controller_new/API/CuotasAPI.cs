@@ -157,5 +157,26 @@ namespace ProyectoFinal.controller_new.api
                 throw new Exception("Error al borrar la cuota.", ex);
             }
         }
+
+        /// <summary>
+        /// Indica si un socio esta al corriente de pago a la fecha indicada.
+        /// Tiene que tener al menos una cuota pagada con FechaVencimiento >= fechaReserva.
+        /// </summary>
+        /// <param name="socioId">Id del socio.</param>
+        /// <param name="fechaReserva">Fecha de inicio de la reserva.</param>
+        /// <returns>True si esta al corriente de pago.</returns>
+        public bool EstaAlCorriente(int socioId, DateTime fechaReserva)
+        {
+            try
+            {
+                // Delegamos en el repositorio.
+                return _repo.EstaAlCorriente(socioId, fechaReserva);
+            }
+            catch (Exception ex)
+            {
+                // Envolvemos.
+                throw new Exception("Error al verificar si el socio esta al corriente de pago.", ex);
+            }
+        }
     }
 }

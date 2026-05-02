@@ -86,13 +86,6 @@
                                   DisplayMemberPath="Nombre"
                                   SelectionChanged="FiltroChanged"/>
 
-                        <CheckBox x:Name="chkSoloActivas"
-                                  Content="Solo activas"
-                                  FontSize="13"
-                                  Foreground="#374151"
-                                  VerticalAlignment="Center"
-                                  Checked="FiltroChanged"
-                                  Unchecked="FiltroChanged"/>
                     </StackPanel>
                 </Grid>
 
@@ -116,8 +109,8 @@
                                 Click="BtnEditarSeleccionado_Click"/>
 
                         <Button x:Name="btnCancelarReserva"
-                                Content="Cancelar reserva"
-                                Width="140"
+                                Content="Borrar reserva"
+                                Width="160"
                                 Height="36"
                                 Margin="0,0,8,0"
                                 Style="{StaticResource BotonBorrar}"
@@ -155,17 +148,6 @@
                               HeadersVisibility="Column"
                               SelectionChanged="DgReservas_SelectionChanged">
 
-                        <DataGrid.RowStyle>
-                            <Style TargetType="DataGridRow">
-                                <Style.Triggers>
-                                    <!-- Reservas canceladas se muestran atenuadas -->
-                                    <DataTrigger Binding="{Binding Estado}" Value="Cancelada">
-                                        <Setter Property="Opacity" Value="0.55"/>
-                                        <Setter Property="Foreground" Value="#6B7280"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </DataGrid.RowStyle>
 
                         <DataGrid.Columns>
 
@@ -189,10 +171,6 @@
 
                             <DataGridTextColumn Header="Precio"
                                                 Binding="{Binding PrecioTotal, Converter={StaticResource PrecioConverter}}"
-                                                Width="90"/>
-
-                            <DataGridTextColumn Header="Estado"
-                                                Binding="{Binding Estado}"
                                                 Width="90"/>
 
                         </DataGrid.Columns>
@@ -228,21 +206,19 @@
                            Foreground="#1E3A8A"
                            Margin="0,0,0,12"/>
 
-                <!-- Fila 1: Socio / Instalacion -->
+                <!-- Fila 1: Socio / Instalacion / Precio -->
                 <Grid Grid.Row="1" Margin="0,0,0,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="16"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="16"/>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="16"/>
-                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
                     <!-- Socio con lupa -->
                     <StackPanel Grid.Column="0">
-                        <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                        <StackPanel Orientation="Horizontal" Height="28" Margin="0,0,0,4">
                             <TextBlock Text="Socio *" FontSize="12" Foreground="#374151" VerticalAlignment="Center"/>
                             <Button x:Name="btnBuscarSocio"
                                     Content="&#128269;"
@@ -288,7 +264,7 @@
 
                     <!-- Instalacion con lupa -->
                     <StackPanel Grid.Column="2">
-                        <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                        <StackPanel Orientation="Horizontal" Height="28" Margin="0,0,0,4">
                             <TextBlock Text="Instalacion *" FontSize="12" Foreground="#374151" VerticalAlignment="Center"/>
                             <Button x:Name="btnBuscarInstalacion"
                                     Content="&#128269;"
@@ -334,23 +310,14 @@
 
                     <!-- Precio (calculado automaticamente) -->
                     <StackPanel Grid.Column="4">
-                        <TextBlock Text="Precio (EUR)" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
+                        <StackPanel Height="28" Margin="0,0,0,4" Orientation="Horizontal">
+                            <TextBlock Text="Precio (EUR)" FontSize="12" Foreground="#374151" VerticalAlignment="Center"/>
+                        </StackPanel>
                         <TextBox x:Name="txtPrecio"
                                  Style="{StaticResource TextBoxRedondeado}"
                                  Height="42"
                                  IsReadOnly="True"
                                  Background="#F3F4F6"/>
-                    </StackPanel>
-
-                    <!-- Estado -->
-                    <StackPanel Grid.Column="6">
-                        <TextBlock Text="Estado" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
-                        <ComboBox x:Name="cmbEstado"
-                                  Style="{StaticResource ComboBoxRedondeado}"
-                                  Height="42">
-                            <ComboBoxItem Content="Activa" IsSelected="True"/>
-                            <ComboBoxItem Content="Cancelada"/>
-                        </ComboBox>
                     </StackPanel>
 
                 </Grid>
@@ -387,11 +354,11 @@
 
                     <!-- Separador visual -->
                     <TextBlock Grid.Column="3"
-                               Text="&#8594;"
+                               Text=""
                                FontSize="20"
                                Foreground="#9CA3AF"
                                VerticalAlignment="Center"
-                               HorizontalAlignment="Center"/>
+                               HorizontalAlignment="Right" Margin="0,0,7,0"/>
 
                     <!-- Fecha fin -->
                     <StackPanel Grid.Column="4">

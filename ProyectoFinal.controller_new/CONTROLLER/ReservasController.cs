@@ -102,14 +102,13 @@ namespace ProyectoFinal.controller_new.controller
         }
 
         /// <summary>
-        /// Cancela una reserva con validacion previa.
-        /// No se puede cancelar una reserva ya cancelada.
+        /// Borra una reserva fisicamente con validacion previa.
         /// </summary>
-        /// <param name="reserva">Reserva a cancelar.</param>
+        /// <param name="reserva">Reserva a borrar.</param>
         /// <param name="tituloError">Titulo del error (ref).</param>
         /// <param name="mensajeError">Mensaje del error (ref).</param>
-        /// <returns>True si cancela correctamente.</returns>
-        public bool Cancelar(Reservas reserva, ref string tituloError, ref string mensajeError)
+        /// <returns>True si borra correctamente.</returns>
+        public bool Borrar(Reservas reserva, ref string tituloError, ref string mensajeError)
         {
             try
             {
@@ -121,23 +120,15 @@ namespace ProyectoFinal.controller_new.controller
                     return false;
                 }
 
-                // No cancelamos lo que ya esta cancelado.
-                if (reserva.Estado == "Cancelada")
-                {
-                    tituloError = "Ya cancelada";
-                    mensajeError = "Esta reserva ya esta cancelada.";
-                    return false;
-                }
-
-                // Cancelamos.
-                _api.Cancelar(reserva.ReservaId);
+                // Borramos fisicamente.
+                _api.Borrar(reserva.ReservaId);
                 return true;
             }
             catch (Exception ex)
             {
                 // Error inesperado.
-                tituloError = "Error al cancelar";
-                mensajeError = $"No se pudo cancelar la reserva: {ex.Message}";
+                tituloError = "Error al borrar";
+                mensajeError = $"No se pudo borrar la reserva: {ex.Message}";
                 return false;
             }
         }
@@ -209,11 +200,12 @@ namespace ProyectoFinal.controller_new.controller
                 return false;
             }
 
-            // El socio no puede tener cuotas pendientes vencidas.
-            if (_cuotasApi.TieneCuotasPendientesVencidas(reserva.SocioId))
+            // El socio debe estar al corriente de pago en la fecha de inicio de la reserva.
+            // Debe existir al menos una cuota pagada cuyo vencimiento cubra esa fecha.
+            if (!_cuotasApi.EstaAlCorriente(reserva.SocioId, reserva.FechaHoraInicio))
             {
-                tituloError = "Cuotas pendientes";
-                mensajeError = "El socio tiene cuotas vencidas sin pagar. No puede hacer reservas.";
+                tituloError = "Socio sin cobertura de cuota";
+                mensajeError = "El socio no tiene ninguna cuota pagada vigente para la fecha de la reserva.";
                 return false;
             }
 

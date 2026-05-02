@@ -107,11 +107,8 @@ namespace ProyectoFinal.view_new
                 if (instalacionFiltro != null && instalacionFiltro.InstalacionId > 0)
                     instalacionId = instalacionFiltro.InstalacionId; // Filtramos por instalacion.
 
-                // Obtenemos si solo activas.
-                bool soloActivas = chkSoloActivas.IsChecked == true;
-
-                // Cargamos reservas del controlador.
-                var reservas = _controller.ObtenerTodos(socioId, instalacionId, soloActivas);
+                // Cargamos reservas del controlador sin filtro de estado.
+                var reservas = _controller.ObtenerTodos(socioId, instalacionId);
 
                 // Asignamos al grid.
                 dgReservas.ItemsSource = reservas;
@@ -148,9 +145,6 @@ namespace ProyectoFinal.view_new
 
             txtPrecio.Text = "0,00"; // Precio en cero.
 
-            // Seleccionamos "Activa" en el combo de estado.
-            cmbEstado.SelectedIndex = 0;
-
             dgReservas.SelectedItem = null; // Quitamos seleccion del grid.
         }
 
@@ -166,7 +160,7 @@ namespace ProyectoFinal.view_new
 
             _reservaSeleccionada = reserva; // Guardamos referencia.
 
-            // Guardamos socio e instalacion seleccionados (tomamos de la entidad cargada).
+            // Guardamos socio e instalacion seleccionados.
             _socioSeleccionado = reserva.Socios;
             _instalacionSeleccionada = reserva.Instalaciones;
 
@@ -184,16 +178,6 @@ namespace ProyectoFinal.view_new
 
             // Mostramos precio total formateado.
             txtPrecio.Text = reserva.PrecioTotal.ToString("F2");
-
-            // Seleccionamos estado en el ComboBox comparando el texto.
-            foreach (ComboBoxItem item in cmbEstado.Items)
-            {
-                if ((string)item.Content == reserva.Estado) // Buscamos el item que coincida.
-                {
-                    cmbEstado.SelectedItem = item; // Lo seleccionamos.
-                    break;
-                }
-            }
 
             _cargandoFormulario = false; // Desactivamos flag.
         }
@@ -220,8 +204,8 @@ namespace ProyectoFinal.view_new
             if (r.InstalacionId > 0 && r.FechaHoraInicio != default(DateTime) && r.FechaHoraFin > r.FechaHoraInicio)
                 r.PrecioTotal = _controller.CalcularPrecio(r.InstalacionId, r.FechaHoraInicio, r.FechaHoraFin);
 
-            // Estado desde el ComboBox.
-            r.Estado = (cmbEstado.SelectedItem as ComboBoxItem)?.Content?.ToString() ?? "Activa";
+            // Estado siempre "Activa" al guardar (no hay canceladas, se borran directamente).
+            r.Estado = "Activa";
 
             return r; // Devolvemos entidad.
         }
@@ -330,7 +314,7 @@ namespace ProyectoFinal.view_new
         }
 
         /// <summary>
-        /// Boton Cancelar Reserva: cancela la reserva seleccionada en el grid.
+        /// Boton Borrar Reserva: borra fisicamente la reserva seleccionada tras confirmacion.
         /// </summary>
         private void BtnCancelarReserva_Click(object sender, RoutedEventArgs e)
         {
@@ -341,18 +325,18 @@ namespace ProyectoFinal.view_new
 
                 // Pedimos confirmacion al usuario.
                 var confirmar = ModalMessage.ShowModal(
-                    $"Desea cancelar la reserva de {reserva.Socios?.NombreCompleto} en {reserva.Instalaciones?.Nombre}?",
+                    $"Desea borrar la reserva de {reserva.Socios?.NombreCompleto} en {reserva.Instalaciones?.Nombre} ({reserva.FechaHoraInicio:dd/MM/yyyy HH:mm})? Esta accion no se puede deshacer.",
                     "Reservas", 3);
                 if (!confirmar) return; // Cancelado.
 
                 string tituloError = string.Empty;
                 string mensajeError = string.Empty;
 
-                if (_controller.Cancelar(reserva, ref tituloError, ref mensajeError))
+                if (_controller.Borrar(reserva, ref tituloError, ref mensajeError))
                 {
                     LimpiarFormulario(); // Limpiamos formulario.
                     CargarDatos(); // Refrescamos grid.
-                    ModalMessage.ShowModal("Reserva cancelada correctamente.", "Reservas", 2);
+                    ModalMessage.ShowModal("Reserva borrada correctamente.", "Reservas", 2);
                     return;
                 }
 

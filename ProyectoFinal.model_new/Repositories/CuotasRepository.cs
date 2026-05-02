@@ -186,5 +186,23 @@ namespace ProyectoFinal.model_new.Repositories
                 throw new Exception("Error al borrar la cuota en la base de datos.", ex);
             }
         }
+
+        /// <summary>
+        /// Indica si un socio esta al corriente de pago a la fecha indicada.
+        /// Se considera al corriente si tiene al menos una cuota pagada cuya
+        /// FechaVencimiento sea igual o posterior a la fecha de la reserva.
+        /// Cubre cuotas mensuales y anuales por igual.
+        /// </summary>
+        /// <param name="socioId">Id del socio.</param>
+        /// <param name="fechaReserva">Fecha de inicio de la reserva a comprobar.</param>
+        /// <returns>True si esta al corriente de pago.</returns>
+        public bool EstaAlCorriente(int socioId, DateTime fechaReserva)
+        {
+            // Buscamos si existe alguna cuota pagada cuyo vencimiento cubra la fecha de la reserva.
+            return Context.Cuotas.Any(c =>
+                c.SocioId == socioId &&
+                c.Pagada &&
+                c.FechaVencimiento >= fechaReserva);
+        }
     }
 }
