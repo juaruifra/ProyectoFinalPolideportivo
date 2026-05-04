@@ -65,6 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="HuecoDiario.cs" />
     <Compile Include="ModalBuscarInstalacion.xaml.cs">
       <DependentUpon>ModalBuscarInstalacion.xaml</DependentUpon>
     </Compile>
@@ -73,6 +74,9 @@
     </Compile>
     <Compile Include="ModalMessage.cs" />
     <Compile Include="ModalMessageType.cs" />
+    <Compile Include="ModalNuevaReserva.xaml.cs">
+      <DependentUpon>ModalNuevaReserva.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VistaCuotas.xaml.cs">
       <DependentUpon>VistaCuotas.xaml</DependentUpon>
     </Compile>
@@ -107,6 +111,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ModalBuscarSocio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModalNuevaReserva.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles.xaml">

@@ -100,6 +100,14 @@
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
 
+                        <Button x:Name="btnNuevaReserva"
+                                Content="Reserva asistida"
+                                Width="150"
+                                Height="36"
+                                Margin="0,0,8,0"
+                                Style="{StaticResource BotonCrearReserva}"
+                                Click="BtnNuevaReserva_Click"/>
+
                         <Button x:Name="btnEditarSeleccionado"
                                 Content="Editar"
                                 Width="90"

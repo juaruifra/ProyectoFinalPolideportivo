@@ -64,6 +64,26 @@ namespace ProyectoFinal.controller_new.api
         }
 
         /// <summary>
+        /// Obtiene las reservas de un dia concreto con filtro opcional de instalacion.
+        /// </summary>
+        /// <param name="fecha">Fecha del dia a consultar.</param>
+        /// <param name="instalacionId">Id de instalacion. Null devuelve todas.</param>
+        /// <returns>Lista de reservas del dia.</returns>
+        public List<Reservas> ObtenerPorFecha(DateTime fecha, int? instalacionId = null)
+        {
+            try
+            {
+                // Delegamos en el repositorio.
+                return _repo.GetByFecha(fecha, instalacionId);
+            }
+            catch (Exception ex)
+            {
+                // Envolvemos el error.
+                throw new Exception("Error al obtener las reservas por fecha.", ex);
+            }
+        }
+
+        /// <summary>
         /// Comprueba si existe solape de horario en la misma instalacion.
         /// </summary>
         /// <param name="instalacionId">Id de la instalacion.</param>

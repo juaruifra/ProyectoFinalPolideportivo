@@ -138,9 +138,9 @@ namespace ProyectoFinal.view_new
             txtSocio.Text = string.Empty; // Limpiamos campo socio.
             txtInstalacion.Text = string.Empty; // Limpiamos campo instalacion.
 
-            dpFechaInicio.SelectedDate = null; // Sin fecha inicio.
+            dpFechaInicio.SelectedDate = DateTime.Today; // Fecha inicio: hoy por defecto.
             txtHoraInicio.Text = "09:00"; // Hora por defecto.
-            dpFechaFin.SelectedDate = null; // Sin fecha fin.
+            dpFechaFin.SelectedDate = DateTime.Today; // Fecha fin: hoy por defecto.
             txtHoraFin.Text = "10:00"; // Hora fin por defecto.
 
             txtPrecio.Text = "0,00"; // Precio en cero.
@@ -288,10 +288,14 @@ namespace ProyectoFinal.view_new
         }
 
         /// <summary>
-        /// Cambio en un DatePicker de fecha: recalcula precio.
+        /// Cambio en un DatePicker de fecha: autocompleta fecha fin si no tiene valor, y recalcula precio.
         /// </summary>
         private void FechaHoraChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Si cambia la fecha de inicio, sincronizamos la fecha fin con ella siempre.
+            if (sender == dpFechaInicio && dpFechaInicio.SelectedDate.HasValue)
+                dpFechaFin.SelectedDate = dpFechaInicio.SelectedDate;
+
             RecalcularPrecio(); // Recalculamos.
         }
 
@@ -434,6 +438,43 @@ namespace ProyectoFinal.view_new
             catch (Exception ex)
             {
                 ModalMessage.ShowModal($"Error al buscar instalacion: {ex.Message}", "Reservas", 1);
+            }
+        }
+
+        /// <summary>
+        /// Boton Nueva Reserva: abre el modal asistido y rellena el formulario con el hueco elegido.
+        /// </summary>
+        private void BtnNuevaReserva_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var modal = new ModalNuevaReserva(); // Creamos el modal asistido.
+                modal.Owner = Window.GetWindow(this); // Asignamos ventana padre.
+
+                if (modal.ShowDialog() != true) return; // El usuario cancelo.
+
+                _cargandoFormulario = true; // Evitamos recalculo prematuro.
+
+                // Asignamos la instalacion seleccionada desde el modal.
+                _instalacionSeleccionada = modal.InstalacionSeleccionada;
+                txtInstalacion.Text = _instalacionSeleccionada?.Nombre ?? string.Empty;
+
+                // Asignamos la fecha de inicio y fin (mismo dia) desde el modal.
+                dpFechaInicio.SelectedDate = modal.FechaSeleccionada;
+                dpFechaFin.SelectedDate = modal.FechaSeleccionada;
+
+                // Asignamos las horas en los TextBox.
+                txtHoraInicio.Text = modal.HoraInicioSeleccionada.ToString("hh\\:mm");
+                txtHoraFin.Text = modal.HoraFinSeleccionada.ToString("hh\\:mm");
+
+                _cargandoFormulario = false; // Desactivamos flag.
+
+                // Recalculamos el precio con los nuevos valores.
+                RecalcularPrecio();
+            }
+            catch (Exception ex)
+            {
+                ModalMessage.ShowModal($"Error al abrir nueva reserva: {ex.Message}", "Reservas", 1);
             }
         }
     }

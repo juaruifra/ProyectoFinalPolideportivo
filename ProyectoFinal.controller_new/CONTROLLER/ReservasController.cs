@@ -45,6 +45,18 @@ namespace ProyectoFinal.controller_new.controller
         }
 
         /// <summary>
+        /// Obtiene las reservas de un dia concreto con filtro opcional de instalacion.
+        /// </summary>
+        /// <param name="fecha">Fecha del dia a consultar.</param>
+        /// <param name="instalacionId">Id de instalacion. Null devuelve todas.</param>
+        /// <returns>Lista de reservas del dia.</returns>
+        public List<Reservas> ObtenerPorFecha(DateTime fecha, int? instalacionId = null)
+        {
+            // Delegamos en la API.
+            return _api.ObtenerPorFecha(fecha, instalacionId);
+        }
+
+        /// <summary>
         /// Calcula el precio total de una reserva en base al precio/hora de la instalacion.
         /// </summary>
         /// <param name="instalacionId">Id de la instalacion.</param>

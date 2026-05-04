@@ -199,5 +199,31 @@ namespace ProyectoFinal.model_new.Repositories
                 throw new Exception("Error al borrar la reserva.", ex);
             }
         }
+
+        /// <summary>
+        /// Devuelve las reservas de un dia concreto, opcionalmente filtradas por instalacion.
+        /// </summary>
+        /// <param name="fecha">Fecha del dia a consultar.</param>
+        /// <param name="instalacionId">Id de instalacion. Null devuelve todas.</param>
+        /// <returns>Lista de reservas del dia ordenadas por hora de inicio.</returns>
+        public List<Reservas> GetByFecha(DateTime fecha, int? instalacionId = null)
+        {
+            // Calculamos el inicio y fin del dia para el filtro de rango.
+            var inicioDia = fecha.Date;
+            var finDia = fecha.Date.AddDays(1);
+
+            // Comenzamos con todos los registros incluyendo socio e instalacion.
+            var q = Context.Reservas
+                .Include("Socios")
+                .Include("Instalaciones")
+                .Where(r => r.FechaHoraInicio >= inicioDia && r.FechaHoraInicio < finDia);
+
+            // Filtramos por instalacion si se indica.
+            if (instalacionId.HasValue)
+                q = q.Where(r => r.InstalacionId == instalacionId.Value);
+
+            // Ordenamos por hora de inicio ascendente para ver el dia en orden.
+            return q.OrderBy(r => r.FechaHoraInicio).ToList();
+        }
     }
 }
