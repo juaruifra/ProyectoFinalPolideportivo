@@ -50,6 +50,7 @@
     <Compile Include="CONTROLLER\InstalacionesController.cs" />
     <Compile Include="CONTROLLER\ReservasController.cs" />
     <Compile Include="CONTROLLER\SociosController.cs" />
+    <Compile Include="CONTROLLER\TiposInstalacionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -92,6 +92,9 @@
     <Compile Include="VistaSocios.xaml.cs">
       <DependentUpon>VistaSocios.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VistaTiposInstalacion.xaml.cs">
+      <DependentUpon>VistaTiposInstalacion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="win_modal_message.xaml.cs">
       <DependentUpon>win_modal_message.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,9 @@
     <Page Include="VistaSocios.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VistaTiposInstalacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="win_modal_message.xaml">
       <Generator>MSBuild:Compile</Generator>

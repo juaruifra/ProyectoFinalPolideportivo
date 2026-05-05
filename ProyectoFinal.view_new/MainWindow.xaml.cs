@@ -34,6 +34,7 @@ namespace ProyectoFinal.view_new
         private void OcultarTextos()
         {
             if (TextoInicio != null) TextoInicio.Visibility = Visibility.Collapsed; // Oculta inicio.
+            if (TextoTipos != null) TextoTipos.Visibility = Visibility.Collapsed; // Oculta tipos.
             if (TextoClientes != null) TextoClientes.Visibility = Visibility.Collapsed; // Oculta socios.
             if (TextoInstalaciones != null) TextoInstalaciones.Visibility = Visibility.Collapsed; // Oculta instalaciones.
             if (TextoCuotas != null) TextoCuotas.Visibility = Visibility.Collapsed; // Oculta cuotas.
@@ -43,6 +44,7 @@ namespace ProyectoFinal.view_new
         private void MostrarTextos()
         {
             if (TextoInicio != null) TextoInicio.Visibility = Visibility.Visible; // Muestra inicio.
+            if (TextoTipos != null) TextoTipos.Visibility = Visibility.Visible; // Muestra tipos.
             if (TextoClientes != null) TextoClientes.Visibility = Visibility.Visible; // Muestra socios.
             if (TextoInstalaciones != null) TextoInstalaciones.Visibility = Visibility.Visible; // Muestra instalaciones.
             if (TextoCuotas != null) TextoCuotas.Visibility = Visibility.Visible; // Muestra cuotas.
@@ -87,6 +89,7 @@ namespace ProyectoFinal.view_new
         private void ResetMenu()
         {
             ItemInicio.Tag = null; // Limpia.
+            if (ItemTipos != null) ItemTipos.Tag = null; // Limpia tipos.
             ItemClientes.Tag = null; // Limpia.
             if (ItemInstalaciones != null) ItemInstalaciones.Tag = null; // Limpia.
             if (ItemCuotas != null) ItemCuotas.Tag = null; // Limpia cuotas.
@@ -125,6 +128,18 @@ namespace ProyectoFinal.view_new
             ItemReservas.Tag = "Activo"; // Marcamos menu.
             tbTitulo.Text = "Gestion de Reservas"; // Titulo.
             MainContent.Content = new VistaReservas(); // Cargamos vista.
+        }
+
+        /// <summary>
+        /// Evento click de Tipos de Instalacion.
+        /// </summary>
+        private void AbrirTipos(object sender, MouseButtonEventArgs e)
+        {
+            ResetMenu(); // Quitamos seleccion.
+
+            ItemTipos.Tag = "Activo"; // Marcamos menu.
+            tbTitulo.Text = "Tipos de Instalacion"; // Titulo.
+            MainContent.Content = new VistaTiposInstalacion(); // Cargamos vista.
         }
     }
 }

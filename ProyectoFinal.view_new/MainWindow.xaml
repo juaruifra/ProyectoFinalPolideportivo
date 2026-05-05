@@ -150,6 +150,41 @@
                     </Grid>
                 </Border>
 
+                <!-- Opcion Tipos de Instalacion -->
+                <Border x:Name="ItemTipos"
+                        Style="{StaticResource MenuItem}"
+                        MouseLeftButtonUp="AbrirTipos"
+                        ToolTip="Tipos de Instalacion">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="56"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Barra indicadora -->
+                        <Border x:Name="IndicadorTipos"
+                                Background="Transparent"/>
+
+                        <!-- Icono -->
+                        <TextBlock Grid.Column="1"
+                                   Text="&#127991;"
+                                   FontSize="20"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+
+                        <!-- Texto del menu -->
+                        <TextBlock x:Name="TextoTipos"
+                                   Grid.Column="2"
+                                   Text="Tipos"
+                                   VerticalAlignment="Center"
+                                   Margin="8,0,0,0"
+                                   Foreground="#E5E7EB"
+                                   FontSize="14"
+                                   Visibility="Collapsed"/>
+                    </Grid>
+                </Border>
+
                 <!-- Opción Socios -->
                 <Border x:Name="ItemClientes"
                         Style="{StaticResource MenuItem}"
