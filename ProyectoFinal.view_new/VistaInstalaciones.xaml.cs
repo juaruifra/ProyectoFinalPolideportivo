@@ -128,7 +128,7 @@ namespace ProyectoFinal.view_new
         /// <param name="instalacion">Instalacion.</param>
         private void CargarFormularioDesdeEntidad(Instalaciones instalacion)
         {
-            if (instalacion == null) return; // Guard.
+            if (instalacion == null) return; // Seguridad por si el valor viene a null
 
             _instalacionSeleccionada = instalacion; // Guardamos ref.
 
@@ -183,7 +183,7 @@ namespace ProyectoFinal.view_new
         private void BtnEditarSeleccionado_Click(object sender, RoutedEventArgs e)
         {
             var instalacion = dgInstalaciones.SelectedItem as Instalaciones; // Seleccion.
-            if (instalacion == null) return; // Guard.
+            if (instalacion == null) return; // Seguridad por si el objeto viene a null.
 
             CargarFormularioDesdeEntidad(instalacion); // Cargamos.
         }

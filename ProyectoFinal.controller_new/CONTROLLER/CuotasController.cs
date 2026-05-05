@@ -153,64 +153,66 @@ namespace ProyectoFinal.controller_new.controller
         /// <returns>True si es válida.</returns>
         private bool ValidarCuota(Cuotas cuota, ref string tituloError, ref string mensajeError)
         {
+            bool ok = true;
+
             // Comprobación null
             if (cuota == null)
             {
                 tituloError = "Datos incompletos";
                 mensajeError = "La cuota no puede ser nula.";
-                return false;
+                ok = false;
             }
 
             // El socio debe estar seleccionado.
-            if (cuota.SocioId < 1)
+            if (ok && cuota.SocioId < 1)
             {
                 tituloError = "Socio requerido";
                 mensajeError = "Debe seleccionar un socio para la cuota.";
-                return false;
+                ok =  false;
             }
 
             // El año debe ser razonable.
-            if (cuota.Anio < 2000 || cuota.Anio > 2100)
+            if (ok && (cuota.Anio < 2000 || cuota.Anio > 2100))
             {
                 tituloError = "Año no válido";
                 mensajeError = "El año debe estar entre 2000 y 2100.";
-                return false;
+                ok = false;
             }
 
             // El mes debe estar entre 1 y 12.
-            if (cuota.Mes < 1 || cuota.Mes > 12)
+            if (ok && (cuota.Mes < 1 || cuota.Mes > 12))
             {
                 tituloError = "Mes no válido";
                 mensajeError = "El mes debe estar entre 1 y 12.";
-                return false;
+                ok = false;
             }
 
             // El importe no puede ser negativo.
-            if (cuota.Importe < 0)
+            if (ok && cuota.Importe < 0)
             {
                 tituloError = "Importe no válido";
                 mensajeError = "El importe no puede ser negativo.";
-                return false;
+                ok = false;
             }
 
             // La fecha de vencimiento no puede ser nula.
-            if (cuota.FechaVencimiento == default(DateTime))
+            if (ok && cuota.FechaVencimiento == default(DateTime))
             {
                 tituloError = "Fecha de vencimiento requerida";
                 mensajeError = "Debe indicar la fecha de vencimiento.";
-                return false;
+                ok = false;
             }
 
             // La fecha de pago no puede ser nula.
-            if (cuota.FechaPago == default(DateTime))
+            if (ok && cuota.FechaPago == default(DateTime))
             {
                 tituloError = "Fecha de pago requerida";
                 mensajeError = "Debe indicar la fecha de pago.";
-                return false;
+                ok = false;
             }
 
             // La fecha de vencimiento no puede ser anterior a hoy (solo en alta nueva).
-            if (cuota.CuotaId == 0 && cuota.FechaVencimiento.Date < DateTime.Today)
+            if (ok && cuota.CuotaId == 0 && cuota.FechaVencimiento.Date < DateTime.Today)
             {
                 tituloError = "Fecha de vencimiento no valida";
                 mensajeError = "La fecha de vencimiento no puede ser anterior a hoy.";
@@ -218,14 +220,14 @@ namespace ProyectoFinal.controller_new.controller
             }
 
             // No puede existir otra cuota del mismo socio para el mismo anio y mes.
-            if (_api.ExisteDuplicado(cuota.SocioId, cuota.Anio, cuota.Mes, cuota.CuotaId))
+            if (ok && _api.ExisteDuplicado(cuota.SocioId, cuota.Anio, cuota.Mes, cuota.CuotaId))
             {
                 tituloError = "Cuota duplicada";
                 mensajeError = $"Ya existe una cuota para este socio en el mes {cuota.Mes}/{cuota.Anio}.";
                 return false;
             }
 
-            return true; // Todo correcto.
+            return ok; // Todo Devolver resultado.
         }
     }
 }

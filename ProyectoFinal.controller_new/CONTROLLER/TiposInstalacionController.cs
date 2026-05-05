@@ -43,25 +43,14 @@ namespace ProyectoFinal.controller_new.controller
         {
             try
             {
-                // Validamos el nombre obligatorio.
-                if (tipo == null || string.IsNullOrWhiteSpace(tipo.Nombre))
-                {
-                    tituloError = "Nombre requerido"; // Titulo.
-                    mensajeError = "Debe indicar el nombre del tipo de instalacion."; // Mensaje.
-                    return false; // Error.
-                }
+                // Validamos los datos del tipo antes de guardar.
+                if (!ValidarTipo(tipo, ref tituloError, ref mensajeError))
+                    return false; // Salimos si la validacion falla.
 
-                // Validamos longitud minima del nombre.
-                if (tipo.Nombre.Trim().Length < 2)
-                {
-                    tituloError = "Nombre muy corto"; // Titulo.
-                    mensajeError = "El nombre debe tener al menos 2 caracteres."; // Mensaje.
-                    return false; // Error.
-                }
+                // Calculamos el id a excluir en la comprobacion de duplicado (para edicion).
+                var excluirId = tipo.TipoInstalacionId > 0 ? tipo.TipoInstalacionId : (int?)null;
 
-                // Comprobamos si el nombre ya existe en otro tipo distinto.
-                var excluirId = tipo.TipoInstalacionId > 0 ? tipo.TipoInstalacionId : (int?)null; // Id a excluir.
-
+                // Comprobamos que el nombre no este ya registrado en otro tipo.
                 if (_api.NombreYaExiste(tipo.Nombre.Trim(), excluirId))
                 {
                     tituloError = "Nombre duplicado"; // Titulo.
@@ -80,6 +69,44 @@ namespace ProyectoFinal.controller_new.controller
                 mensajeError = $"No se pudo guardar el tipo de instalacion: {ex.Message}"; // Mensaje.
                 return false; // Error.
             }
+        }
+
+        /// <summary>
+        /// Valida los datos basicos de un tipo de instalacion antes de guardarlo.
+        /// </summary>
+        /// <param name="tipo">Tipo a validar.</param>
+        /// <param name="tituloError">Titulo del error si la validacion falla (ref).</param>
+        /// <param name="mensajeError">Mensaje del error si la validacion falla (ref).</param>
+        /// <returns>True si los datos son correctos.</returns>
+        private bool ValidarTipo(TiposInstalacion tipo, ref string tituloError, ref string mensajeError)
+        {
+            bool ok = true; // Empezamos asumiendo que los datos son correctos.
+
+            // Comprobamos que el objeto no sea nulo.
+            if (tipo == null)
+            {
+                tituloError = "Datos incompletos"; // Titulo.
+                mensajeError = "El tipo de instalacion no puede ser nulo."; // Mensaje.
+                ok = false; // Marcamos error.
+            }
+
+            // El nombre no puede estar vacio.
+            if (ok && string.IsNullOrWhiteSpace(tipo.Nombre))
+            {
+                tituloError = "Nombre requerido"; // Titulo.
+                mensajeError = "Debe indicar el nombre del tipo de instalacion."; // Mensaje.
+                ok = false; // Marcamos error.
+            }
+
+            // El nombre debe tener al menos 2 caracteres.
+            if (ok && tipo.Nombre.Trim().Length < 2)
+            {
+                tituloError = "Nombre muy corto"; // Titulo.
+                mensajeError = "El nombre debe tener al menos 2 caracteres."; // Mensaje.
+                ok = false; // Marcamos error.
+            }
+
+            return ok; // Devolvemos el resultado de la validacion.
         }
 
         /// <summary>

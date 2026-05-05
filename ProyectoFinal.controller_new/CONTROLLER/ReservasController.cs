@@ -146,90 +146,91 @@ namespace ProyectoFinal.controller_new.controller
         }
 
         /// <summary>
-        /// Valida los datos de una reserva antes de guardar.
-        /// Comprueba: campos obligatorios, socio activo, cuotas vencidas,
-        /// instalacion disponible, fechas coherentes y solapes de horario.
-        /// </summary>
-        /// <param name="reserva">Entidad Reservas.</param>
-        /// <param name="tituloError">Titulo del error (ref).</param>
-        /// <param name="mensajeError">Mensaje del error (ref).</param>
-        /// <returns>True si es valida.</returns>
-        private bool ValidarReserva(Reservas reserva, ref string tituloError, ref string mensajeError)
+     /// Valida los datos de una reserva antes de guardar.
+     /// Comprueba: campos obligatorios, socio activo, cuotas vencidas,
+     /// instalacion disponible, fechas coherentes y solapes de horario.
+     /// </summary>
+     /// <param name="reserva">Entidad Reservas.</param>
+     /// <param name="tituloError">Titulo del error (ref).</param>
+     /// <param name="mensajeError">Mensaje del error (ref).</param>
+     /// <returns>True si es valida.</returns>
+     private bool ValidarReserva(Reservas reserva, ref string tituloError, ref string mensajeError)
         {
-            // Null guard.
+            bool ok = true; // Empezamos asumiendo que los datos son correctos.
+
+            // Null guard: comprobamos que el objeto no sea nulo.
             if (reserva == null)
             {
-                tituloError = "Datos incompletos";
-                mensajeError = "La reserva no puede ser nula.";
-                return false;
+                tituloError = "Datos incompletos"; // Titulo.
+                mensajeError = "La reserva no puede ser nula."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
             // El socio debe estar seleccionado.
-            if (reserva.SocioId < 1)
+            if (ok && reserva.SocioId < 1)
             {
-                tituloError = "Socio requerido";
-                mensajeError = "Debe seleccionar un socio para la reserva.";
-                return false;
+                tituloError = "Socio requerido"; // Titulo.
+                mensajeError = "Debe seleccionar un socio para la reserva."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
             // La instalacion debe estar seleccionada.
-            if (reserva.InstalacionId < 1)
+            if (ok && reserva.InstalacionId < 1)
             {
-                tituloError = "Instalacion requerida";
-                mensajeError = "Debe seleccionar una instalacion para la reserva.";
-                return false;
+                tituloError = "Instalacion requerida"; // Titulo.
+                mensajeError = "Debe seleccionar una instalacion para la reserva."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
-            // La fecha/hora de inicio es obligatoria.
-            if (reserva.FechaHoraInicio == default(DateTime))
+            // La fecha y hora de inicio es obligatoria.
+            if (ok && reserva.FechaHoraInicio == default(DateTime))
             {
-                tituloError = "Fecha de inicio requerida";
-                mensajeError = "Debe indicar la fecha y hora de inicio.";
-                return false;
+                tituloError = "Fecha de inicio requerida"; // Titulo.
+                mensajeError = "Debe indicar la fecha y hora de inicio."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
-            // La fecha/hora de fin es obligatoria.
-            if (reserva.FechaHoraFin == default(DateTime))
+            // La fecha y hora de fin es obligatoria.
+            if (ok && reserva.FechaHoraFin == default(DateTime))
             {
-                tituloError = "Fecha de fin requerida";
-                mensajeError = "Debe indicar la fecha y hora de fin.";
-                return false;
+                tituloError = "Fecha de fin requerida"; // Titulo.
+                mensajeError = "Debe indicar la fecha y hora de fin."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
             // El fin debe ser posterior al inicio.
-            if (reserva.FechaHoraFin <= reserva.FechaHoraInicio)
+            if (ok && reserva.FechaHoraFin <= reserva.FechaHoraInicio)
             {
-                tituloError = "Fechas no validas";
-                mensajeError = "La hora de fin debe ser posterior a la hora de inicio.";
-                return false;
+                tituloError = "Fechas no validas"; // Titulo.
+                mensajeError = "La hora de fin debe ser posterior a la hora de inicio."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
             // La duracion minima es de 30 minutos.
-            if ((reserva.FechaHoraFin - reserva.FechaHoraInicio).TotalMinutes < 30)
+            if (ok && (reserva.FechaHoraFin - reserva.FechaHoraInicio).TotalMinutes < 30)
             {
-                tituloError = "Duracion minima";
-                mensajeError = "La reserva debe durar al menos 30 minutos.";
-                return false;
+                tituloError = "Duracion minima"; // Titulo.
+                mensajeError = "La reserva debe durar al menos 30 minutos."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
-            // El socio debe estar al corriente de pago en la fecha de inicio de la reserva.
-            // Debe existir al menos una cuota pagada cuyo vencimiento cubra esa fecha.
-            if (!_cuotasApi.EstaAlCorriente(reserva.SocioId, reserva.FechaHoraInicio))
+            // El socio debe tener al menos una cuota pagada vigente para la fecha de la reserva.
+            if (ok && !_cuotasApi.EstaAlCorriente(reserva.SocioId, reserva.FechaHoraInicio))
             {
-                tituloError = "Socio sin cobertura de cuota";
-                mensajeError = "El socio no tiene ninguna cuota pagada vigente para la fecha de la reserva.";
-                return false;
+                tituloError = "Socio sin cobertura de cuota"; // Titulo.
+                mensajeError = "El socio no tiene ninguna cuota pagada vigente para la fecha de la reserva."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
-            // Comprobamos solape de horario en la misma instalacion.
-            if (_api.ExisteSolape(reserva.InstalacionId, reserva.FechaHoraInicio, reserva.FechaHoraFin, reserva.ReservaId))
+            // Comprobamos que no exista otra reserva en el mismo horario para la misma instalacion.
+            if (ok && _api.ExisteSolape(reserva.InstalacionId, reserva.FechaHoraInicio, reserva.FechaHoraFin, reserva.ReservaId))
             {
-                tituloError = "Horario ocupado";
-                mensajeError = "La instalacion ya tiene una reserva en ese horario.";
-                return false;
+                tituloError = "Horario ocupado"; // Titulo.
+                mensajeError = "La instalacion ya tiene una reserva en ese horario."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
-            return true; // Todo correcto.
+            return ok; // Devolvemos el resultado de la validacion.
         }
     }
 }

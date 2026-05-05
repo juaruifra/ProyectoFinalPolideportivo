@@ -154,7 +154,7 @@ namespace ProyectoFinal.view_new
         /// <param name="reserva">Reserva a cargar.</param>
         private void CargarFormularioDesdeEntidad(Reservas reserva)
         {
-            if (reserva == null) return; // Guard.
+            if (reserva == null) return; // Seguridad frente reserva null
 
             _cargandoFormulario = true; // Activamos flag para evitar recalculo prematuro.
 
@@ -269,8 +269,6 @@ namespace ProyectoFinal.view_new
             btnCancelarReserva.IsEnabled = haySeleccion; // Cancelar reserva.
         }
 
-        // ??? EVENTOS ???????????????????????????????????????????????????????????????
-
         /// <summary>
         /// Cambio de seleccion en el DataGrid: actualiza botones.
         /// </summary>
@@ -313,7 +311,7 @@ namespace ProyectoFinal.view_new
         private void BtnEditarSeleccionado_Click(object sender, RoutedEventArgs e)
         {
             var reserva = dgReservas.SelectedItem as Reservas; // Obtenemos seleccion.
-            if (reserva == null) return; // Guard.
+            if (reserva == null) return; // Seguridad por si el objeto viene a null.
             CargarFormularioDesdeEntidad(reserva); // Cargamos en formulario.
         }
 
@@ -325,7 +323,7 @@ namespace ProyectoFinal.view_new
             try
             {
                 var reserva = dgReservas.SelectedItem as Reservas; // Obtenemos seleccion.
-                if (reserva == null) return; // Guard.
+                if (reserva == null) return; // Seguridad por si el objeto viene a null.
 
                 // Pedimos confirmacion al usuario.
                 var confirmar = ModalMessage.ShowModal(

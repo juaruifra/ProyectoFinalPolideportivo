@@ -135,7 +135,7 @@ namespace ProyectoFinal.view_new
         /// <param name="cuota">Cuota a cargar.</param>
         private void CargarFormularioDesdeEntidad(Cuotas cuota)
         {
-            if (cuota == null) return; // Guard.
+            if (cuota == null) return; // Seguridad por si el objeto viene a null
 
             _cuotaSeleccionada = cuota; // Guardamos referencia.
 
@@ -234,7 +234,7 @@ namespace ProyectoFinal.view_new
         private void BtnEditarSeleccionado_Click(object sender, RoutedEventArgs e)
         {
             var cuota = dgCuotas.SelectedItem as Cuotas; // Obtenemos seleccion.
-            if (cuota == null) return; // Guard.
+            if (cuota == null) return; // Seguridad por si el objeto viene a null.
             CargarFormularioDesdeEntidad(cuota); // Cargamos en formulario.
         }
 
@@ -246,7 +246,7 @@ namespace ProyectoFinal.view_new
             try
             {
                 var cuota = dgCuotas.SelectedItem as Cuotas; // Obtenemos seleccion.
-                if (cuota == null) return; // Guard.
+                if (cuota == null) return; // Seguridad por si el objeto viene a null.
 
                 // Pedimos confirmacion al usuario.
                 var confirmar = ModalMessage.ShowModal(
@@ -325,7 +325,7 @@ namespace ProyectoFinal.view_new
             try
             {
                 var cuota = dgCuotas.SelectedItem as Cuotas; // Obtenemos seleccion.
-                if (cuota == null) return; // Guard.
+                if (cuota == null) return; // Seguridad por si el objeto viene a null.
 
                 // Pedimos confirmacion al usuario.
                 var confirmar = ModalMessage.ShowModal(

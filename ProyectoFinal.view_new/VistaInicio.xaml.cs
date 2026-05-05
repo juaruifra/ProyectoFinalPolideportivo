@@ -264,8 +264,6 @@ namespace ProyectoFinal.view_new
             }
         }
 
-        // ─── EVENTOS ──────────────────────────────────────────────────────────────
-
         /// <summary>
         /// Boton actualizar: recarga todos los datos de la pantalla.
         /// </summary>

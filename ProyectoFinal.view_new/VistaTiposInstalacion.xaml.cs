@@ -87,7 +87,7 @@ namespace ProyectoFinal.view_new
         /// <param name="tipo">Tipo a cargar.</param>
         private void CargarFormularioDesdeEntidad(TiposInstalacion tipo)
         {
-            if (tipo == null) return; // Guard.
+            if (tipo == null) return; // Seguridad por si el tipo es null
 
             _tipoSeleccionado = tipo; // Guardamos referencia.
 
@@ -149,7 +149,7 @@ namespace ProyectoFinal.view_new
         private void BtnEditarSeleccionado_Click(object sender, RoutedEventArgs e)
         {
             var tipo = dgTipos.SelectedItem as TiposInstalacion; // Obtenemos seleccion.
-            if (tipo == null) return; // Guard.
+            if (tipo == null) return; // Seguridad por si el objeto viene a null.
 
             CargarFormularioDesdeEntidad(tipo); // Cargamos en formulario.
         }
@@ -162,7 +162,7 @@ namespace ProyectoFinal.view_new
             try
             {
                 var tipo = dgTipos.SelectedItem as TiposInstalacion; // Obtenemos seleccion.
-                if (tipo == null) return; // Guard.
+                if (tipo == null) return; // Seguridad por si el objeto viene a null.
 
                 // Pedimos confirmacion antes de borrar.
                 var confirmar = ModalMessage.ShowModal(

@@ -60,14 +60,6 @@ namespace ProyectoFinal.controller_new.controller
                 if (!ValidarSocio(socio, ref tituloError, ref mensajeError))
                     return false; // Salimos si la validacion falla.
 
-                // Comprobamos que el DNI no este ya registrado en otro socio.
-                if (_api.DniYaExiste(socio.Dni, socio.SocioId > 0 ? socio.SocioId : (int?)null))
-                {
-                    tituloError = "DNI duplicado"; // Titulo del error.
-                    mensajeError = "Ya existe un socio con el mismo DNI."; // Mensaje al usuario.
-                    return false; // Error de duplicado.
-                }
-
                 // Si todo es correcto guardamos el socio.
                 _api.Guardar(socio);
                 return true; // Exito.
@@ -131,63 +123,73 @@ namespace ProyectoFinal.controller_new.controller
         /// <returns>True si los datos son correctos.</returns>
         private bool ValidarSocio(Socios socio, ref string tituloError, ref string mensajeError)
         {
+            bool ok = true; // Empezamos asumiendo que los datos son correctos.
+
             // Comprobamos que el objeto no sea nulo.
             if (socio == null)
             {
                 tituloError = "Datos incompletos"; // Titulo.
                 mensajeError = "El socio no puede ser nulo."; // Mensaje.
-                return false; // Error.
+                ok = false; // Marcamos error.
             }
 
-            // Comprobamos que el nombre tenga al menos 2 caracteres.
-            if (string.IsNullOrWhiteSpace(socio.Nombre) || socio.Nombre.Trim().Length < 2)
+            // El nombre debe tener al menos 2 caracteres.
+            if (ok && (string.IsNullOrWhiteSpace(socio.Nombre) || socio.Nombre.Trim().Length < 2))
             {
                 tituloError = "Nombre requerido"; // Titulo.
                 mensajeError = "Debe indicar el nombre del socio (min. 2 caracteres)."; // Mensaje.
-                return false; // Error.
+                ok = false; // Marcamos error.
             }
 
-            // Comprobamos que los apellidos tengan al menos 2 caracteres.
-            if (string.IsNullOrWhiteSpace(socio.Apellidos) || socio.Apellidos.Trim().Length < 2)
+            // Los apellidos deben tener al menos 2 caracteres.
+            if (ok && (string.IsNullOrWhiteSpace(socio.Apellidos) || socio.Apellidos.Trim().Length < 2))
             {
                 tituloError = "Apellidos requeridos"; // Titulo.
                 mensajeError = "Debe indicar los apellidos del socio (min. 2 caracteres)."; // Mensaje.
-                return false; // Error.
+                ok = false; // Marcamos error.
             }
 
-            // Comprobamos que el DNI no este vacio.
-            if (string.IsNullOrWhiteSpace(socio.Dni))
+            // El DNI no puede estar vacio.
+            if (ok && string.IsNullOrWhiteSpace(socio.Dni))
             {
                 tituloError = "DNI requerido"; // Titulo.
                 mensajeError = "Debe indicar el DNI del socio."; // Mensaje.
-                return false; // Error.
+                ok = false; // Marcamos error.
             }
 
-            // Comprobamos que el email no este vacio.
-            if (string.IsNullOrWhiteSpace(socio.Email))
+            // El email no puede estar vacio.
+            if (ok && string.IsNullOrWhiteSpace(socio.Email))
             {
                 tituloError = "Email requerido"; // Titulo.
                 mensajeError = "Debe ingresar el email del socio."; // Mensaje.
-                return false; // Error.
+                ok = false; // Marcamos error.
             }
 
-            // Comprobamos que el formato del email sea valido usando la utilidad comun.
-            if (!Utils.EsEmailValido(socio.Email))
+            // El formato del email debe ser valido.
+            if (ok && !Utils.EsEmailValido(socio.Email))
             {
                 tituloError = "Email no valido"; // Titulo.
                 mensajeError = "El formato del email no es correcto."; // Mensaje.
-                return false; // Error.
+                ok = false; // Marcamos error.
             }
 
-            // Si hay telefono, comprobamos que tenga un formato valido.
-            if (!string.IsNullOrWhiteSpace(socio.Telefono) && !Utils.EsTelefonoValido(socio.Telefono))
+            // Comprobamos que el DNI no este ya registrado en otro socio.
+            if (_api.DniYaExiste(socio.Dni, socio.SocioId > 0 ? socio.SocioId : (int?)null))
+            {
+                tituloError = "DNI duplicado"; // Titulo del error.
+                mensajeError = "Ya existe un socio con el mismo DNI."; // Mensaje al usuario.
+                ok = false; // Error de duplicado.
+            }
+
+            // Si hay telefono, debe tener un formato valido.
+            if (ok && !string.IsNullOrWhiteSpace(socio.Telefono) && !Utils.EsTelefonoValido(socio.Telefono))
             {
                 tituloError = "Telefono no valido"; // Titulo.
                 mensajeError = "El telefono debe tener entre 9 y 15 digitos."; // Mensaje.
-                return false; // Error.
+                ok = false; // Marcamos error.
             }
 
-            return true; // Todos los datos son correctos.
+            return ok; // Devolvemos el resultado de la validacion.
         }
     }
 }

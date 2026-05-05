@@ -49,14 +49,6 @@ namespace ProyectoFinal.controller_new.controller
                 if (!ValidarInstalacion(instalacion, ref tituloError, ref mensajeError))
                     return false;
 
-                // Comprobamos nombre único.
-                if (_api.NombreYaExiste(instalacion.Nombre, instalacion.InstalacionId > 0 ? instalacion.InstalacionId : (int?)null))
-                {
-                    tituloError = "Nombre duplicado";
-                    mensajeError = "Ya existe una instalación con el mismo nombre.";
-                    return false;
-                }
-
                 // Guardamos.
                 _api.Guardar(instalacion);
                 return true;
@@ -120,47 +112,57 @@ namespace ProyectoFinal.controller_new.controller
         /// <returns>True si ok.</returns>
         private bool ValidarInstalacion(Instalaciones instalacion, ref string tituloError, ref string mensajeError)
         {
-            // Validamos objeto.
+            bool ok = true; // Empezamos asumiendo que los datos son correctos.
+
+            // Validamos que el objeto no sea nulo.
             if (instalacion == null)
             {
-                tituloError = "Datos incompletos";
-                mensajeError = "La instalación no puede ser nula.";
-                return false;
+                tituloError = "Datos incompletos"; // Titulo.
+                mensajeError = "La instalacion no puede ser nula."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
-            // Validamos nombre.
-            if (string.IsNullOrWhiteSpace(instalacion.Nombre))
+            // Validamos que el nombre no este vacio.
+            if (ok && string.IsNullOrWhiteSpace(instalacion.Nombre))
             {
-                tituloError = "Nombre requerido";
-                mensajeError = "Debe indicar el nombre de la instalación.";
-                return false;
+                tituloError = "Nombre requerido"; // Titulo.
+                mensajeError = "Debe indicar el nombre de la instalacion."; // Mensaje.
+                ok = false; // Marcamos error.
             }
 
-            // Validamos longitud.
-            if (instalacion.Nombre.Trim().Length < 2)
+            // Validamos que el nombre tenga al menos 2 caracteres.
+            if (ok && instalacion.Nombre.Trim().Length < 2)
             {
-                tituloError = "Nombre muy corto";
-                mensajeError = "El nombre debe tener al menos 2 caracteres.";
-                return false;
+                tituloError = "Nombre muy corto"; // Titulo.
+                mensajeError = "El nombre debe tener al menos 2 caracteres."; // Mensaje.
+                ok = false; // Marcamos error.
+            }
+
+            // Comprobamos nombre único.
+            if (ok && _api.NombreYaExiste(instalacion.Nombre, instalacion.InstalacionId > 0 ? instalacion.InstalacionId : (int?)null))
+            {
+                tituloError = "Nombre duplicado";
+                mensajeError = "Ya existe una instalación con el mismo nombre.";
+                ok = false;
             }
 
             // Validamos tipo.
-            if (instalacion.TipoInstalacionId < 1)
+            if (ok && instalacion.TipoInstalacionId < 1)
             {
                 tituloError = "Tipo requerido";
                 mensajeError = "Debe seleccionar un tipo de instalación.";
-                return false;
+                ok = false;
             }
 
             // Validamos precio.
-            if (instalacion.PrecioHora < 0)
+            if (ok && instalacion.PrecioHora < 0)
             {
                 tituloError = "Precio no válido";
                 mensajeError = "El precio por hora no puede ser negativo.";
-                return false;
+                ok = false;
             }
 
-            return true;
+            return ok; // Devolvemos el resultado de la validacion.
         }
     }
 }

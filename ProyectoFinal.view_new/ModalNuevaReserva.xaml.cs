@@ -152,12 +152,12 @@ namespace ProyectoFinal.view_new
             dgHuecos.ItemsSource = slotsFiltrados;
 
             // Actualizamos el contador de slots visibles.
-            txtContadorHuecos.Text = $"{slotsFiltrados.Count} slots disponibles";
+            txtContadorHuecos.Text = $"{slotsFiltrados.Count} huecos disponibles";
 
             // Limpiamos la seleccion y el panel inferior.
             LimpiarPanelAjuste();
             btnUsarHueco.IsEnabled = false;
-            MostrarHint("Selecciona uno o varios slots consecutivos de la misma instalacion", false);
+            MostrarHint("Selecciona uno o varios huecos consecutivos de la misma instalacion", false);
         }
 
 
@@ -298,7 +298,7 @@ namespace ProyectoFinal.view_new
             // Si no hay seleccion, no es valida.
             if (seleccionados.Count == 0)
             {
-                mensajeError = "Selecciona uno o varios slots consecutivos de la misma instalacion";
+                mensajeError = "Selecciona uno o varios huecos consecutivos de la misma instalacion";
                 return false;
             }
 
@@ -308,7 +308,7 @@ namespace ProyectoFinal.view_new
 
             if (!mismaInstalacion)
             {
-                mensajeError = "Todos los slots seleccionados deben pertenecer a la misma instalacion";
+                mensajeError = "Todos los huecos seleccionados deben pertenecer a la misma instalacion";
                 return false;
             }
 
@@ -320,7 +320,7 @@ namespace ProyectoFinal.view_new
             {
                 if (ordenados[i].HoraFin != ordenados[i + 1].HoraInicio)
                 {
-                    mensajeError = "Los slots seleccionados no son consecutivos. Selecciona slots sin huecos entre ellos";
+                    mensajeError = "Los huecos seleccionados no son consecutivos. Selecciona huecos sin espacio libre entre ellos";
                     return false;
                 }
             }
@@ -463,7 +463,7 @@ namespace ProyectoFinal.view_new
             {
                 LimpiarPanelAjuste();
                 btnUsarHueco.IsEnabled = false;
-                MostrarHint("Selecciona uno o varios slots consecutivos de la misma instalacion", false);
+                MostrarHint("Selecciona uno o varios huecos consecutivos de la misma instalacion", false);
                 return;
             }
 
@@ -493,7 +493,7 @@ namespace ProyectoFinal.view_new
             // Habilitamos el boton y mostramos un hint positivo con el resumen.
             btnUsarHueco.IsEnabled = true;
             int minutosTotales = (int)(horaFin - horaInicio).TotalMinutes;
-            MostrarHint($"{seleccionados.Count} slot(s) seleccionado(s) - {instalacion.Nombre} - {minutosTotales} min en total", false);
+            MostrarHint($"{seleccionados.Count} hueco(s) seleccionado(s) - {instalacion.Nombre} - {minutosTotales} min en total", false);
 
             // Calculamos el precio estimado.
             RecalcularPrecioEstimado(instalacion);
