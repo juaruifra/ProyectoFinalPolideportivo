@@ -11,14 +11,6 @@
         AllowsTransparency="True"
         Background="Transparent">
 
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
-
     <Border Background="White"
             CornerRadius="12"
             BorderBrush="#D1D5DB"

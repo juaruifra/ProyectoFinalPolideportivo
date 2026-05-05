@@ -153,7 +153,7 @@ namespace ProyectoFinal.controller_new.controller
         /// <returns>True si es válida.</returns>
         private bool ValidarCuota(Cuotas cuota, ref string tituloError, ref string mensajeError)
         {
-            // Null guard.
+            // Comprobación null
             if (cuota == null)
             {
                 tituloError = "Datos incompletos";

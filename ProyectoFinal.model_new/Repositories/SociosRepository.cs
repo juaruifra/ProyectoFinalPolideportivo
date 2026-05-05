@@ -10,27 +10,49 @@ namespace ProyectoFinal.model_new.Repositories
     /// </summary>
     public class SociosRepository : RepositoryBase
     {
+        /// <summary>
+        /// Obtiene todos los socios, opcionalmente solo los activos.
+        /// </summary>
+        /// <param name="soloActivos">Si true, devuelve solo socios activos.</param>
+        /// <returns>Lista de socios.</returns>
         public List<Socios> GetAll(bool soloActivos = false)
         {
+            // Empezamos con todos los socios.
             var q = Context.Socios.AsQueryable();
 
+            // Si se pide, filtramos solo los que estan activos.
             if (soloActivos)
                 q = q.Where(s => s.Activo);
 
+            // Devolvemos el resultado.
             return q.ToList();
         }
 
+        /// <summary>
+        /// Obtiene un socio por su identificador.
+        /// </summary>
+        /// <param name="idSocio">Id del socio.</param>
+        /// <returns>Socio encontrado o null.</returns>
         public Socios GetById(int idSocio)
         {
+            // Buscamos el primer socio que coincida con el id indicado.
             return Context.Socios.FirstOrDefault(s => s.SocioId == idSocio);
         }
 
+        /// <summary>
+        /// Busca socios cuyo nombre, apellidos o DNI contengan el texto indicado.
+        /// </summary>
+        /// <param name="texto">Texto a buscar.</param>
+        /// <returns>Lista de socios que coinciden.</returns>
         public List<Socios> BuscarPorNombreODni(string texto)
         {
+            // Si el texto esta vacio devolvemos lista vacia sin consultar.
             if (string.IsNullOrWhiteSpace(texto)) return new List<Socios>();
 
+            // Quitamos espacios del texto de busqueda.
             texto = texto.Trim();
 
+            // Buscamos socios que coincidan en nombre, apellidos o DNI.
             return Context.Socios
                 .Where(s => s.Nombre.Contains(texto)
                          || s.Apellidos.Contains(texto)
@@ -38,105 +60,135 @@ namespace ProyectoFinal.model_new.Repositories
                 .ToList();
         }
 
+        /// <summary>
+        /// Comprueba si un DNI ya esta registrado en otro socio distinto.
+        /// </summary>
+        /// <param name="dni">DNI a comprobar.</param>
+        /// <param name="idSocioExcluir">Id del socio a excluir en la comprobacion (para edicion).</param>
+        /// <returns>True si el DNI ya existe.</returns>
         public bool DniYaExiste(string dni, int? idSocioExcluir = null)
         {
+            // Si el DNI esta vacio no puede existir duplicado.
             if (string.IsNullOrWhiteSpace(dni)) return false;
 
+            // Buscamos socios con ese DNI.
             var q = Context.Socios.Where(s => s.Dni == dni);
 
+            // Si estamos editando, excluimos al propio socio de la busqueda.
             if (idSocioExcluir.HasValue)
                 q = q.Where(s => s.SocioId != idSocioExcluir.Value);
 
+            // Devolvemos true si existe alguno.
             return q.Any();
         }
 
+        /// <summary>
+        /// Guarda un socio nuevo o actualiza uno existente.
+        /// </summary>
+        /// <param name="socio">Socio a guardar.</param>
         public void Save(Socios socio)
         {
             try
             {
+                // Si el id es 0 o menor, es un socio nuevo que hay que insertar.
                 if (socio.SocioId < 1)
                 {
+                    // Creamos un nuevo registro con todos los datos del formulario.
                     Context.Socios.Add(new Socios
                     {
-                        Nombre = socio.Nombre,
-                        Apellidos = socio.Apellidos,
-                        Dni = socio.Dni,
-                        Telefono = socio.Telefono,
-                        Email = socio.Email,
-                        FechaAlta = DateTime.Now,
-                        Activo = socio.Activo
+                        Nombre = socio.Nombre, // Nombre.
+                        Apellidos = socio.Apellidos, // Apellidos.
+                        Dni = socio.Dni, // DNI.
+                        Telefono = socio.Telefono, // Telefono.
+                        Email = socio.Email, // Email.
+                        FechaAlta = DateTime.Now, // Fecha de alta automatica.
+                        Activo = socio.Activo // Estado activo.
                     });
                 }
                 else
                 {
+                    // Buscamos el socio existente para actualizarlo.
                     var s = Context.Socios.FirstOrDefault(x => x.SocioId == socio.SocioId);
+
                     if (s != null)
                     {
-                        s.Nombre = socio.Nombre;
-                        s.Apellidos = socio.Apellidos;
-                        s.Dni = socio.Dni;
-                        s.Telefono = socio.Telefono;
-                        s.Email = socio.Email;
-                        s.Activo = socio.Activo;
+                        s.Nombre = socio.Nombre; // Actualizamos nombre.
+                        s.Apellidos = socio.Apellidos; // Actualizamos apellidos.
+                        s.Dni = socio.Dni; // Actualizamos DNI.
+                        s.Telefono = socio.Telefono; // Actualizamos telefono.
+                        s.Email = socio.Email; // Actualizamos email.
+                        s.Activo = socio.Activo; // Actualizamos estado activo.
                     }
                 }
 
+                // Persistimos los cambios en la base de datos.
                 Context.SaveChanges();
             }
             catch (Exception ex)
             {
+                // Envolvemos el error con un mensaje descriptivo.
                 throw new Exception("Error al guardar socio en la base de datos.", ex);
             }
         }
 
+        /// <summary>
+        /// Marca un socio como inactivo sin borrarlo fisicamente.
+        /// </summary>
+        /// <param name="socio">Socio a desactivar.</param>
         public void Desactivar(Socios socio)
         {
             try
             {
+                // Buscamos el socio por id.
                 var s = Context.Socios.FirstOrDefault(x => x.SocioId == socio.SocioId);
+
                 if (s != null)
                 {
-                    s.Activo = false;
-                    Context.SaveChanges();
+                    s.Activo = false; // Marcamos como inactivo.
+                    Context.SaveChanges(); // Guardamos el cambio.
                 }
             }
             catch (Exception ex)
             {
+                // Envolvemos el error con un mensaje descriptivo.
                 throw new Exception("Error al desactivar socio en la base de datos.", ex);
             }
         }
 
+        /// <summary>
+        /// Devuelve el numero total de socios, opcionalmente solo los activos.
+        /// </summary>
+        /// <param name="soloActivos">Si true, cuenta solo los activos.</param>
+        /// <returns>Total de socios.</returns>
         public int GetTotal(bool soloActivos = false)
         {
+            // Si se pide solo activos contamos con filtro, si no contamos todos.
             return soloActivos ? Context.Socios.Count(s => s.Activo) : Context.Socios.Count();
         }
 
-        // NOTA: La validacion de "en uso" se centraliza en ReservasRepository.
-
         /// <summary>
-        /// Elimina físicamente un socio.
-        /// IMPORTANTE: solo debe llamarse si no está en uso.
+        /// Elimina fisicamente un socio de la base de datos.
         /// </summary>
-        /// <param name="socioId">Id del socio.</param>
+        /// <param name="socioId">Id del socio a borrar.</param>
         public void Delete(int socioId)
         {
             try
             {
-                // Buscamos el socio.
+                // Buscamos el socio por su id.
                 var s = Context.Socios.FirstOrDefault(x => x.SocioId == socioId);
 
-                // Si no existe, no hacemos nada.
+                // Si no existe no hacemos nada.
                 if (s == null) return;
 
-                // Eliminamos.
+                // Marcamos el registro para eliminar.
                 Context.Socios.Remove(s);
 
-                // Guardamos cambios.
+                // Persistimos el borrado en la base de datos.
                 Context.SaveChanges();
             }
             catch (Exception ex)
             {
-                // Envolvemos error.
+                // Envolvemos el error con un mensaje descriptivo.
                 throw new Exception("Error al borrar socio en la base de datos.", ex);
             }
         }

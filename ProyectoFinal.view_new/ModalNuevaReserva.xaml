@@ -10,14 +10,6 @@
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
 
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
-
     <!-- Contenedor principal con sombra -->
     <Border Background="White"
             CornerRadius="12"
