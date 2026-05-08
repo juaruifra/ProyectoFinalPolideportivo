@@ -325,6 +325,41 @@
                     </Grid>
                 </Border>
 
+                <!-- Opcion Informes -->
+                <Border x:Name="ItemInformes"
+                        Style="{StaticResource MenuItem}"
+                        MouseLeftButtonUp="AbrirInformes"
+                        ToolTip="Informes">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="56"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Barra indicadora -->
+                        <Border x:Name="IndicadorInformes"
+                                Background="Transparent"/>
+
+                        <!-- Icono -->
+                        <TextBlock Grid.Column="1"
+                                   Text="&#128202;"
+                                   FontSize="20"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+
+                        <!-- Texto del menu -->
+                        <TextBlock x:Name="TextoInformes"
+                                   Grid.Column="2"
+                                   Text="Informes"
+                                   VerticalAlignment="Center"
+                                   Margin="8,0,0,0"
+                                   Foreground="#E5E7EB"
+                                   FontSize="14"
+                                   Visibility="Collapsed"/>
+                    </Grid>
+                </Border>
+
             </StackPanel>
 
             <!-- ================= CONTENIDO DERECHO ================= -->

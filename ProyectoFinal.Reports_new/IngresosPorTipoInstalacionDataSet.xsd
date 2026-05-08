@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IngresosPorTipoInstalacionDataSet" targetNamespace="http://tempuri.org/IngresosPorTipoInstalacionDataSet.xsd" xmlns:mstns="http://tempuri.org/IngresosPorTipoInstalacionDataSet.xsd" xmlns="http://tempuri.org/IngresosPorTipoInstalacionDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IngresosPorTipoInstalacionDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="IngresosPorTipoInstalacionDataSet" msprop:Generator_DataSetName="IngresosPorTipoInstalacionDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="IngresosPorTipo" msprop:Generator_RowEvHandlerName="IngresosPorTipoRowChangeEventHandler" msprop:Generator_RowDeletedName="IngresosPorTipoRowDeleted" msprop:Generator_RowDeletingName="IngresosPorTipoRowDeleting" msprop:Generator_RowEvArgName="IngresosPorTipoRowChangeEvent" msprop:Generator_TablePropName="IngresosPorTipo" msprop:Generator_RowChangedName="IngresosPorTipoRowChanged" msprop:Generator_RowChangingName="IngresosPorTipoRowChanging" msprop:Generator_TableClassName="IngresosPorTipoDataTable" msprop:Generator_RowClassName="IngresosPorTipoRow" msprop:Generator_TableVarName="tableIngresosPorTipo" msprop:Generator_UserTableName="IngresosPorTipo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TipoInstalacionId" msprop:Generator_ColumnPropNameInRow="TipoInstalacionId" msprop:Generator_ColumnPropNameInTable="TipoInstalacionIdColumn" msprop:Generator_ColumnVarNameInTable="columnTipoInstalacionId" msprop:Generator_UserColumnName="TipoInstalacionId" type="xs:int" minOccurs="0" />
+              <xs:element name="NombreTipo" msprop:Generator_ColumnPropNameInRow="NombreTipo" msprop:Generator_ColumnPropNameInTable="NombreTipoColumn" msprop:Generator_ColumnVarNameInTable="columnNombreTipo" msprop:Generator_UserColumnName="NombreTipo" type="xs:string" minOccurs="0" />
+              <xs:element name="NumReservas" msprop:Generator_ColumnPropNameInRow="NumReservas" msprop:Generator_ColumnPropNameInTable="NumReservasColumn" msprop:Generator_ColumnVarNameInTable="columnNumReservas" msprop:Generator_UserColumnName="NumReservas" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalIngresos" msprop:Generator_ColumnPropNameInRow="TotalIngresos" msprop:Generator_ColumnPropNameInTable="TotalIngresosColumn" msprop:Generator_ColumnVarNameInTable="columnTotalIngresos" msprop:Generator_UserColumnName="TotalIngresos" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MediaPorReserva" msprop:Generator_ColumnPropNameInRow="MediaPorReserva" msprop:Generator_ColumnPropNameInTable="MediaPorReservaColumn" msprop:Generator_ColumnVarNameInTable="columnMediaPorReserva" msprop:Generator_UserColumnName="MediaPorReserva" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

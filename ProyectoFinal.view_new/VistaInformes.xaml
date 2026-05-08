@@ -1,0 +1,196 @@
+<UserControl x:Class="ProyectoFinal.view_new.VistaInformes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="10">
+
+            <!-- Titulo de la seccion -->
+            <TextBlock Text="Informes"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       Foreground="#1E3A8A"
+                       Margin="0,0,0,20"/>
+
+            <!-- ===== INFORME 1: Listado de Socios Activos ===== -->
+            <Border Background="White"
+                    CornerRadius="8"
+                    Padding="20"
+                    Margin="0,0,0,16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="6" ShadowDepth="1" Opacity="0.10" Color="#000000"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <!-- Titulo del informe -->
+                        <TextBlock Text="Socios Activos"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Foreground="#111827"
+                                   Margin="0,0,0,6"/>
+                        <!-- Descripcion del informe -->
+                        <TextBlock Text="Listado completo de todos los socios activos del club ordenados por apellidos."
+                                   FontSize="13"
+                                   Foreground="#6B7280"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <!-- Boton para lanzar el informe -->
+                    <Button Grid.Column="1"
+                            Content="Ver Informe"
+                            Style="{StaticResource BotonPrimario}"
+                            Width="120"
+                            VerticalAlignment="Center"
+                            Margin="20,0,0,0"
+                            Click="BtnSociosActivos_Click"/>
+                </Grid>
+            </Border>
+
+            <!-- ===== INFORME 2: Reservas por Instalacion ===== -->
+            <Border Background="White"
+                    CornerRadius="8"
+                    Padding="20"
+                    Margin="0,0,0,16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="6" ShadowDepth="1" Opacity="0.10" Color="#000000"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Reservas por Instalacion"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Foreground="#111827"
+                                   Margin="0,0,0,6"/>
+                        <TextBlock Text="Todas las reservas agrupadas por instalacion, mostrando socio, horario y precio de cada reserva."
+                                   FontSize="13"
+                                   Foreground="#6B7280"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <Button Grid.Column="1"
+                            Content="Ver Informe"
+                            Style="{StaticResource BotonPrimario}"
+                            Width="120"
+                            VerticalAlignment="Center"
+                            Margin="20,0,0,0"
+                            Click="BtnReservasPorInstalacion_Click"/>
+                </Grid>
+            </Border>
+
+            <!-- ===== INFORME 3: Ingresos por Tipo de Instalacion ===== -->
+            <Border Background="White"
+                    CornerRadius="8"
+                    Padding="20"
+                    Margin="0,0,0,16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="6" ShadowDepth="1" Opacity="0.10" Color="#000000"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Ingresos por Tipo de Instalacion"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Foreground="#111827"
+                                   Margin="0,0,0,6"/>
+                        <TextBlock Text="Numero de reservas, ingresos totales y media por reserva agrupados por tipo de instalacion."
+                                   FontSize="13"
+                                   Foreground="#6B7280"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <Button Grid.Column="1"
+                            Content="Ver Informe"
+                            Style="{StaticResource BotonPrimario}"
+                            Width="120"
+                            VerticalAlignment="Center"
+                            Margin="20,0,0,0"
+                            Click="BtnIngresosPorTipo_Click"/>
+                </Grid>
+            </Border>
+
+            <!-- ===== INFORME 4: Reservas por Rango de Fechas ===== -->
+            <Border Background="White"
+                    CornerRadius="8"
+                    Padding="20"
+                    Margin="0,0,0,16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="6" ShadowDepth="1" Opacity="0.10" Color="#000000"/>
+                </Border.Effect>
+                <StackPanel>
+                    <Grid Margin="0,0,0,16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Reservas en un Rango de Fechas"
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Foreground="#111827"
+                                       Margin="0,0,0,6"/>
+                            <TextBlock Text="Listado de reservas comprendidas entre las fechas seleccionadas, ordenadas por fecha de inicio."
+                                       FontSize="13"
+                                       Foreground="#6B7280"
+                                       TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Grid>
+                    <!-- Selector de fechas y boton en la misma fila -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Etiqueta fecha desde -->
+                        <TextBlock Grid.Column="0"
+                                   Text="Desde:"
+                                   VerticalAlignment="Center"
+                                   Foreground="#374151"
+                                   FontSize="13"
+                                   Margin="0,0,8,0"/>
+                        <!-- DatePicker fecha desde -->
+                        <DatePicker x:Name="DpFechaDesde"
+                                    Grid.Column="1"
+                                    Style="{StaticResource DatePickerRedondeado}"
+                                    Width="150"
+                                    Margin="0,0,20,0"/>
+                        <!-- Etiqueta fecha hasta -->
+                        <TextBlock Grid.Column="2"
+                                   Text="Hasta:"
+                                   VerticalAlignment="Center"
+                                   Foreground="#374151"
+                                   FontSize="13"
+                                   Margin="0,0,8,0"/>
+                        <!-- DatePicker fecha hasta -->
+                        <DatePicker x:Name="DpFechaHasta"
+                                    Grid.Column="3"
+                                    Style="{StaticResource DatePickerRedondeado}"
+                                    Width="150"
+                                    Margin="0,0,0,0"/>
+                        <!-- Boton lanzar informe -->
+                        <Button Grid.Column="5"
+                                Content="Ver Informe"
+                                Style="{StaticResource BotonPrimario}"
+                                Width="120"
+                                VerticalAlignment="Center"
+                                Margin="20,0,0,0"
+                                Click="BtnReservasPorFecha_Click"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+
+</UserControl>

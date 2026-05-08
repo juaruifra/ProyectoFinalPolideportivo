@@ -39,6 +39,7 @@ namespace ProyectoFinal.view_new
             if (TextoInstalaciones != null) TextoInstalaciones.Visibility = Visibility.Collapsed; // Oculta instalaciones.
             if (TextoCuotas != null) TextoCuotas.Visibility = Visibility.Collapsed; // Oculta cuotas.
             if (TextoReservas != null) TextoReservas.Visibility = Visibility.Collapsed; // Oculta reservas.
+            if (TextoInformes != null) TextoInformes.Visibility = Visibility.Collapsed; // Oculta informes.
         }
 
         private void MostrarTextos()
@@ -49,6 +50,7 @@ namespace ProyectoFinal.view_new
             if (TextoInstalaciones != null) TextoInstalaciones.Visibility = Visibility.Visible; // Muestra instalaciones.
             if (TextoCuotas != null) TextoCuotas.Visibility = Visibility.Visible; // Muestra cuotas.
             if (TextoReservas != null) TextoReservas.Visibility = Visibility.Visible; // Muestra reservas.
+            if (TextoInformes != null) TextoInformes.Visibility = Visibility.Visible; // Muestra informes.
         }
 
         private void CargarInicio()
@@ -94,6 +96,7 @@ namespace ProyectoFinal.view_new
             if (ItemInstalaciones != null) ItemInstalaciones.Tag = null; // Limpia.
             if (ItemCuotas != null) ItemCuotas.Tag = null; // Limpia cuotas.
             if (ItemReservas != null) ItemReservas.Tag = null; // Limpia reservas.
+            if (ItemInformes != null) ItemInformes.Tag = null; // Limpia informes.
         }
 
         private void BarraSuperior_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -140,6 +143,18 @@ namespace ProyectoFinal.view_new
             ItemTipos.Tag = "Activo"; // Marcamos menu.
             tbTitulo.Text = "Tipos de Instalacion"; // Titulo.
             MainContent.Content = new VistaTiposInstalacion(); // Cargamos vista.
+        }
+
+        /// <summary>
+        /// Evento click de Informes.
+        /// </summary>
+        private void AbrirInformes(object sender, MouseButtonEventArgs e)
+        {
+            ResetMenu(); // Quitamos seleccion.
+
+            ItemInformes.Tag = "Activo"; // Marcamos menu.
+            tbTitulo.Text = "Informes"; // Titulo.
+            MainContent.Content = new VistaInformes(); // Cargamos vista.
         }
     }
 }

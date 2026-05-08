@@ -80,6 +80,9 @@
     <Compile Include="VistaCuotas.xaml.cs">
       <DependentUpon>VistaCuotas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VistaInformes.xaml.cs">
+      <DependentUpon>VistaInformes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VistaInicio.xaml.cs">
       <DependentUpon>VistaInicio.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="VistaCuotas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VistaInformes.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VistaInicio.xaml">
@@ -191,6 +197,14 @@
     <ProjectReference Include="..\ProyectoFinal.model_new\ProyectoFinal.model_new.csproj">
       <Project>{34e7a4fc-ccda-4dbd-bde6-7ff67e2e6759}</Project>
       <Name>ProyectoFinal.model_new</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProyectoFinal.ReportsView_new\ProyectoFinal.ReportsView_new.csproj">
+      <Project>{ac56a2b8-15c3-4023-9813-98402c27e2d1}</Project>
+      <Name>ProyectoFinal.ReportsView_new</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProyectoFinal.Reports_new\ProyectoFinal.Reports_new.csproj">
+      <Project>{ca5d7ca3-241f-43b5-89c1-71e381c5e59f}</Project>
+      <Name>ProyectoFinal.Reports_new</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

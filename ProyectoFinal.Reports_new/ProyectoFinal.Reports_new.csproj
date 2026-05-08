@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA5D7CA3-241F-43B5-89C1-71E381C5E59F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoFinal.Reports_new</RootNamespace>
+    <AssemblyName>ProyectoFinal.Reports_new</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InformeIngresosPorTipoInstalacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeIngresosPorTipoInstalacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InformeReservasPorFecha.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeReservasPorFecha.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InformeReservasPorInstalacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeReservasPorInstalacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InformeSociosActivos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeSociosActivos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IngresosPorTipoInstalacionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresosPorTipoInstalacionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IngresosPorTipoInstalacionReportBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportType.cs" />
+    <Compile Include="ReservasPorFechaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservasPorFechaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReservasPorFechaReportBuilder.cs" />
+    <Compile Include="ReservasPorInstalacionDataSet.cs">
+      <DependentUpon>ReservasPorInstalacionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReservasPorInstalacionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservasPorInstalacionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReservasPorInstalacionReportBuilder.cs" />
+    <Compile Include="SociosActivosDataSet.cs">
+      <DependentUpon>SociosActivosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SociosActivosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SociosActivosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SociosActivosReportBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProyectoFinal.controller_new\ProyectoFinal.controller_new.csproj">
+      <Project>{b5549c43-e5e7-4cf3-a001-bd766dc31a6b}</Project>
+      <Name>ProyectoFinal.controller_new</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProyectoFinal.model_new\ProyectoFinal.model_new.csproj">
+      <Project>{34e7a4fc-ccda-4dbd-bde6-7ff67e2e6759}</Project>
+      <Name>ProyectoFinal.model_new</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IngresosPorTipoInstalacionDataSet.xsc">
+      <DependentUpon>IngresosPorTipoInstalacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IngresosPorTipoInstalacionDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IngresosPorTipoInstalacionDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="IngresosPorTipoInstalacionDataSet.xss">
+      <DependentUpon>IngresosPorTipoInstalacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReservasPorFechaDataSet.xsc">
+      <DependentUpon>ReservasPorFechaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReservasPorFechaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReservasPorFechaDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReservasPorFechaDataSet.xss">
+      <DependentUpon>ReservasPorFechaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReservasPorInstalacionDataSet.xsc">
+      <DependentUpon>ReservasPorInstalacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReservasPorInstalacionDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReservasPorInstalacionDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReservasPorInstalacionDataSet.xss">
+      <DependentUpon>ReservasPorInstalacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SociosActivosDataSet.xsc">
+      <DependentUpon>SociosActivosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SociosActivosDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SociosActivosDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SociosActivosDataSet.xss">
+      <DependentUpon>SociosActivosDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InformeIngresosPorTipoInstalacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeIngresosPorTipoInstalacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeReservasPorFecha.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeReservasPorFecha.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeReservasPorInstalacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeReservasPorInstalacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeSociosActivos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeSociosActivos.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
