@@ -13,6 +13,7 @@ namespace ProyectoFinal.view_new
     {
         private readonly SociosController _controller; // Controlador que gestiona la logica de socios.
         private Socios _socioSeleccionado; // Socio que se esta editando en el formulario.
+        private System.Collections.Generic.List<Socios> _todosSocios; // Lista completa para filtrar sin ir a la BD.
 
         /// <summary>
         /// Constructor.
@@ -31,10 +32,8 @@ namespace ProyectoFinal.view_new
         {
             try
             {
-                var socios = _controller.ObtenerTodos(soloActivos: false); // Obtenemos todos los socios.
-                dgSocios.ItemsSource = socios; // Asignamos la lista al grid.
-
-                txtTotalSocios.Text = $"{socios.Count} socios"; // Mostramos el total.
+                _todosSocios = _controller.ObtenerTodos(soloActivos: false); // Guardamos la lista completa.
+                AplicarFiltro(); // Aplicamos el filtro actual (puede estar vacio o tener texto).
 
                 btnEditarSeleccionado.IsEnabled = dgSocios.SelectedItem != null; // Habilitamos editar solo si hay seleccion.
             }
@@ -43,6 +42,35 @@ namespace ProyectoFinal.view_new
                 // Mostramos el error si no se pueden cargar los datos.
                 ModalMessage.ShowModal($"No se pudieron cargar los socios: {ex.Message}", "Socios", 1);
             }
+        }
+
+        /// <summary>
+        /// Filtra la lista de socios segun el texto del buscador y actualiza el grid y el contador.
+        /// </summary>
+        private void AplicarFiltro()
+        {
+            // Si no hay lista cargada todavia, no hacemos nada.
+            if (_todosSocios == null) return;
+
+            // Obtenemos el texto de busqueda en minusculas para comparacion sin distincion de mayusculas.
+            var texto = (txtBuscar.Text ?? string.Empty).Trim().ToLower();
+
+            // Si no hay texto mostramos todos los socios sin filtrar.
+            if (string.IsNullOrEmpty(texto))
+            {
+                dgSocios.ItemsSource = _todosSocios; // Mostramos todos.
+                txtTotalSocios.Text = $"{_todosSocios.Count} socios"; // Contador total.
+                return;
+            }
+
+            // Filtramos por nombre, apellidos o DNI que contengan el texto buscado.
+            var filtrados = _todosSocios.FindAll(s =>
+                (s.Nombre ?? string.Empty).ToLower().Contains(texto) ||
+                (s.Apellidos ?? string.Empty).ToLower().Contains(texto) ||
+                (s.Dni ?? string.Empty).ToLower().Contains(texto));
+
+            dgSocios.ItemsSource = filtrados; // Mostramos el resultado filtrado.
+            txtTotalSocios.Text = $"{filtrados.Count} socios"; // Contador filtrado.
         }
 
         /// <summary>
@@ -201,6 +229,14 @@ namespace ProyectoFinal.view_new
 
             btnEditarSeleccionado.IsEnabled = haySeleccion; // Habilitamos o deshabilitamos editar.
             if (btnBorrarSeleccionado != null) btnBorrarSeleccionado.IsEnabled = haySeleccion; // Habilitamos o deshabilitamos borrar.
+        }
+
+        /// <summary>
+        /// Evento TextChanged del buscador: aplica el filtro en tiempo real.
+        /// </summary>
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            AplicarFiltro(); // Filtramos cada vez que cambia el texto.
         }
     }
 }

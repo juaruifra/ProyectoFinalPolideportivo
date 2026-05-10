@@ -17,6 +17,7 @@ namespace ProyectoFinal.view_new
         private readonly TiposInstalacionAPI _tiposApi; // API para cargar tipos.
 
         private Instalaciones _instalacionSeleccionada; // Instalacion actualmente en edicion.
+        private System.Collections.Generic.List<Instalaciones> _todasInstalaciones; // Lista completa para filtrar sin ir a la BD.
 
         /// <summary>
         /// Constructor.
@@ -56,20 +57,44 @@ namespace ProyectoFinal.view_new
         {
             try
             {
-                var instalaciones = _controller.ObtenerTodos(soloDisponibles: false); // Obtenemos instalaciones.
-                dgInstalaciones.ItemsSource = instalaciones; // Mostramos en grid.
-
-                txtTotalInstalaciones.Text = $"{instalaciones.Count} instalaciones"; // Total.
+                _todasInstalaciones = _controller.ObtenerTodos(soloDisponibles: false); // Guardamos la lista completa.
+                AplicarFiltro(); // Aplicamos el filtro actual.
 
                 btnEditarSeleccionado.IsEnabled = dgInstalaciones.SelectedItem != null; // Habilitamos edicion.
-
-                // Actualizamos acciones.
-                ActualizarEstadoAcciones();
+                ActualizarEstadoAcciones(); // Actualizamos acciones.
             }
             catch (Exception ex)
             {
                 ModalMessage.ShowModal($"No se pudieron cargar las instalaciones: {ex.Message}", "Instalaciones", 1); // Error.
             }
+        }
+
+        /// <summary>
+        /// Filtra la lista de instalaciones segun el texto del buscador y actualiza el grid y el contador.
+        /// </summary>
+        private void AplicarFiltro()
+        {
+            // Si no hay lista cargada todavia, no hacemos nada.
+            if (_todasInstalaciones == null) return;
+
+            // Obtenemos el texto de busqueda en minusculas para comparacion sin distincion de mayusculas.
+            var texto = (txtBuscar.Text ?? string.Empty).Trim().ToLower();
+
+            // Si no hay texto mostramos todas las instalaciones sin filtrar.
+            if (string.IsNullOrEmpty(texto))
+            {
+                dgInstalaciones.ItemsSource = _todasInstalaciones; // Mostramos todas.
+                txtTotalInstalaciones.Text = $"{_todasInstalaciones.Count} instalaciones"; // Contador total.
+                return;
+            }
+
+            // Filtramos por nombre de instalacion o nombre del tipo que contengan el texto buscado.
+            var filtradas = _todasInstalaciones.FindAll(i =>
+                (i.Nombre ?? string.Empty).ToLower().Contains(texto) ||
+                (i.TiposInstalacion?.Nombre ?? string.Empty).ToLower().Contains(texto));
+
+            dgInstalaciones.ItemsSource = filtradas; // Mostramos el resultado filtrado.
+            txtTotalInstalaciones.Text = $"{filtradas.Count} instalaciones"; // Contador filtrado.
         }
 
         /// <summary>
@@ -264,6 +289,14 @@ namespace ProyectoFinal.view_new
         {
             // Actualizamos botones.
             ActualizarEstadoAcciones();
+        }
+
+        /// <summary>
+        /// Evento TextChanged del buscador: aplica el filtro en tiempo real.
+        /// </summary>
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            AplicarFiltro(); // Filtramos cada vez que cambia el texto.
         }
     }
 }
