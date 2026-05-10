@@ -17,8 +17,11 @@ namespace ProyectoFinal.controller_new.controller
         // API de cuotas: para verificar si el socio tiene cuotas vencidas.
         private readonly CuotasAPI _cuotasApi;
 
-        // API de instalaciones: para obtener el precio por hora.
+        // API de instalaciones: para obtener el precio por hora y verificar disponibilidad.
         private readonly InstalacionesAPI _instalacionesApi;
+
+        // API de socios: para verificar que el socio esta activo.
+        private readonly SociosAPI _sociosApi;
 
         /// <summary>
         /// Constructor: inicializa las APIs necesarias.
@@ -29,6 +32,7 @@ namespace ProyectoFinal.controller_new.controller
             _api = new ReservasAPI();
             _cuotasApi = new CuotasAPI();
             _instalacionesApi = new InstalacionesAPI();
+            _sociosApi = new SociosAPI(); // Instanciamos la API de socios.
         }
 
         /// <summary>
@@ -174,12 +178,36 @@ namespace ProyectoFinal.controller_new.controller
                 ok = false; // Marcamos error.
             }
 
+            // El socio debe estar activo en el club para poder reservar.
+            if (ok)
+            {
+                var socio = _sociosApi.ObtenerPorId(reserva.SocioId); // Obtenemos el socio de la BD.
+                if (socio == null || !socio.Activo) // Si no existe o esta inactivo, rechazamos.
+                {
+                    tituloError = "Socio inactivo"; // Titulo.
+                    mensajeError = "El socio seleccionado no esta activo en el club y no puede realizar reservas."; // Mensaje.
+                    ok = false; // Marcamos error.
+                }
+            }
+
             // La instalacion debe estar seleccionada.
             if (ok && reserva.InstalacionId < 1)
             {
                 tituloError = "Instalacion requerida"; // Titulo.
                 mensajeError = "Debe seleccionar una instalacion para la reserva."; // Mensaje.
                 ok = false; // Marcamos error.
+            }
+
+            // La instalacion debe estar marcada como disponible.
+            if (ok)
+            {
+                var instalacion = _instalacionesApi.ObtenerPorId(reserva.InstalacionId); // Obtenemos la instalacion de la BD.
+                if (instalacion == null || !instalacion.Disponible) // Si no existe o no esta disponible, rechazamos.
+                {
+                    tituloError = "Instalacion no disponible"; // Titulo.
+                    mensajeError = "La instalacion seleccionada no esta disponible para reservas."; // Mensaje.
+                    ok = false; // Marcamos error.
+                }
             }
 
             // La fecha y hora de inicio es obligatoria.

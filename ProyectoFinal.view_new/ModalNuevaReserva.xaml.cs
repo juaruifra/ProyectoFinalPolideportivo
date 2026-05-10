@@ -77,8 +77,8 @@ namespace ProyectoFinal.view_new
         {
             try
             {
-                // Obtenemos todas las instalaciones del club.
-                _todasLasInstalaciones = _instalacionesController.ObtenerTodos();
+                // Obtenemos solo las instalaciones disponibles: las no disponibles no deben ofrecerse para reservar.
+                _todasLasInstalaciones = _instalacionesController.ObtenerTodos(soloDisponibles: true);
 
                 // Creamos un item especial para "Todas".
                 var itemTodas = new Instalaciones { InstalacionId = 0, Nombre = "(Todas las instalaciones)" };

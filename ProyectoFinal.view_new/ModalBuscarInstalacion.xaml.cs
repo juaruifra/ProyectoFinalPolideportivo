@@ -46,8 +46,8 @@ namespace ProyectoFinal.view_new
         {
             try
             {
-                // Obtenemos todas las instalaciones del controller.
-                _todasInstalaciones = _controller.ObtenerTodos();
+                // Obtenemos solo las instalaciones disponibles: las no disponibles no deben poder reservarse.
+                _todasInstalaciones = _controller.ObtenerTodos(soloDisponibles: true);
 
                 // Asignamos al grid.
                 dgInstalaciones.ItemsSource = _todasInstalaciones;
