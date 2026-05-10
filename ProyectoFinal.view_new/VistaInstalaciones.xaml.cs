@@ -1,5 +1,4 @@
 using ProyectoFinal.controller_new.controller;
-using ProyectoFinal.controller_new.api;
 using ProyectoFinal.model_new;
 using System;
 using System.Globalization;
@@ -14,7 +13,7 @@ namespace ProyectoFinal.view_new
     public partial class VistaInstalaciones : UserControl
     {
         private readonly InstalacionesController _controller; // Controlador de instalaciones.
-        private readonly TiposInstalacionAPI _tiposApi; // API para cargar tipos.
+        private readonly TiposInstalacionController _tiposController; // Controlador de tipos de instalacion.
 
         private Instalaciones _instalacionSeleccionada; // Instalacion actualmente en edicion.
         private System.Collections.Generic.List<Instalaciones> _todasInstalaciones; // Lista completa para filtrar sin ir a la BD.
@@ -26,8 +25,8 @@ namespace ProyectoFinal.view_new
         {
             InitializeComponent(); // Inicializamos componentes.
 
-            _controller = new InstalacionesController(); // Creamos controlador.
-            _tiposApi = new TiposInstalacionAPI(); // Creamos API de tipos.
+            _controller = new InstalacionesController(); // Creamos controlador de instalaciones.
+            _tiposController = new TiposInstalacionController(); // Creamos controlador de tipos.
 
             CargarTipos(); // Cargamos combo de tipos.
             LimpiarFormulario(); // Dejamos formulario en estado "nuevo".
@@ -41,7 +40,7 @@ namespace ProyectoFinal.view_new
         {
             try
             {
-                var tipos = _tiposApi.ObtenerTodos(); // Obtenemos catalogo.
+                var tipos = _tiposController.ObtenerTodos(); // Obtenemos catalogo a traves del controlador.
                 cmbTipoInstalacion.ItemsSource = tipos; // Asignamos fuente.
             }
             catch (Exception ex)
