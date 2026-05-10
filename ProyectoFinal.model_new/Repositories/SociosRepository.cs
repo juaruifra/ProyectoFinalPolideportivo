@@ -93,17 +93,12 @@ namespace ProyectoFinal.model_new.Repositories
                 // Si el id es 0 o menor, es un socio nuevo que hay que insertar.
                 if (socio.SocioId < 1)
                 {
-                    // Creamos un nuevo registro con todos los datos del formulario.
-                    Context.Socios.Add(new Socios
-                    {
-                        Nombre = socio.Nombre, // Nombre.
-                        Apellidos = socio.Apellidos, // Apellidos.
-                        Dni = socio.Dni, // DNI.
-                        Telefono = socio.Telefono, // Telefono.
-                        Email = socio.Email, // Email.
-                        FechaAlta = DateTime.Now, // Fecha de alta automatica.
-                        Activo = socio.Activo // Estado activo.
-                    });
+                    // Asignamos la fecha de alta automatica antes de insertar.
+                    socio.FechaAlta = DateTime.Now;
+
+                    // Añadimos el objeto original al contexto para que EF
+                    // actualice su SocioId con el valor generado por la BD tras SaveChanges.
+                    Context.Socios.Add(socio);
                 }
                 else
                 {
