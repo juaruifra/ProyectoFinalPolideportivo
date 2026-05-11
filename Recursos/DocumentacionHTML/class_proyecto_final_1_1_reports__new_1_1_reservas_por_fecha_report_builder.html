@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro polideportivo: Referencia de la clase ProyectoFinal.Reports_new.ReservasPorFechaReportBuilder</title>
+<link rel="icon" href="Logo_centro_3.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_centro_3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Centro polideportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestión centro polideportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_report_builder.html','','class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_report_builder-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase ProyectoFinal.Reports_new.ReservasPorFechaReportBuilder</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase responsable de construir el informe de reservas filtradas por rango de fechas. Se encarga de:  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:abce2c2688a5dba007caec5f04fd0605f" id="r_abce2c2688a5dba007caec5f04fd0605f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abce2c2688a5dba007caec5f04fd0605f">ReservasPorFechaReportBuilder</a> ()</td></tr>
+<tr class="memdesc:abce2c2688a5dba007caec5f04fd0605f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor: inicializa la API de reservas.  <br /></td></tr>
+<tr class="memitem:a0f5e638cc60726fa46905933ac7bf864" id="r_a0f5e638cc60726fa46905933ac7bf864"><td class="memItemLeft">ReportDocument&#160;</td><td class="memItemRight"><a class="el" href="#a0f5e638cc60726fa46905933ac7bf864">CrearInforme</a> (DateTime? fechaDesde=null, DateTime? fechaHasta=null)</td></tr>
+<tr class="memdesc:a0f5e638cc60726fa46905933ac7bf864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construye el informe de reservas filtradas por rango de fechas: obtiene y filtra los datos, rellena el DataSet y crea el ReportDocument.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase responsable de construir el informe de reservas filtradas por rango de fechas. Se encarga de: </p>
+<ul>
+<li>Obtener las reservas comprendidas entre fechaDesde y fechaHasta desde la API.</li>
+<li>Rellenar el DataSet tipado <a class="el" href="class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_data_set.html" title="Represents a strongly typed in-memory cache of data. /summary&gt;.">ReservasPorFechaDataSet</a>.</li>
+<li>Crear el informe Crystal (<a class="el" href="class_proyecto_final_1_1_reports__new_1_1_informe_reservas_por_fecha.html">InformeReservasPorFecha</a>).</li>
+<li>Devolver un ReportDocument listo para visualizar. </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_por_fecha_report_builder_8cs_source.html#l00018">18</a> del archivo <a class="el" href="_reservas_por_fecha_report_builder_8cs_source.html">ReservasPorFechaReportBuilder.cs</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="abce2c2688a5dba007caec5f04fd0605f" name="abce2c2688a5dba007caec5f04fd0605f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce2c2688a5dba007caec5f04fd0605f">&#9670;&#160;</a></span>ReservasPorFechaReportBuilder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ProyectoFinal.Reports_new.ReservasPorFechaReportBuilder.ReservasPorFechaReportBuilder </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor: inicializa la API de reservas. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_por_fecha_report_builder_8cs_source.html#l00026">26</a> del archivo <a class="el" href="_reservas_por_fecha_report_builder_8cs_source.html">ReservasPorFechaReportBuilder.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>        {</div>
+<div class="line"><span class="lineno">   28</span>            <span class="comment">// Instanciamos la API de reservas.</span></div>
+<div class="line"><span class="lineno">   29</span>            _reservasAPI = <span class="keyword">new</span> ReservasAPI();</div>
+<div class="line"><span class="lineno">   30</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a0f5e638cc60726fa46905933ac7bf864" name="a0f5e638cc60726fa46905933ac7bf864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f5e638cc60726fa46905933ac7bf864">&#9670;&#160;</a></span>CrearInforme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReportDocument ProyectoFinal.Reports_new.ReservasPorFechaReportBuilder.CrearInforme </td>
+          <td>(</td>
+          <td class="paramtype">DateTime?</td>          <td class="paramname"><span class="paramname"><em>fechaDesde</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DateTime?</td>          <td class="paramname"><span class="paramname"><em>fechaHasta</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construye el informe de reservas filtradas por rango de fechas: obtiene y filtra los datos, rellena el DataSet y crea el ReportDocument. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fechaDesde</td><td>Fecha de inicio del rango. Si es null usa el inicio del mes actual.</td></tr>
+    <tr><td class="paramname">fechaHasta</td><td>Fecha de fin del rango. Si es null usa hoy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ReportDocument listo para asignarlo al visor WPF.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_por_fecha_report_builder_8cs_source.html#l00039">39</a> del archivo <a class="el" href="_reservas_por_fecha_report_builder_8cs_source.html">ReservasPorFechaReportBuilder.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>        {</div>
+<div class="line"><span class="lineno">   41</span>            <span class="comment">// Si no se recibe fecha de inicio, usar el primer dia del mes actual.</span></div>
+<div class="line"><span class="lineno">   42</span>            DateTime desde = fechaDesde ?? <span class="keyword">new</span> DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>            <span class="comment">// Si no se recibe fecha de fin, usar el dia de hoy a las 23:59:59.</span></div>
+<div class="line"><span class="lineno">   45</span>            <span class="comment">// Ademas, aunque se reciba fecha de fin, la ajustamos al final del dia (23:59:59)</span></div>
+<div class="line"><span class="lineno">   46</span>            <span class="comment">// para incluir todas las reservas de ese dia y no solo las de medianoche.</span></div>
+<div class="line"><span class="lineno">   47</span>            DateTime hasta = (fechaHasta ?? DateTime.Today).Date.AddDays(1).AddSeconds(-1);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>            <span class="comment">// Crear una instancia del DataSet tipado para este informe.</span></div>
+<div class="line"><span class="lineno">   50</span>            var ds = <span class="keyword">new</span> ReservasPorFechaDataSet();</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>            <span class="comment">// Obtener la tabla ReservasPorFecha del DataSet.</span></div>
+<div class="line"><span class="lineno">   53</span>            var tabla = ds.ReservasPorFecha;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>            <span class="comment">// Obtener todas las reservas y filtrar por el rango de fechas recibido.</span></div>
+<div class="line"><span class="lineno">   56</span>            List&lt;Reservas&gt; reservas = _reservasAPI.ObtenerTodos();</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>            <span class="comment">// Filtrar solo las reservas cuya fecha de inicio este dentro del rango.</span></div>
+<div class="line"><span class="lineno">   59</span>            var reservasFiltradas = reservas</div>
+<div class="line"><span class="lineno">   60</span>                .Where(r =&gt; r.FechaHoraInicio &gt;= desde &amp;&amp; r.FechaHoraInicio &lt;= hasta)</div>
+<div class="line"><span class="lineno">   61</span>                .OrderBy(r =&gt; r.FechaHoraInicio)</div>
+<div class="line"><span class="lineno">   62</span>                .ToList();</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>            <span class="comment">// Recorrer la lista de reservas filtradas para volcar los datos al DataSet.</span></div>
+<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">foreach</span> (var reserva <span class="keywordflow">in</span> reservasFiltradas)</div>
+<div class="line"><span class="lineno">   66</span>            {</div>
+<div class="line"><span class="lineno">   67</span>                <span class="comment">// Crear una nueva fila del DataTable ReservasPorFecha.</span></div>
+<div class="line"><span class="lineno">   68</span>                var fila = tabla.NewReservasPorFechaRow();</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>                <span class="comment">// Asignar el identificador de la reserva.</span></div>
+<div class="line"><span class="lineno">   71</span>                fila.ReservaId = reserva.ReservaId;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>                <span class="comment">// Asignar la fecha y hora de inicio de la reserva.</span></div>
+<div class="line"><span class="lineno">   74</span>                fila.FechaHoraInicio = reserva.FechaHoraInicio;</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>                <span class="comment">// Asignar la fecha y hora de fin de la reserva.</span></div>
+<div class="line"><span class="lineno">   77</span>                fila.FechaHoraFin = reserva.FechaHoraFin;</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>                <span class="comment">// Asignar el nombre completo del socio combinando nombre y apellidos.</span></div>
+<div class="line"><span class="lineno">   80</span>                fila.NombreSocio = reserva.Socios != <span class="keyword">null</span></div>
+<div class="line"><span class="lineno">   81</span>                    ? $<span class="stringliteral">&quot;{reserva.Socios.Nombre} {reserva.Socios.Apellidos}&quot;</span>.Trim()</div>
+<div class="line"><span class="lineno">   82</span>                    : <span class="keywordtype">string</span>.Empty;</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>                <span class="comment">// Asignar el nombre de la instalacion, usando cadena vacia si es null.</span></div>
+<div class="line"><span class="lineno">   85</span>                fila.NombreInstalacion = reserva.Instalaciones != <span class="keyword">null</span></div>
+<div class="line"><span class="lineno">   86</span>                    ? reserva.Instalaciones.Nombre ?? string.Empty</div>
+<div class="line"><span class="lineno">   87</span>                    : <span class="keywordtype">string</span>.Empty;</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>                <span class="comment">// Asignar el precio total de la reserva.</span></div>
+<div class="line"><span class="lineno">   90</span>                fila.PrecioTotal = reserva.PrecioTotal;</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>                <span class="comment">// Asignar el estado de la reserva.</span></div>
+<div class="line"><span class="lineno">   93</span>                fila.Estado = reserva.Estado ?? <span class="keywordtype">string</span>.Empty;</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>                <span class="comment">// A�adir la fila a la tabla del DataSet.</span></div>
+<div class="line"><span class="lineno">   96</span>                tabla.AddReservasPorFechaRow(fila);</div>
+<div class="line"><span class="lineno">   97</span>            }</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>            <span class="comment">// Crear el informe Crystal Reports correspondiente.</span></div>
+<div class="line"><span class="lineno">  100</span>            var report = <span class="keyword">new</span> InformeReservasPorFecha();</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>            <span class="comment">// Asignar el DataSet como origen de datos del informe.</span></div>
+<div class="line"><span class="lineno">  103</span>            report.SetDataSource(ds);</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>            <span class="comment">// Devolver el ReportDocument listo para mostrarlo en el visor.</span></div>
+<div class="line"><span class="lineno">  106</span>            <span class="keywordflow">return</span> report;</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>C:/DAM/Diseño de interficies/proyectos/WPF/PROYECTO_FINAL/ProyectoFinal/ProyectoFinal.Reports_new/<a class="el" href="_reservas_por_fecha_report_builder_8cs_source.html">ReservasPorFechaReportBuilder.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_proyecto_final.html">ProyectoFinal</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1_reports__new.html">Reports_new</a></li><li class="navelem"><a href="class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_report_builder.html">ReservasPorFechaReportBuilder</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

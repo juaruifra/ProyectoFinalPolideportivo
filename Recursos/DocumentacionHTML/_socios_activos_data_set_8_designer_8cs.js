@@ -1,0 +1,7 @@
+var _socios_activos_data_set_8_designer_8cs =
+[
+    [ "ProyectoFinal.Reports_new.SociosActivosDataSet", "class_proyecto_final_1_1_reports__new_1_1_socios_activos_data_set.html", "class_proyecto_final_1_1_reports__new_1_1_socios_activos_data_set" ],
+    [ "ProyectoFinal.Reports_new.SociosActivosDataSet.SociosActivosDataTable", "class_proyecto_final_1_1_reports__new_1_1_socios_activos_data_set_1_1_socios_activos_data_table.html", "class_proyecto_final_1_1_reports__new_1_1_socios_activos_data_set_1_1_socios_activos_data_table" ],
+    [ "ProyectoFinal.Reports_new.SociosActivosDataSet.SociosActivosRow", "class_proyecto_final_1_1_reports__new_1_1_socios_activos_data_set_1_1_socios_activos_row.html", "class_proyecto_final_1_1_reports__new_1_1_socios_activos_data_set_1_1_socios_activos_row" ],
+    [ "ProyectoFinal.Reports_new.SociosActivosDataSet.SociosActivosRowChangeEvent", "class_proyecto_final_1_1_reports__new_1_1_socios_activos_data_set_1_1_socios_activos_row_change_event.html", "class_proyecto_final_1_1_reports__new_1_1_socios_activos_data_set_1_1_socios_activos_row_change_event" ]
+];

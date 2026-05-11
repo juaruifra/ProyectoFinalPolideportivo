@@ -1,0 +1,621 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro polideportivo: Referencia de la clase ProyectoFinal.model_new.Repositories.ReservasRepository</title>
+<link rel="icon" href="Logo_centro_3.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_centro_3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Centro polideportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestión centro polideportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_proyecto_final_1_1model__new_1_1_repositories_1_1_reservas_repository.html','','class_proyecto_final_1_1model__new_1_1_repositories_1_1_reservas_repository-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase ProyectoFinal.model_new.Repositories.ReservasRepository</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Repositorio para gestionar las operaciones CRUD de <a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a> en ClubPolideportivoDB. Tambien centraliza las validaciones de uso para socios e instalaciones.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a66b078fd8d018396d88d8eb4be830a24" id="r_a66b078fd8d018396d88d8eb4be830a24"><td class="memItemLeft">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a66b078fd8d018396d88d8eb4be830a24">GetAll</a> (int? socioId=null, int? instalacionId=null, bool soloPendientes=false)</td></tr>
+<tr class="memdesc:a66b078fd8d018396d88d8eb4be830a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todas las reservas con filtros opcionales.  <br /></td></tr>
+<tr class="memitem:a3764663eca21c3fbce678d15a4868826" id="r_a3764663eca21c3fbce678d15a4868826"><td class="memItemLeft"><a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3764663eca21c3fbce678d15a4868826">GetById</a> (int reservaId)</td></tr>
+<tr class="memdesc:a3764663eca21c3fbce678d15a4868826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve una reserva por su ID incluyendo socio e instalacion.  <br /></td></tr>
+<tr class="memitem:a5359e3fb226c487482226b93e9737136" id="r_a5359e3fb226c487482226b93e9737136"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5359e3fb226c487482226b93e9737136">ExisteSolape</a> (int instalacionId, DateTime inicio, DateTime fin, int excludeReservaId=0)</td></tr>
+<tr class="memdesc:a5359e3fb226c487482226b93e9737136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si existe solape de horario en la misma instalacion. Excluye la propia reserva al editar.  <br /></td></tr>
+<tr class="memitem:a420f447f28db2e42c9a454475391f95d" id="r_a420f447f28db2e42c9a454475391f95d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a420f447f28db2e42c9a454475391f95d">Save</a> (<a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a> reserva)</td></tr>
+<tr class="memdesc:a420f447f28db2e42c9a454475391f95d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda una reserva (alta si ReservaId menor que 1, modificacion si existe).  <br /></td></tr>
+<tr class="memitem:a8a709b8ef0da5655f29d609b6079ef09" id="r_a8a709b8ef0da5655f29d609b6079ef09"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8a709b8ef0da5655f29d609b6079ef09">Cancelar</a> (int reservaId)</td></tr>
+<tr class="memdesc:a8a709b8ef0da5655f29d609b6079ef09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancela una reserva cambiando su estado a "Cancelada".  <br /></td></tr>
+<tr class="memitem:aecc8ca94d488bd01254dd71987a18fd3" id="r_aecc8ca94d488bd01254dd71987a18fd3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aecc8ca94d488bd01254dd71987a18fd3">ExisteReservaParaSocio</a> (int socioId)</td></tr>
+<tr class="memdesc:aecc8ca94d488bd01254dd71987a18fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si existe alguna reserva asociada a un socio.  <br /></td></tr>
+<tr class="memitem:abe7134d874cc1f16b6d9ceca0cb4a3b0" id="r_abe7134d874cc1f16b6d9ceca0cb4a3b0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#abe7134d874cc1f16b6d9ceca0cb4a3b0">ExisteReservaParaInstalacion</a> (int instalacionId)</td></tr>
+<tr class="memdesc:abe7134d874cc1f16b6d9ceca0cb4a3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si existe alguna reserva asociada a una instalacion.  <br /></td></tr>
+<tr class="memitem:a402aeb5dd67e53de670c003a9fb1284a" id="r_a402aeb5dd67e53de670c003a9fb1284a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a402aeb5dd67e53de670c003a9fb1284a">Delete</a> (int reservaId)</td></tr>
+<tr class="memdesc:a402aeb5dd67e53de670c003a9fb1284a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Borra una reserva fisicamente de la base de datos.  <br /></td></tr>
+<tr class="memitem:ad7f0df5ffa22791c983508a6ea98b4f2" id="r_ad7f0df5ffa22791c983508a6ea98b4f2"><td class="memItemLeft">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad7f0df5ffa22791c983508a6ea98b4f2">GetByFecha</a> (DateTime fecha, int? instalacionId=null)</td></tr>
+<tr class="memdesc:ad7f0df5ffa22791c983508a6ea98b4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve las reservas de un dia concreto, opcionalmente filtradas por instalacion.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base"><td colspan="2">Métodos protegidos heredados de <a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html">ProyectoFinal.model_new.RepositoryBase</a></td></tr>
+<tr class="memitem:a7430f68f32037460338c89e22e992f8e pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base" id="r_a7430f68f32037460338c89e22e992f8e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html#a7430f68f32037460338c89e22e992f8e">RepositoryBase</a> ()</td></tr>
+<tr class="memdesc:a7430f68f32037460338c89e22e992f8e pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_class_proyecto_final_1_1model__new_1_1_repository_base"><td colspan="2">Atributos protegidos heredados de <a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html">ProyectoFinal.model_new.RepositoryBase</a></td></tr>
+<tr class="memitem:a69f26be71ed229d514f8b488a94c22d5 pro_attribs_class_proyecto_final_1_1model__new_1_1_repository_base" id="r_a69f26be71ed229d514f8b488a94c22d5"><td class="memItemLeft"><a class="el" href="class_proyecto_final_1_1model__new_1_1_club_polideportivo_d_b_entities.html">ClubPolideportivoDBEntities</a>&#160;</td><td class="memItemRight"><a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html#a69f26be71ed229d514f8b488a94c22d5">Context</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Repositorio para gestionar las operaciones CRUD de <a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a> en ClubPolideportivoDB. Tambien centraliza las validaciones de uso para socios e instalaciones. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00012">12</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a8a709b8ef0da5655f29d609b6079ef09" name="a8a709b8ef0da5655f29d609b6079ef09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a709b8ef0da5655f29d609b6079ef09">&#9670;&#160;</a></span>Cancelar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.ReservasRepository.Cancelar </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>reservaId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cancela una reserva cambiando su estado a "Cancelada". </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reservaId</td><td>Id de la reserva.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00131">131</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>        {</div>
+<div class="line"><span class="lineno">  133</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  134</span>            {</div>
+<div class="line"><span class="lineno">  135</span>                <span class="comment">// Buscamos la reserva.</span></div>
+<div class="line"><span class="lineno">  136</span>                var r = Context.Reservas.FirstOrDefault(x =&gt; x.ReservaId == reservaId);</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>                <span class="comment">// Si no existe, no hacemos nada.</span></div>
+<div class="line"><span class="lineno">  139</span>                <span class="keywordflow">if</span> (r == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>                <span class="comment">// Marcamos como cancelada.</span></div>
+<div class="line"><span class="lineno">  142</span>                r.Estado = <span class="stringliteral">&quot;Cancelada&quot;</span>;</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>                <span class="comment">// Guardamos.</span></div>
+<div class="line"><span class="lineno">  145</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  146</span>            }</div>
+<div class="line"><span class="lineno">  147</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  148</span>            {</div>
+<div class="line"><span class="lineno">  149</span>                <span class="comment">// Envolvemos el error.</span></div>
+<div class="line"><span class="lineno">  150</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al cancelar la reserva.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  151</span>            }</div>
+<div class="line"><span class="lineno">  152</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a402aeb5dd67e53de670c003a9fb1284a" name="a402aeb5dd67e53de670c003a9fb1284a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a402aeb5dd67e53de670c003a9fb1284a">&#9670;&#160;</a></span>Delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.ReservasRepository.Delete </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>reservaId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Borra una reserva fisicamente de la base de datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reservaId</td><td>Id de la reserva a borrar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00180">180</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>        {</div>
+<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  183</span>            {</div>
+<div class="line"><span class="lineno">  184</span>                <span class="comment">// Buscamos la reserva por su Id.</span></div>
+<div class="line"><span class="lineno">  185</span>                var r = Context.Reservas.FirstOrDefault(x =&gt; x.ReservaId == reservaId);</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>                <span class="comment">// Si no existe, no hacemos nada.</span></div>
+<div class="line"><span class="lineno">  188</span>                <span class="keywordflow">if</span> (r == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>                <span class="comment">// Eliminamos el registro de la base de datos.</span></div>
+<div class="line"><span class="lineno">  191</span>                Context.Reservas.Remove(r);</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>                <span class="comment">// Persistimos el borrado.</span></div>
+<div class="line"><span class="lineno">  194</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  195</span>            }</div>
+<div class="line"><span class="lineno">  196</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  197</span>            {</div>
+<div class="line"><span class="lineno">  198</span>                <span class="comment">// Envolvemos el error.</span></div>
+<div class="line"><span class="lineno">  199</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al borrar la reserva.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  200</span>            }</div>
+<div class="line"><span class="lineno">  201</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abe7134d874cc1f16b6d9ceca0cb4a3b0" name="abe7134d874cc1f16b6d9ceca0cb4a3b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7134d874cc1f16b6d9ceca0cb4a3b0">&#9670;&#160;</a></span>ExisteReservaParaInstalacion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.model_new.Repositories.ReservasRepository.ExisteReservaParaInstalacion </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>instalacionId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si existe alguna reserva asociada a una instalacion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instalacionId</td><td>Id de la instalacion.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si hay reservas.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00170">170</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>        {</div>
+<div class="line"><span class="lineno">  172</span>            <span class="comment">// Buscamos cualquier reserva asociada.</span></div>
+<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">return</span> Context.Reservas.Any(r =&gt; r.InstalacionId == instalacionId);</div>
+<div class="line"><span class="lineno">  174</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aecc8ca94d488bd01254dd71987a18fd3" name="aecc8ca94d488bd01254dd71987a18fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecc8ca94d488bd01254dd71987a18fd3">&#9670;&#160;</a></span>ExisteReservaParaSocio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.model_new.Repositories.ReservasRepository.ExisteReservaParaSocio </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>socioId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si existe alguna reserva asociada a un socio. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socioId</td><td>Id del socio.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si hay reservas.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00159">159</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>        {</div>
+<div class="line"><span class="lineno">  161</span>            <span class="comment">// Buscamos cualquier reserva asociada.</span></div>
+<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">return</span> Context.Reservas.Any(r =&gt; r.SocioId == socioId);</div>
+<div class="line"><span class="lineno">  163</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5359e3fb226c487482226b93e9737136" name="a5359e3fb226c487482226b93e9737136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5359e3fb226c487482226b93e9737136">&#9670;&#160;</a></span>ExisteSolape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.model_new.Repositories.ReservasRepository.ExisteSolape </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>instalacionId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>inicio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>fin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>excludeReservaId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprueba si existe solape de horario en la misma instalacion. Excluye la propia reserva al editar. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instalacionId</td><td>Id de la instalacion.</td></tr>
+    <tr><td class="paramname">inicio</td><td>FechaHoraInicio de la nueva reserva.</td></tr>
+    <tr><td class="paramname">fin</td><td>FechaHoraFin de la nueva reserva.</td></tr>
+    <tr><td class="paramname">excludeReservaId</td><td>ReservaId a excluir en edicion (0 en alta).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si hay solape.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00068">68</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>        {</div>
+<div class="line"><span class="lineno">   70</span>            <span class="comment">// Buscamos reservas activas de la misma instalacion que se solapen con el rango.</span></div>
+<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">return</span> Context.Reservas.Any(r =&gt;</div>
+<div class="line"><span class="lineno">   72</span>                r.InstalacionId == instalacionId &amp;&amp;</div>
+<div class="line"><span class="lineno">   73</span>                r.ReservaId != excludeReservaId &amp;&amp;</div>
+<div class="line"><span class="lineno">   74</span>                r.Estado != <span class="stringliteral">&quot;Cancelada&quot;</span> &amp;&amp;</div>
+<div class="line"><span class="lineno">   75</span>                r.FechaHoraInicio &lt; fin &amp;&amp;</div>
+<div class="line"><span class="lineno">   76</span>                r.FechaHoraFin &gt; inicio);</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a66b078fd8d018396d88d8eb4be830a24" name="a66b078fd8d018396d88d8eb4be830a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b078fd8d018396d88d8eb4be830a24">&#9670;&#160;</a></span>GetAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a> &gt; ProyectoFinal.model_new.Repositories.ReservasRepository.GetAll </td>
+          <td>(</td>
+          <td class="paramtype">int?</td>          <td class="paramname"><span class="paramname"><em>socioId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int?</td>          <td class="paramname"><span class="paramname"><em>instalacionId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>soloPendientes</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve todas las reservas con filtros opcionales. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socioId</td><td>Filtra por socio. Null devuelve todas.</td></tr>
+    <tr><td class="paramname">instalacionId</td><td>Filtra por instalacion. Null devuelve todas.</td></tr>
+    <tr><td class="paramname">soloPendientes</td><td>Si true, devuelve solo las no canceladas.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de reservas.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00021">21</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>        {</div>
+<div class="line"><span class="lineno">   23</span>            <span class="comment">// Comenzamos con todos los registros incluyendo socio e instalacion.</span></div>
+<div class="line"><span class="lineno">   24</span>            var q = Context.Reservas</div>
+<div class="line"><span class="lineno">   25</span>                .Include(<span class="stringliteral">&quot;Socios&quot;</span>)</div>
+<div class="line"><span class="lineno">   26</span>                .Include(<span class="stringliteral">&quot;Instalaciones&quot;</span>)</div>
+<div class="line"><span class="lineno">   27</span>                .AsQueryable();</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>            <span class="comment">// Filtramos por socio si se indica.</span></div>
+<div class="line"><span class="lineno">   30</span>            <span class="keywordflow">if</span> (socioId.HasValue)</div>
+<div class="line"><span class="lineno">   31</span>                q = q.Where(r =&gt; r.SocioId == socioId.Value);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>            <span class="comment">// Filtramos por instalacion si se indica.</span></div>
+<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">if</span> (instalacionId.HasValue)</div>
+<div class="line"><span class="lineno">   35</span>                q = q.Where(r =&gt; r.InstalacionId == instalacionId.Value);</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>            <span class="comment">// Filtramos solo activas (no canceladas) si se pide.</span></div>
+<div class="line"><span class="lineno">   38</span>            <span class="keywordflow">if</span> (soloPendientes)</div>
+<div class="line"><span class="lineno">   39</span>                q = q.Where(r =&gt; r.Estado != <span class="stringliteral">&quot;Cancelada&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>            <span class="comment">// Ordenamos por fecha de inicio descendente para ver las mas recientes primero.</span></div>
+<div class="line"><span class="lineno">   42</span>            <span class="keywordflow">return</span> q.OrderByDescending(r =&gt; r.FechaHoraInicio).ToList();</div>
+<div class="line"><span class="lineno">   43</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad7f0df5ffa22791c983508a6ea98b4f2" name="ad7f0df5ffa22791c983508a6ea98b4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f0df5ffa22791c983508a6ea98b4f2">&#9670;&#160;</a></span>GetByFecha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a> &gt; ProyectoFinal.model_new.Repositories.ReservasRepository.GetByFecha </td>
+          <td>(</td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>fecha</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int?</td>          <td class="paramname"><span class="paramname"><em>instalacionId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve las reservas de un dia concreto, opcionalmente filtradas por instalacion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fecha</td><td>Fecha del dia a consultar.</td></tr>
+    <tr><td class="paramname">instalacionId</td><td>Id de instalacion. Null devuelve todas.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de reservas del dia ordenadas por hora de inicio.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00209">209</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  210</span>        {</div>
+<div class="line"><span class="lineno">  211</span>            <span class="comment">// Calculamos el inicio y fin del dia para el filtro de rango.</span></div>
+<div class="line"><span class="lineno">  212</span>            var inicioDia = fecha.Date;</div>
+<div class="line"><span class="lineno">  213</span>            var finDia = fecha.Date.AddDays(1);</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>            <span class="comment">// Comenzamos con todos los registros incluyendo socio e instalacion.</span></div>
+<div class="line"><span class="lineno">  216</span>            var q = Context.Reservas</div>
+<div class="line"><span class="lineno">  217</span>                .Include(<span class="stringliteral">&quot;Socios&quot;</span>)</div>
+<div class="line"><span class="lineno">  218</span>                .Include(<span class="stringliteral">&quot;Instalaciones&quot;</span>)</div>
+<div class="line"><span class="lineno">  219</span>                .Where(r =&gt; r.FechaHoraInicio &gt;= inicioDia &amp;&amp; r.FechaHoraInicio &lt; finDia);</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>            <span class="comment">// Filtramos por instalacion si se indica.</span></div>
+<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">if</span> (instalacionId.HasValue)</div>
+<div class="line"><span class="lineno">  223</span>                q = q.Where(r =&gt; r.InstalacionId == instalacionId.Value);</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>            <span class="comment">// Ordenamos por hora de inicio ascendente para ver el dia en orden.</span></div>
+<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">return</span> q.OrderBy(r =&gt; r.FechaHoraInicio).ToList();</div>
+<div class="line"><span class="lineno">  227</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3764663eca21c3fbce678d15a4868826" name="a3764663eca21c3fbce678d15a4868826"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3764663eca21c3fbce678d15a4868826">&#9670;&#160;</a></span>GetById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a> ProyectoFinal.model_new.Repositories.ReservasRepository.GetById </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>reservaId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve una reserva por su ID incluyendo socio e instalacion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reservaId</td><td>Id de la reserva.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Reserva encontrada o null.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00050">50</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>        {</div>
+<div class="line"><span class="lineno">   52</span>            <span class="comment">// Buscamos por clave primaria con includes.</span></div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">return</span> Context.Reservas</div>
+<div class="line"><span class="lineno">   54</span>                .Include(<span class="stringliteral">&quot;Socios&quot;</span>)</div>
+<div class="line"><span class="lineno">   55</span>                .Include(<span class="stringliteral">&quot;Instalaciones&quot;</span>)</div>
+<div class="line"><span class="lineno">   56</span>                .FirstOrDefault(r =&gt; r.ReservaId == reservaId);</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a420f447f28db2e42c9a454475391f95d" name="a420f447f28db2e42c9a454475391f95d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a420f447f28db2e42c9a454475391f95d">&#9670;&#160;</a></span>Save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.ReservasRepository.Save </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a></td>          <td class="paramname"><span class="paramname"><em>reserva</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda una reserva (alta si ReservaId menor que 1, modificacion si existe). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reserva</td><td>Entidad <a class="el" href="class_proyecto_final_1_1model__new_1_1_reservas.html">Reservas</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_reservas_repository_8cs_source.html#l00083">83</a> del archivo <a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>        {</div>
+<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   86</span>            {</div>
+<div class="line"><span class="lineno">   87</span>                <span class="keywordflow">if</span> (reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#a9a2b3a4b32387d9b32e2c2b60b2134a7">ReservaId</a> &lt; 1)</div>
+<div class="line"><span class="lineno">   88</span>                {</div>
+<div class="line"><span class="lineno">   89</span>                    <span class="comment">// Alta: a�adimos nueva reserva.</span></div>
+<div class="line"><span class="lineno">   90</span>                    Context.Reservas.Add(<span class="keyword">new</span> Reservas</div>
+<div class="line"><span class="lineno">   91</span>                    {</div>
+<div class="line"><span class="lineno">   92</span>                        SocioId = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#a3cf02e709dc3676e1e447c1d4a868cab">SocioId</a>,</div>
+<div class="line"><span class="lineno">   93</span>                        InstalacionId = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#abd447634dcc4bb71cc403539a3ea4468">InstalacionId</a>,</div>
+<div class="line"><span class="lineno">   94</span>                        FechaHoraInicio = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#afedf3b76447e12c04d903329849f4f33">FechaHoraInicio</a>,</div>
+<div class="line"><span class="lineno">   95</span>                        FechaHoraFin = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#a3d532112e99b467d86e34f3b6a0b65d1">FechaHoraFin</a>,</div>
+<div class="line"><span class="lineno">   96</span>                        PrecioTotal = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#af26b3e7d7f9f411146644a259a426d73">PrecioTotal</a>,</div>
+<div class="line"><span class="lineno">   97</span>                        Estado = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#a6795fced40f9f95df15bab30aee7aa27">Estado</a>,</div>
+<div class="line"><span class="lineno">   98</span>                        Observaciones = reserva.Observaciones</div>
+<div class="line"><span class="lineno">   99</span>                    });</div>
+<div class="line"><span class="lineno">  100</span>                }</div>
+<div class="line"><span class="lineno">  101</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  102</span>                {</div>
+<div class="line"><span class="lineno">  103</span>                    <span class="comment">// Modificacion: buscamos y actualizamos.</span></div>
+<div class="line"><span class="lineno">  104</span>                    var r = Context.Reservas.FirstOrDefault(x =&gt; x.ReservaId == reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#a9a2b3a4b32387d9b32e2c2b60b2134a7">ReservaId</a>);</div>
+<div class="line"><span class="lineno">  105</span>                    <span class="keywordflow">if</span> (r != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  106</span>                    {</div>
+<div class="line"><span class="lineno">  107</span>                        r.SocioId = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#a3cf02e709dc3676e1e447c1d4a868cab">SocioId</a>;</div>
+<div class="line"><span class="lineno">  108</span>                        r.InstalacionId = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#abd447634dcc4bb71cc403539a3ea4468">InstalacionId</a>;</div>
+<div class="line"><span class="lineno">  109</span>                        r.FechaHoraInicio = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#afedf3b76447e12c04d903329849f4f33">FechaHoraInicio</a>;</div>
+<div class="line"><span class="lineno">  110</span>                        r.FechaHoraFin = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#a3d532112e99b467d86e34f3b6a0b65d1">FechaHoraFin</a>;</div>
+<div class="line"><span class="lineno">  111</span>                        r.PrecioTotal = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#af26b3e7d7f9f411146644a259a426d73">PrecioTotal</a>;</div>
+<div class="line"><span class="lineno">  112</span>                        r.Estado = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#a6795fced40f9f95df15bab30aee7aa27">Estado</a>;</div>
+<div class="line"><span class="lineno">  113</span>                        r.Observaciones = reserva.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_reservas.html#acafdd15287b54390f4d9ffdef73a5902">Observaciones</a>;</div>
+<div class="line"><span class="lineno">  114</span>                    }</div>
+<div class="line"><span class="lineno">  115</span>                }</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>                <span class="comment">// Persistimos cambios.</span></div>
+<div class="line"><span class="lineno">  118</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  119</span>            }</div>
+<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  121</span>            {</div>
+<div class="line"><span class="lineno">  122</span>                <span class="comment">// Envolvemos el error.</span></div>
+<div class="line"><span class="lineno">  123</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al guardar la reserva en la base de datos.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  124</span>            }</div>
+<div class="line"><span class="lineno">  125</span>        }</div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_reservas_html_a3cf02e709dc3676e1e447c1d4a868cab"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_reservas.html#a3cf02e709dc3676e1e447c1d4a868cab">ProyectoFinal.model_new.Reservas.SocioId</a></div><div class="ttdeci">int SocioId</div><div class="ttdef"><b>Definition</b> <a href="_reservas_8cs_source.html#l00024">Reservas.cs:24</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_reservas_html_a3d532112e99b467d86e34f3b6a0b65d1"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_reservas.html#a3d532112e99b467d86e34f3b6a0b65d1">ProyectoFinal.model_new.Reservas.FechaHoraFin</a></div><div class="ttdeci">System.DateTime FechaHoraFin</div><div class="ttdef"><b>Definition</b> <a href="_reservas_8cs_source.html#l00027">Reservas.cs:27</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_reservas_html_a6795fced40f9f95df15bab30aee7aa27"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_reservas.html#a6795fced40f9f95df15bab30aee7aa27">ProyectoFinal.model_new.Reservas.Estado</a></div><div class="ttdeci">string Estado</div><div class="ttdef"><b>Definition</b> <a href="_reservas_8cs_source.html#l00029">Reservas.cs:29</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_reservas_html_a9a2b3a4b32387d9b32e2c2b60b2134a7"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_reservas.html#a9a2b3a4b32387d9b32e2c2b60b2134a7">ProyectoFinal.model_new.Reservas.ReservaId</a></div><div class="ttdeci">int ReservaId</div><div class="ttdef"><b>Definition</b> <a href="_reservas_8cs_source.html#l00023">Reservas.cs:23</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_reservas_html_abd447634dcc4bb71cc403539a3ea4468"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_reservas.html#abd447634dcc4bb71cc403539a3ea4468">ProyectoFinal.model_new.Reservas.InstalacionId</a></div><div class="ttdeci">int InstalacionId</div><div class="ttdef"><b>Definition</b> <a href="_reservas_8cs_source.html#l00025">Reservas.cs:25</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_reservas_html_acafdd15287b54390f4d9ffdef73a5902"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_reservas.html#acafdd15287b54390f4d9ffdef73a5902">ProyectoFinal.model_new.Reservas.Observaciones</a></div><div class="ttdeci">string Observaciones</div><div class="ttdef"><b>Definition</b> <a href="_reservas_8cs_source.html#l00030">Reservas.cs:30</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_reservas_html_af26b3e7d7f9f411146644a259a426d73"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_reservas.html#af26b3e7d7f9f411146644a259a426d73">ProyectoFinal.model_new.Reservas.PrecioTotal</a></div><div class="ttdeci">decimal PrecioTotal</div><div class="ttdef"><b>Definition</b> <a href="_reservas_8cs_source.html#l00028">Reservas.cs:28</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_reservas_html_afedf3b76447e12c04d903329849f4f33"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_reservas.html#afedf3b76447e12c04d903329849f4f33">ProyectoFinal.model_new.Reservas.FechaHoraInicio</a></div><div class="ttdeci">System.DateTime FechaHoraInicio</div><div class="ttdef"><b>Definition</b> <a href="_reservas_8cs_source.html#l00026">Reservas.cs:26</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>C:/DAM/Diseño de interficies/proyectos/WPF/PROYECTO_FINAL/ProyectoFinal/ProyectoFinal.model_new/Repositories/<a class="el" href="_reservas_repository_8cs_source.html">ReservasRepository.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_proyecto_final.html">ProyectoFinal</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1model__new.html">model_new</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1model__new_1_1_repositories.html">Repositories</a></li><li class="navelem"><a href="class_proyecto_final_1_1model__new_1_1_repositories_1_1_reservas_repository.html">ReservasRepository</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

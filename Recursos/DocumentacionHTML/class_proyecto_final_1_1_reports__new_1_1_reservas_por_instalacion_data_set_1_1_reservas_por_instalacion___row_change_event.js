@@ -1,0 +1,6 @@
+var class_proyecto_final_1_1_reports__new_1_1_reservas_por_instalacion_data_set_1_1_reservas_por_instalacion___row_change_event =
+[
+    [ "ReservasPorInstalacion_RowChangeEvent", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_instalacion_data_set_1_1_reservas_por_instalacion___row_change_event.html#a94d0b28a96ddde2aa7dea1b72572e236", null ],
+    [ "Action", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_instalacion_data_set_1_1_reservas_por_instalacion___row_change_event.html#ad2854b10fbc498df2b15f9be820b8718", null ],
+    [ "Row", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_instalacion_data_set_1_1_reservas_por_instalacion___row_change_event.html#a383e01d43737d62350635511b72c575a", null ]
+];

@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro polideportivo: Referencia de la clase ProyectoFinal.model_new.Repositories.CuotasRepository</title>
+<link rel="icon" href="Logo_centro_3.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_centro_3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Centro polideportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestión centro polideportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_proyecto_final_1_1model__new_1_1_repositories_1_1_cuotas_repository.html','','class_proyecto_final_1_1model__new_1_1_repositories_1_1_cuotas_repository-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase ProyectoFinal.model_new.Repositories.CuotasRepository</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Repositorio para gestionar las operaciones CRUD de <a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> en la base de datos ClubPolideportivoDB.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a7a2563e2cf1557d5b476cfcb252ffe2c" id="r_a7a2563e2cf1557d5b476cfcb252ffe2c"><td class="memItemLeft">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a7a2563e2cf1557d5b476cfcb252ffe2c">GetAll</a> (int? socioId=null, bool soloPendientes=false)</td></tr>
+<tr class="memdesc:a7a2563e2cf1557d5b476cfcb252ffe2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todas las cuotas, con filtro opcional por socio y/o solo pendientes.  <br /></td></tr>
+<tr class="memitem:ae198f71f0bbee3c0d0562a8938e538e6" id="r_ae198f71f0bbee3c0d0562a8938e538e6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae198f71f0bbee3c0d0562a8938e538e6">ExisteDuplicado</a> (int socioId, int anio, int mes, int excludeCuotaId=0)</td></tr>
+<tr class="memdesc:ae198f71f0bbee3c0d0562a8938e538e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si ya existe una cuota para el mismo socio, anio y mes. Excluye el propio registro al editar.  <br /></td></tr>
+<tr class="memitem:a77269afc54b2d6e3d9ea8604cf08293b" id="r_a77269afc54b2d6e3d9ea8604cf08293b"><td class="memItemLeft"><a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a>&#160;</td><td class="memItemRight"><a class="el" href="#a77269afc54b2d6e3d9ea8604cf08293b">GetById</a> (int cuotaId)</td></tr>
+<tr class="memdesc:a77269afc54b2d6e3d9ea8604cf08293b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve una cuota por su ID.  <br /></td></tr>
+<tr class="memitem:a74cd45e273e59f224a1317f50184607b" id="r_a74cd45e273e59f224a1317f50184607b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a74cd45e273e59f224a1317f50184607b">TieneCuotasPendientesVencidas</a> (int socioId)</td></tr>
+<tr class="memdesc:a74cd45e273e59f224a1317f50184607b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si un socio tiene cuotas pendientes con fecha de vencimiento pasada. Se usa para validar si puede hacer reservas.  <br /></td></tr>
+<tr class="memitem:afa9c62adb7802049c1e433e514ecc125" id="r_afa9c62adb7802049c1e433e514ecc125"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afa9c62adb7802049c1e433e514ecc125">Save</a> (<a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> cuota)</td></tr>
+<tr class="memdesc:afa9c62adb7802049c1e433e514ecc125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda una cuota (alta si CuotaId menor que 1, modificaci�n si existe).  <br /></td></tr>
+<tr class="memitem:a3bee81c68486c8cbfe96e52600f35291" id="r_a3bee81c68486c8cbfe96e52600f35291"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3bee81c68486c8cbfe96e52600f35291">MarcarPagada</a> (int cuotaId, DateTime fechaPago)</td></tr>
+<tr class="memdesc:a3bee81c68486c8cbfe96e52600f35291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marca una cuota como pagada con la fecha indicada.  <br /></td></tr>
+<tr class="memitem:a67f33b69b0efcdbfc6518f8e7839d9a8" id="r_a67f33b69b0efcdbfc6518f8e7839d9a8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a67f33b69b0efcdbfc6518f8e7839d9a8">Delete</a> (int cuotaId)</td></tr>
+<tr class="memdesc:a67f33b69b0efcdbfc6518f8e7839d9a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina fisicamente una cuota por su ID.  <br /></td></tr>
+<tr class="memitem:af843dd8e55d5b76117030f7b7d1e5222" id="r_af843dd8e55d5b76117030f7b7d1e5222"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af843dd8e55d5b76117030f7b7d1e5222">EstaAlCorriente</a> (int socioId, DateTime fechaReserva)</td></tr>
+<tr class="memdesc:af843dd8e55d5b76117030f7b7d1e5222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si un socio esta al corriente de pago a la fecha indicada. Se considera al corriente si tiene al menos una cuota pagada cuya FechaVencimiento sea igual o posterior a la fecha de la reserva. Cubre cuotas mensuales y anuales por igual.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base"><td colspan="2">Métodos protegidos heredados de <a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html">ProyectoFinal.model_new.RepositoryBase</a></td></tr>
+<tr class="memitem:a7430f68f32037460338c89e22e992f8e pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base" id="r_a7430f68f32037460338c89e22e992f8e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html#a7430f68f32037460338c89e22e992f8e">RepositoryBase</a> ()</td></tr>
+<tr class="memdesc:a7430f68f32037460338c89e22e992f8e pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_class_proyecto_final_1_1model__new_1_1_repository_base"><td colspan="2">Atributos protegidos heredados de <a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html">ProyectoFinal.model_new.RepositoryBase</a></td></tr>
+<tr class="memitem:a69f26be71ed229d514f8b488a94c22d5 pro_attribs_class_proyecto_final_1_1model__new_1_1_repository_base" id="r_a69f26be71ed229d514f8b488a94c22d5"><td class="memItemLeft"><a class="el" href="class_proyecto_final_1_1model__new_1_1_club_polideportivo_d_b_entities.html">ClubPolideportivoDBEntities</a>&#160;</td><td class="memItemRight"><a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html#a69f26be71ed229d514f8b488a94c22d5">Context</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Repositorio para gestionar las operaciones CRUD de <a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> en la base de datos ClubPolideportivoDB. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_repository_8cs_source.html#l00011">11</a> del archivo <a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a67f33b69b0efcdbfc6518f8e7839d9a8" name="a67f33b69b0efcdbfc6518f8e7839d9a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f33b69b0efcdbfc6518f8e7839d9a8">&#9670;&#160;</a></span>Delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.CuotasRepository.Delete </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cuotaId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina fisicamente una cuota por su ID. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cuotaId</td><td>Id de la cuota.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_repository_8cs_source.html#l00167">167</a> del archivo <a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>        {</div>
+<div class="line"><span class="lineno">  169</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  170</span>            {</div>
+<div class="line"><span class="lineno">  171</span>                <span class="comment">// Buscamos la cuota.</span></div>
+<div class="line"><span class="lineno">  172</span>                var c = Context.Cuotas.FirstOrDefault(x =&gt; x.CuotaId == cuotaId);</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>                <span class="comment">// Si no existe, no hacemos nada.</span></div>
+<div class="line"><span class="lineno">  175</span>                <span class="keywordflow">if</span> (c == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>                <span class="comment">// Eliminamos.</span></div>
+<div class="line"><span class="lineno">  178</span>                Context.Cuotas.Remove(c);</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>                <span class="comment">// Guardamos cambios.</span></div>
+<div class="line"><span class="lineno">  181</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  182</span>            }</div>
+<div class="line"><span class="lineno">  183</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  184</span>            {</div>
+<div class="line"><span class="lineno">  185</span>                <span class="comment">// Envolvemos error.</span></div>
+<div class="line"><span class="lineno">  186</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al borrar la cuota en la base de datos.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  187</span>            }</div>
+<div class="line"><span class="lineno">  188</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af843dd8e55d5b76117030f7b7d1e5222" name="af843dd8e55d5b76117030f7b7d1e5222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af843dd8e55d5b76117030f7b7d1e5222">&#9670;&#160;</a></span>EstaAlCorriente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.model_new.Repositories.CuotasRepository.EstaAlCorriente </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>socioId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>fechaReserva</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si un socio esta al corriente de pago a la fecha indicada. Se considera al corriente si tiene al menos una cuota pagada cuya FechaVencimiento sea igual o posterior a la fecha de la reserva. Cubre cuotas mensuales y anuales por igual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socioId</td><td>Id del socio.</td></tr>
+    <tr><td class="paramname">fechaReserva</td><td>Fecha de inicio de la reserva a comprobar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si esta al corriente de pago.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_repository_8cs_source.html#l00199">199</a> del archivo <a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>        {</div>
+<div class="line"><span class="lineno">  201</span>            <span class="comment">// Buscamos si existe alguna cuota pagada cuyo vencimiento cubra la fecha de la reserva.</span></div>
+<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">return</span> Context.Cuotas.Any(c =&gt;</div>
+<div class="line"><span class="lineno">  203</span>                c.SocioId == socioId &amp;&amp;</div>
+<div class="line"><span class="lineno">  204</span>                c.Pagada &amp;&amp;</div>
+<div class="line"><span class="lineno">  205</span>                c.FechaVencimiento &gt;= fechaReserva);</div>
+<div class="line"><span class="lineno">  206</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae198f71f0bbee3c0d0562a8938e538e6" name="ae198f71f0bbee3c0d0562a8938e538e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae198f71f0bbee3c0d0562a8938e538e6">&#9670;&#160;</a></span>ExisteDuplicado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.model_new.Repositories.CuotasRepository.ExisteDuplicado </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>socioId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>anio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mes</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>excludeCuotaId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si ya existe una cuota para el mismo socio, anio y mes. Excluye el propio registro al editar. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socioId</td><td>Id del socio.</td></tr>
+    <tr><td class="paramname">anio</td><td>Anio de la cuota.</td></tr>
+    <tr><td class="paramname">mes</td><td>Mes de la cuota.</td></tr>
+    <tr><td class="paramname">excludeCuotaId</td><td>CuotaId a excluir (0 en alta).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si ya existe un duplicado.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_repository_8cs_source.html#l00047">47</a> del archivo <a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>        {</div>
+<div class="line"><span class="lineno">   49</span>            <span class="comment">// Buscamos cuota con mismo socio, anio y mes excluyendo el registro actual.</span></div>
+<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">return</span> Context.Cuotas.Any(c =&gt;</div>
+<div class="line"><span class="lineno">   51</span>                c.SocioId == socioId &amp;&amp;</div>
+<div class="line"><span class="lineno">   52</span>                c.Anio == anio &amp;&amp;</div>
+<div class="line"><span class="lineno">   53</span>                c.Mes == mes &amp;&amp;</div>
+<div class="line"><span class="lineno">   54</span>                c.CuotaId != excludeCuotaId);</div>
+<div class="line"><span class="lineno">   55</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7a2563e2cf1557d5b476cfcb252ffe2c" name="a7a2563e2cf1557d5b476cfcb252ffe2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2563e2cf1557d5b476cfcb252ffe2c">&#9670;&#160;</a></span>GetAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> &gt; ProyectoFinal.model_new.Repositories.CuotasRepository.GetAll </td>
+          <td>(</td>
+          <td class="paramtype">int?</td>          <td class="paramname"><span class="paramname"><em>socioId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>soloPendientes</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve todas las cuotas, con filtro opcional por socio y/o solo pendientes. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socioId</td><td>Si se indica, filtra por ese socio. Null devuelve todas.</td></tr>
+    <tr><td class="paramname">soloPendientes</td><td>Si true, devuelve solo las no pagadas.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de cuotas.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_repository_8cs_source.html#l00019">19</a> del archivo <a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>        {</div>
+<div class="line"><span class="lineno">   21</span>            <span class="comment">// Comenzamos con todos los registros, incluyendo el socio relacionado.</span></div>
+<div class="line"><span class="lineno">   22</span>            var q = Context.Cuotas.Include(<span class="stringliteral">&quot;Socios&quot;</span>).AsQueryable();</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>            <span class="comment">// Filtramos por socio si se indica.</span></div>
+<div class="line"><span class="lineno">   25</span>            <span class="keywordflow">if</span> (socioId.HasValue)</div>
+<div class="line"><span class="lineno">   26</span>                q = q.Where(c =&gt; c.SocioId == socioId.Value);</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>            <span class="comment">// Filtramos solo pendientes si se pide.</span></div>
+<div class="line"><span class="lineno">   29</span>            <span class="keywordflow">if</span> (soloPendientes)</div>
+<div class="line"><span class="lineno">   30</span>                q = q.Where(c =&gt; !c.Pagada);</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>            <span class="comment">// Ordenamos por a�o desc y mes desc para mostrar las m�s recientes primero.</span></div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">return</span> q.OrderByDescending(c =&gt; c.Anio)</div>
+<div class="line"><span class="lineno">   34</span>                    .ThenByDescending(c =&gt; c.Mes)</div>
+<div class="line"><span class="lineno">   35</span>                    .ToList();</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a77269afc54b2d6e3d9ea8604cf08293b" name="a77269afc54b2d6e3d9ea8604cf08293b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77269afc54b2d6e3d9ea8604cf08293b">&#9670;&#160;</a></span>GetById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> ProyectoFinal.model_new.Repositories.CuotasRepository.GetById </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cuotaId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve una cuota por su ID. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cuotaId</td><td>Id de la cuota.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Cuota encontrada o null.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_repository_8cs_source.html#l00062">62</a> del archivo <a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>        {</div>
+<div class="line"><span class="lineno">   64</span>            <span class="comment">// Buscamos por clave primaria.</span></div>
+<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">return</span> Context.Cuotas.Include(<span class="stringliteral">&quot;Socios&quot;</span>).FirstOrDefault(c =&gt; c.CuotaId == cuotaId);</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3bee81c68486c8cbfe96e52600f35291" name="a3bee81c68486c8cbfe96e52600f35291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bee81c68486c8cbfe96e52600f35291">&#9670;&#160;</a></span>MarcarPagada()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.CuotasRepository.MarcarPagada </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cuotaId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>fechaPago</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marca una cuota como pagada con la fecha indicada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cuotaId</td><td>Id de la cuota.</td></tr>
+    <tr><td class="paramname">fechaPago</td><td>Fecha en que se realiza el pago.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_repository_8cs_source.html#l00139">139</a> del archivo <a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>        {</div>
+<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  142</span>            {</div>
+<div class="line"><span class="lineno">  143</span>                <span class="comment">// Buscamos la cuota.</span></div>
+<div class="line"><span class="lineno">  144</span>                var c = Context.Cuotas.FirstOrDefault(x =&gt; x.CuotaId == cuotaId);</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>                <span class="comment">// Si no existe, no hacemos nada.</span></div>
+<div class="line"><span class="lineno">  147</span>                <span class="keywordflow">if</span> (c == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>                <span class="comment">// Actualizamos estado de pago.</span></div>
+<div class="line"><span class="lineno">  150</span>                c.Pagada = <span class="keyword">true</span>; <span class="comment">// Marcamos pagada.</span></div>
+<div class="line"><span class="lineno">  151</span>                c.FechaPago = fechaPago; <span class="comment">// Asignamos fecha.</span></div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>                <span class="comment">// Guardamos.</span></div>
+<div class="line"><span class="lineno">  154</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  155</span>            }</div>
+<div class="line"><span class="lineno">  156</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  157</span>            {</div>
+<div class="line"><span class="lineno">  158</span>                <span class="comment">// Envolvemos error.</span></div>
+<div class="line"><span class="lineno">  159</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al marcar la cuota como pagada.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  160</span>            }</div>
+<div class="line"><span class="lineno">  161</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afa9c62adb7802049c1e433e514ecc125" name="afa9c62adb7802049c1e433e514ecc125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa9c62adb7802049c1e433e514ecc125">&#9670;&#160;</a></span>Save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.CuotasRepository.Save </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a></td>          <td class="paramname"><span class="paramname"><em>cuota</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda una cuota (alta si CuotaId menor que 1, modificaci�n si existe). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cuota</td><td>Entidad <a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_repository_8cs_source.html#l00090">90</a> del archivo <a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>        {</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   93</span>            {</div>
+<div class="line"><span class="lineno">   94</span>                <span class="keywordflow">if</span> (cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a8e63fb34004dfd7bb9cffab084ea5194">CuotaId</a> &lt; 1)</div>
+<div class="line"><span class="lineno">   95</span>                {</div>
+<div class="line"><span class="lineno">   96</span>                    <span class="comment">// Alta: a�adimos nueva cuota.</span></div>
+<div class="line"><span class="lineno">   97</span>                    Context.Cuotas.Add(<span class="keyword">new</span> Cuotas</div>
+<div class="line"><span class="lineno">   98</span>                    {</div>
+<div class="line"><span class="lineno">   99</span>                        SocioId = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a43cefc39368f5c88f917dc9266dc49d8">SocioId</a>,</div>
+<div class="line"><span class="lineno">  100</span>                        Anio = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a015c61f5c00f29faecc1e3e856a959fd">Anio</a>,</div>
+<div class="line"><span class="lineno">  101</span>                        Mes = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a11033ec93c23392c4ddad4318ddc8f8b">Mes</a>,</div>
+<div class="line"><span class="lineno">  102</span>                        Importe = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a6093dc4c4875096c8ab5652b7a5c7ecd">Importe</a>,</div>
+<div class="line"><span class="lineno">  103</span>                        FechaVencimiento = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a792b2a772f5dd2c56ec140f800209d73">FechaVencimiento</a>,</div>
+<div class="line"><span class="lineno">  104</span>                        FechaPago = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a1c030b22bce550bfa369f30feeb500a5">FechaPago</a>,</div>
+<div class="line"><span class="lineno">  105</span>                        Pagada = cuota.Pagada</div>
+<div class="line"><span class="lineno">  106</span>                    });</div>
+<div class="line"><span class="lineno">  107</span>                }</div>
+<div class="line"><span class="lineno">  108</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  109</span>                {</div>
+<div class="line"><span class="lineno">  110</span>                    <span class="comment">// Modificacion: buscamos y actualizamos.</span></div>
+<div class="line"><span class="lineno">  111</span>                    var c = Context.Cuotas.FirstOrDefault(x =&gt; x.CuotaId == cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a8e63fb34004dfd7bb9cffab084ea5194">CuotaId</a>);</div>
+<div class="line"><span class="lineno">  112</span>                    <span class="keywordflow">if</span> (c != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  113</span>                    {</div>
+<div class="line"><span class="lineno">  114</span>                        c.SocioId = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a43cefc39368f5c88f917dc9266dc49d8">SocioId</a>; <span class="comment">// Socio.</span></div>
+<div class="line"><span class="lineno">  115</span>                        c.Anio = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a015c61f5c00f29faecc1e3e856a959fd">Anio</a>; <span class="comment">// Anio.</span></div>
+<div class="line"><span class="lineno">  116</span>                        c.Mes = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a11033ec93c23392c4ddad4318ddc8f8b">Mes</a>; <span class="comment">// Mes.</span></div>
+<div class="line"><span class="lineno">  117</span>                        c.Importe = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a6093dc4c4875096c8ab5652b7a5c7ecd">Importe</a>; <span class="comment">// Importe.</span></div>
+<div class="line"><span class="lineno">  118</span>                        c.FechaVencimiento = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a792b2a772f5dd2c56ec140f800209d73">FechaVencimiento</a>; <span class="comment">// Vencimiento.</span></div>
+<div class="line"><span class="lineno">  119</span>                        c.FechaPago = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a1c030b22bce550bfa369f30feeb500a5">FechaPago</a>; <span class="comment">// Fecha pago.</span></div>
+<div class="line"><span class="lineno">  120</span>                        c.Pagada = cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#aa48bc7a3d5ede9c6274bb18140b887dc">Pagada</a>; <span class="comment">// Estado.</span></div>
+<div class="line"><span class="lineno">  121</span>                    }</div>
+<div class="line"><span class="lineno">  122</span>                }</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>                <span class="comment">// Persistimos cambios.</span></div>
+<div class="line"><span class="lineno">  125</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  126</span>            }</div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  128</span>            {</div>
+<div class="line"><span class="lineno">  129</span>                <span class="comment">// Envolvemos el error para que la capa superior lo gestione.</span></div>
+<div class="line"><span class="lineno">  130</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al guardar la cuota en la base de datos.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  131</span>            }</div>
+<div class="line"><span class="lineno">  132</span>        }</div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_a015c61f5c00f29faecc1e3e856a959fd"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a015c61f5c00f29faecc1e3e856a959fd">ProyectoFinal.model_new.Cuotas.Anio</a></div><div class="ttdeci">int Anio</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00019">Cuotas.cs:19</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_a11033ec93c23392c4ddad4318ddc8f8b"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a11033ec93c23392c4ddad4318ddc8f8b">ProyectoFinal.model_new.Cuotas.Mes</a></div><div class="ttdeci">int Mes</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00020">Cuotas.cs:20</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_a1c030b22bce550bfa369f30feeb500a5"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a1c030b22bce550bfa369f30feeb500a5">ProyectoFinal.model_new.Cuotas.FechaPago</a></div><div class="ttdeci">Nullable&lt; System.DateTime &gt; FechaPago</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00023">Cuotas.cs:23</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_a43cefc39368f5c88f917dc9266dc49d8"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a43cefc39368f5c88f917dc9266dc49d8">ProyectoFinal.model_new.Cuotas.SocioId</a></div><div class="ttdeci">int SocioId</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00018">Cuotas.cs:18</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_a6093dc4c4875096c8ab5652b7a5c7ecd"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a6093dc4c4875096c8ab5652b7a5c7ecd">ProyectoFinal.model_new.Cuotas.Importe</a></div><div class="ttdeci">decimal Importe</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00021">Cuotas.cs:21</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_a792b2a772f5dd2c56ec140f800209d73"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a792b2a772f5dd2c56ec140f800209d73">ProyectoFinal.model_new.Cuotas.FechaVencimiento</a></div><div class="ttdeci">System.DateTime FechaVencimiento</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00022">Cuotas.cs:22</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_a8e63fb34004dfd7bb9cffab084ea5194"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a8e63fb34004dfd7bb9cffab084ea5194">ProyectoFinal.model_new.Cuotas.CuotaId</a></div><div class="ttdeci">int CuotaId</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00017">Cuotas.cs:17</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_aa48bc7a3d5ede9c6274bb18140b887dc"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#aa48bc7a3d5ede9c6274bb18140b887dc">ProyectoFinal.model_new.Cuotas.Pagada</a></div><div class="ttdeci">bool Pagada</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00024">Cuotas.cs:24</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a74cd45e273e59f224a1317f50184607b" name="a74cd45e273e59f224a1317f50184607b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74cd45e273e59f224a1317f50184607b">&#9670;&#160;</a></span>TieneCuotasPendientesVencidas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.model_new.Repositories.CuotasRepository.TieneCuotasPendientesVencidas </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>socioId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si un socio tiene cuotas pendientes con fecha de vencimiento pasada. Se usa para validar si puede hacer reservas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socioId</td><td>Id del socio.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si tiene cuotas vencidas sin pagar.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_repository_8cs_source.html#l00074">74</a> del archivo <a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>        {</div>
+<div class="line"><span class="lineno">   76</span>            <span class="comment">// Fecha actual.</span></div>
+<div class="line"><span class="lineno">   77</span>            var hoy = DateTime.Today;</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>            <span class="comment">// Buscamos cuotas no pagadas con vencimiento anterior a hoy.</span></div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">return</span> Context.Cuotas.Any(c =&gt;</div>
+<div class="line"><span class="lineno">   81</span>                c.SocioId == socioId &amp;&amp;</div>
+<div class="line"><span class="lineno">   82</span>                !c.Pagada &amp;&amp;</div>
+<div class="line"><span class="lineno">   83</span>                c.FechaVencimiento &lt; hoy);</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>C:/DAM/Diseño de interficies/proyectos/WPF/PROYECTO_FINAL/ProyectoFinal/ProyectoFinal.model_new/Repositories/<a class="el" href="_cuotas_repository_8cs_source.html">CuotasRepository.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_proyecto_final.html">ProyectoFinal</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1model__new.html">model_new</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1model__new_1_1_repositories.html">Repositories</a></li><li class="navelem"><a href="class_proyecto_final_1_1model__new_1_1_repositories_1_1_cuotas_repository.html">CuotasRepository</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

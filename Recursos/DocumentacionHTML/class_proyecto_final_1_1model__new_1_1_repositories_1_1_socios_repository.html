@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro polideportivo: Referencia de la clase ProyectoFinal.model_new.Repositories.SociosRepository</title>
+<link rel="icon" href="Logo_centro_3.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_centro_3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Centro polideportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestión centro polideportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_proyecto_final_1_1model__new_1_1_repositories_1_1_socios_repository.html','','class_proyecto_final_1_1model__new_1_1_repositories_1_1_socios_repository-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase ProyectoFinal.model_new.Repositories.SociosRepository</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Repositorio para gestionar las operaciones CRUD de <a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html" title="Extensiones de la entidad Socios generada por Entity Framework. Se implementan en un fichero parcial ...">Socios</a> en la base de datos ClubPolideportivoDB.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a6fb7e68207c0226fbd3296a56103fc7c" id="r_a6fb7e68207c0226fbd3296a56103fc7c"><td class="memItemLeft">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6fb7e68207c0226fbd3296a56103fc7c">GetAll</a> (bool soloActivos=false)</td></tr>
+<tr class="memdesc:a6fb7e68207c0226fbd3296a56103fc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene todos los socios, opcionalmente solo los activos.  <br /></td></tr>
+<tr class="memitem:a9bb5200ce87197670c50d6d55ccd420e" id="r_a9bb5200ce87197670c50d6d55ccd420e"><td class="memItemLeft"><a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9bb5200ce87197670c50d6d55ccd420e">GetById</a> (int idSocio)</td></tr>
+<tr class="memdesc:a9bb5200ce87197670c50d6d55ccd420e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene un socio por su identificador.  <br /></td></tr>
+<tr class="memitem:a07a9f82ecb30021ac03aa9f0cc137684" id="r_a07a9f82ecb30021ac03aa9f0cc137684"><td class="memItemLeft">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a07a9f82ecb30021ac03aa9f0cc137684">BuscarPorNombreODni</a> (string texto)</td></tr>
+<tr class="memdesc:a07a9f82ecb30021ac03aa9f0cc137684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca socios cuyo nombre, apellidos o DNI contengan el texto indicado.  <br /></td></tr>
+<tr class="memitem:ae8a8be0353c450a4764cd9cd7a78bde7" id="r_ae8a8be0353c450a4764cd9cd7a78bde7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae8a8be0353c450a4764cd9cd7a78bde7">DniYaExiste</a> (string dni, int? idSocioExcluir=null)</td></tr>
+<tr class="memdesc:ae8a8be0353c450a4764cd9cd7a78bde7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si un DNI ya esta registrado en otro socio distinto.  <br /></td></tr>
+<tr class="memitem:a02dee5b2222e409f165b8681b309dd50" id="r_a02dee5b2222e409f165b8681b309dd50"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a02dee5b2222e409f165b8681b309dd50">Save</a> (<a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a> socio)</td></tr>
+<tr class="memdesc:a02dee5b2222e409f165b8681b309dd50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda un socio nuevo o actualiza uno existente.  <br /></td></tr>
+<tr class="memitem:ac16b75e048b0d43166a55b1b7c1f07b4" id="r_ac16b75e048b0d43166a55b1b7c1f07b4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac16b75e048b0d43166a55b1b7c1f07b4">Desactivar</a> (<a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a> socio)</td></tr>
+<tr class="memdesc:ac16b75e048b0d43166a55b1b7c1f07b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marca un socio como inactivo sin borrarlo fisicamente.  <br /></td></tr>
+<tr class="memitem:a73a7fccb7193ca5a21dbaa109c8977e8" id="r_a73a7fccb7193ca5a21dbaa109c8977e8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a73a7fccb7193ca5a21dbaa109c8977e8">GetTotal</a> (bool soloActivos=false)</td></tr>
+<tr class="memdesc:a73a7fccb7193ca5a21dbaa109c8977e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el numero total de socios, opcionalmente solo los activos.  <br /></td></tr>
+<tr class="memitem:affc71c4ac292c49452bc28a9f6409f7e" id="r_affc71c4ac292c49452bc28a9f6409f7e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#affc71c4ac292c49452bc28a9f6409f7e">Delete</a> (int socioId)</td></tr>
+<tr class="memdesc:affc71c4ac292c49452bc28a9f6409f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina fisicamente un socio de la base de datos.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base"><td colspan="2">Métodos protegidos heredados de <a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html">ProyectoFinal.model_new.RepositoryBase</a></td></tr>
+<tr class="memitem:a7430f68f32037460338c89e22e992f8e pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base" id="r_a7430f68f32037460338c89e22e992f8e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html#a7430f68f32037460338c89e22e992f8e">RepositoryBase</a> ()</td></tr>
+<tr class="memdesc:a7430f68f32037460338c89e22e992f8e pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_class_proyecto_final_1_1model__new_1_1_repository_base"><td colspan="2">Atributos protegidos heredados de <a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html">ProyectoFinal.model_new.RepositoryBase</a></td></tr>
+<tr class="memitem:a69f26be71ed229d514f8b488a94c22d5 pro_attribs_class_proyecto_final_1_1model__new_1_1_repository_base" id="r_a69f26be71ed229d514f8b488a94c22d5"><td class="memItemLeft"><a class="el" href="class_proyecto_final_1_1model__new_1_1_club_polideportivo_d_b_entities.html">ClubPolideportivoDBEntities</a>&#160;</td><td class="memItemRight"><a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html#a69f26be71ed229d514f8b488a94c22d5">Context</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Repositorio para gestionar las operaciones CRUD de <a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html" title="Extensiones de la entidad Socios generada por Entity Framework. Se implementan en un fichero parcial ...">Socios</a> en la base de datos ClubPolideportivoDB. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_socios_repository_8cs_source.html#l00011">11</a> del archivo <a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a07a9f82ecb30021ac03aa9f0cc137684" name="a07a9f82ecb30021ac03aa9f0cc137684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a9f82ecb30021ac03aa9f0cc137684">&#9670;&#160;</a></span>BuscarPorNombreODni()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a> &gt; ProyectoFinal.model_new.Repositories.SociosRepository.BuscarPorNombreODni </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>texto</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Busca socios cuyo nombre, apellidos o DNI contengan el texto indicado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texto</td><td>Texto a buscar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de socios que coinciden.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_socios_repository_8cs_source.html#l00047">47</a> del archivo <a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>        {</div>
+<div class="line"><span class="lineno">   49</span>            <span class="comment">// Si el texto esta vacio devolvemos lista vacia sin consultar.</span></div>
+<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrWhiteSpace(texto)) <span class="keywordflow">return</span> <span class="keyword">new</span> List&lt;Socios&gt;();</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>            <span class="comment">// Quitamos espacios del texto de busqueda.</span></div>
+<div class="line"><span class="lineno">   53</span>            texto = texto.Trim();</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>            <span class="comment">// Buscamos socios que coincidan en nombre, apellidos o DNI.</span></div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">return</span> Context.Socios</div>
+<div class="line"><span class="lineno">   57</span>                .Where(s =&gt; s.Nombre.Contains(texto)</div>
+<div class="line"><span class="lineno">   58</span>                         || s.Apellidos.Contains(texto)</div>
+<div class="line"><span class="lineno">   59</span>                         || s.Dni.Contains(texto))</div>
+<div class="line"><span class="lineno">   60</span>                .ToList();</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="affc71c4ac292c49452bc28a9f6409f7e" name="affc71c4ac292c49452bc28a9f6409f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc71c4ac292c49452bc28a9f6409f7e">&#9670;&#160;</a></span>Delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.SociosRepository.Delete </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>socioId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina fisicamente un socio de la base de datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socioId</td><td>Id del socio a borrar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_socios_repository_8cs_source.html#l00168">168</a> del archivo <a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  169</span>        {</div>
+<div class="line"><span class="lineno">  170</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  171</span>            {</div>
+<div class="line"><span class="lineno">  172</span>                <span class="comment">// Buscamos el socio por su id.</span></div>
+<div class="line"><span class="lineno">  173</span>                var s = Context.Socios.FirstOrDefault(x =&gt; x.SocioId == socioId);</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>                <span class="comment">// Si no existe no hacemos nada.</span></div>
+<div class="line"><span class="lineno">  176</span>                <span class="keywordflow">if</span> (s == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>                <span class="comment">// Marcamos el registro para eliminar.</span></div>
+<div class="line"><span class="lineno">  179</span>                Context.Socios.Remove(s);</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>                <span class="comment">// Persistimos el borrado en la base de datos.</span></div>
+<div class="line"><span class="lineno">  182</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  183</span>            }</div>
+<div class="line"><span class="lineno">  184</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  185</span>            {</div>
+<div class="line"><span class="lineno">  186</span>                <span class="comment">// Envolvemos el error con un mensaje descriptivo.</span></div>
+<div class="line"><span class="lineno">  187</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al borrar socio en la base de datos.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  188</span>            }</div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac16b75e048b0d43166a55b1b7c1f07b4" name="ac16b75e048b0d43166a55b1b7c1f07b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac16b75e048b0d43166a55b1b7c1f07b4">&#9670;&#160;</a></span>Desactivar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.SociosRepository.Desactivar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a></td>          <td class="paramname"><span class="paramname"><em>socio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marca un socio como inactivo sin borrarlo fisicamente. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socio</td><td>Socio a desactivar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_socios_repository_8cs_source.html#l00133">133</a> del archivo <a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>        {</div>
+<div class="line"><span class="lineno">  135</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  136</span>            {</div>
+<div class="line"><span class="lineno">  137</span>                <span class="comment">// Buscamos el socio por id.</span></div>
+<div class="line"><span class="lineno">  138</span>                var s = Context.Socios.FirstOrDefault(x =&gt; x.SocioId == socio.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_socios.html#a6539affdd5cfa91596e82e6c16a586b2">SocioId</a>);</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>                <span class="keywordflow">if</span> (s != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  141</span>                {</div>
+<div class="line"><span class="lineno">  142</span>                    s.Activo = <span class="keyword">false</span>; <span class="comment">// Marcamos como inactivo.</span></div>
+<div class="line"><span class="lineno">  143</span>                    Context.SaveChanges(); <span class="comment">// Guardamos el cambio.</span></div>
+<div class="line"><span class="lineno">  144</span>                }</div>
+<div class="line"><span class="lineno">  145</span>            }</div>
+<div class="line"><span class="lineno">  146</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  147</span>            {</div>
+<div class="line"><span class="lineno">  148</span>                <span class="comment">// Envolvemos el error con un mensaje descriptivo.</span></div>
+<div class="line"><span class="lineno">  149</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al desactivar socio en la base de datos.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  150</span>            }</div>
+<div class="line"><span class="lineno">  151</span>        }</div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_socios_html_a6539affdd5cfa91596e82e6c16a586b2"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_socios.html#a6539affdd5cfa91596e82e6c16a586b2">ProyectoFinal.model_new.Socios.SocioId</a></div><div class="ttdeci">int SocioId</div><div class="ttdef"><b>Definition</b> <a href="_socios_8cs_source.html#l00024">Socios.cs:24</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae8a8be0353c450a4764cd9cd7a78bde7" name="ae8a8be0353c450a4764cd9cd7a78bde7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a8be0353c450a4764cd9cd7a78bde7">&#9670;&#160;</a></span>DniYaExiste()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.model_new.Repositories.SociosRepository.DniYaExiste </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>dni</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int?</td>          <td class="paramname"><span class="paramname"><em>idSocioExcluir</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprueba si un DNI ya esta registrado en otro socio distinto. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dni</td><td>DNI a comprobar.</td></tr>
+    <tr><td class="paramname">idSocioExcluir</td><td>Id del socio a excluir en la comprobacion (para edicion).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si el DNI ya existe.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_socios_repository_8cs_source.html#l00069">69</a> del archivo <a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>        {</div>
+<div class="line"><span class="lineno">   71</span>            <span class="comment">// Si el DNI esta vacio no puede existir duplicado.</span></div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrWhiteSpace(dni)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>            <span class="comment">// Buscamos socios con ese DNI.</span></div>
+<div class="line"><span class="lineno">   75</span>            var q = Context.Socios.Where(s =&gt; s.Dni == dni);</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>            <span class="comment">// Si estamos editando, excluimos al propio socio de la busqueda.</span></div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">if</span> (idSocioExcluir.HasValue)</div>
+<div class="line"><span class="lineno">   79</span>                q = q.Where(s =&gt; s.SocioId != idSocioExcluir.Value);</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>            <span class="comment">// Devolvemos true si existe alguno.</span></div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">return</span> q.Any();</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6fb7e68207c0226fbd3296a56103fc7c" name="a6fb7e68207c0226fbd3296a56103fc7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb7e68207c0226fbd3296a56103fc7c">&#9670;&#160;</a></span>GetAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a> &gt; ProyectoFinal.model_new.Repositories.SociosRepository.GetAll </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>soloActivos</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene todos los socios, opcionalmente solo los activos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soloActivos</td><td>Si true, devuelve solo socios activos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de socios.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_socios_repository_8cs_source.html#l00018">18</a> del archivo <a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>        {</div>
+<div class="line"><span class="lineno">   20</span>            <span class="comment">// Empezamos con todos los socios.</span></div>
+<div class="line"><span class="lineno">   21</span>            var q = Context.Socios.AsQueryable();</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>            <span class="comment">// Si se pide, filtramos solo los que estan activos.</span></div>
+<div class="line"><span class="lineno">   24</span>            <span class="keywordflow">if</span> (soloActivos)</div>
+<div class="line"><span class="lineno">   25</span>                q = q.Where(s =&gt; s.Activo);</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>            <span class="comment">// Devolvemos el resultado.</span></div>
+<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">return</span> q.ToList();</div>
+<div class="line"><span class="lineno">   29</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9bb5200ce87197670c50d6d55ccd420e" name="a9bb5200ce87197670c50d6d55ccd420e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb5200ce87197670c50d6d55ccd420e">&#9670;&#160;</a></span>GetById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a> ProyectoFinal.model_new.Repositories.SociosRepository.GetById </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idSocio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene un socio por su identificador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idSocio</td><td>Id del socio.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Socio encontrado o null.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_socios_repository_8cs_source.html#l00036">36</a> del archivo <a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>        {</div>
+<div class="line"><span class="lineno">   38</span>            <span class="comment">// Buscamos el primer socio que coincida con el id indicado.</span></div>
+<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">return</span> Context.Socios.FirstOrDefault(s =&gt; s.SocioId == idSocio);</div>
+<div class="line"><span class="lineno">   40</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a73a7fccb7193ca5a21dbaa109c8977e8" name="a73a7fccb7193ca5a21dbaa109c8977e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73a7fccb7193ca5a21dbaa109c8977e8">&#9670;&#160;</a></span>GetTotal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProyectoFinal.model_new.Repositories.SociosRepository.GetTotal </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>soloActivos</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve el numero total de socios, opcionalmente solo los activos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soloActivos</td><td>Si true, cuenta solo los activos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Total de socios.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_socios_repository_8cs_source.html#l00158">158</a> del archivo <a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>        {</div>
+<div class="line"><span class="lineno">  160</span>            <span class="comment">// Si se pide solo activos contamos con filtro, si no contamos todos.</span></div>
+<div class="line"><span class="lineno">  161</span>            <span class="keywordflow">return</span> soloActivos ? Context.Socios.Count(s =&gt; s.Activo) : Context.Socios.Count();</div>
+<div class="line"><span class="lineno">  162</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a02dee5b2222e409f165b8681b309dd50" name="a02dee5b2222e409f165b8681b309dd50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02dee5b2222e409f165b8681b309dd50">&#9670;&#160;</a></span>Save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.SociosRepository.Save </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_proyecto_final_1_1model__new_1_1_socios.html">Socios</a></td>          <td class="paramname"><span class="paramname"><em>socio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda un socio nuevo o actualiza uno existente. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socio</td><td>Socio a guardar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_socios_repository_8cs_source.html#l00089">89</a> del archivo <a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>        {</div>
+<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   92</span>            {</div>
+<div class="line"><span class="lineno">   93</span>                <span class="comment">// Si el id es 0 o menor, es un socio nuevo que hay que insertar.</span></div>
+<div class="line"><span class="lineno">   94</span>                <span class="keywordflow">if</span> (socio.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_socios.html#a6539affdd5cfa91596e82e6c16a586b2">SocioId</a> &lt; 1)</div>
+<div class="line"><span class="lineno">   95</span>                {</div>
+<div class="line"><span class="lineno">   96</span>                    <span class="comment">// Asignamos la fecha de alta automatica antes de insertar.</span></div>
+<div class="line"><span class="lineno">   97</span>                    socio.FechaAlta = DateTime.Now;</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>                    <span class="comment">// A�adimos el objeto original al contexto para que EF</span></div>
+<div class="line"><span class="lineno">  100</span>                    <span class="comment">// actualice su SocioId con el valor generado por la BD tras SaveChanges.</span></div>
+<div class="line"><span class="lineno">  101</span>                    Context.Socios.Add(socio);</div>
+<div class="line"><span class="lineno">  102</span>                }</div>
+<div class="line"><span class="lineno">  103</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  104</span>                {</div>
+<div class="line"><span class="lineno">  105</span>                    <span class="comment">// Buscamos el socio existente para actualizarlo.</span></div>
+<div class="line"><span class="lineno">  106</span>                    var s = Context.Socios.FirstOrDefault(x =&gt; x.SocioId == socio.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_socios.html#a6539affdd5cfa91596e82e6c16a586b2">SocioId</a>);</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>                    <span class="keywordflow">if</span> (s != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  109</span>                    {</div>
+<div class="line"><span class="lineno">  110</span>                        s.Nombre = socio.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_socios.html#a491480f8c851b64491dbede520c0708c">Nombre</a>; <span class="comment">// Actualizamos nombre.</span></div>
+<div class="line"><span class="lineno">  111</span>                        s.Apellidos = socio.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_socios.html#a7d6d49c633806a6e59bff0940003bc5b">Apellidos</a>; <span class="comment">// Actualizamos apellidos.</span></div>
+<div class="line"><span class="lineno">  112</span>                        s.Dni = socio.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_socios.html#a08fa093ff74016089ad2551febe0304c">Dni</a>; <span class="comment">// Actualizamos DNI.</span></div>
+<div class="line"><span class="lineno">  113</span>                        s.Telefono = socio.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_socios.html#aa047d97409cb82c0f106867a413b729f">Telefono</a>; <span class="comment">// Actualizamos telefono.</span></div>
+<div class="line"><span class="lineno">  114</span>                        s.Email = socio.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_socios.html#a8548f21e2f89903ea6c687732bb301f2">Email</a>; <span class="comment">// Actualizamos email.</span></div>
+<div class="line"><span class="lineno">  115</span>                        s.Activo = socio.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_socios.html#acc9e5a9a7eef15f86c046744b9b040ef">Activo</a>; <span class="comment">// Actualizamos estado activo.</span></div>
+<div class="line"><span class="lineno">  116</span>                    }</div>
+<div class="line"><span class="lineno">  117</span>                }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>                <span class="comment">// Persistimos los cambios en la base de datos.</span></div>
+<div class="line"><span class="lineno">  120</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  121</span>            }</div>
+<div class="line"><span class="lineno">  122</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  123</span>            {</div>
+<div class="line"><span class="lineno">  124</span>                <span class="comment">// Envolvemos el error con un mensaje descriptivo.</span></div>
+<div class="line"><span class="lineno">  125</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al guardar socio en la base de datos.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  126</span>            }</div>
+<div class="line"><span class="lineno">  127</span>        }</div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_socios_html_a08fa093ff74016089ad2551febe0304c"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_socios.html#a08fa093ff74016089ad2551febe0304c">ProyectoFinal.model_new.Socios.Dni</a></div><div class="ttdeci">string Dni</div><div class="ttdef"><b>Definition</b> <a href="_socios_8cs_source.html#l00027">Socios.cs:27</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_socios_html_a491480f8c851b64491dbede520c0708c"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_socios.html#a491480f8c851b64491dbede520c0708c">ProyectoFinal.model_new.Socios.Nombre</a></div><div class="ttdeci">string Nombre</div><div class="ttdef"><b>Definition</b> <a href="_socios_8cs_source.html#l00025">Socios.cs:25</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_socios_html_a7d6d49c633806a6e59bff0940003bc5b"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_socios.html#a7d6d49c633806a6e59bff0940003bc5b">ProyectoFinal.model_new.Socios.Apellidos</a></div><div class="ttdeci">string Apellidos</div><div class="ttdef"><b>Definition</b> <a href="_socios_8cs_source.html#l00026">Socios.cs:26</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_socios_html_a8548f21e2f89903ea6c687732bb301f2"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_socios.html#a8548f21e2f89903ea6c687732bb301f2">ProyectoFinal.model_new.Socios.Email</a></div><div class="ttdeci">string Email</div><div class="ttdef"><b>Definition</b> <a href="_socios_8cs_source.html#l00029">Socios.cs:29</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_socios_html_aa047d97409cb82c0f106867a413b729f"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_socios.html#aa047d97409cb82c0f106867a413b729f">ProyectoFinal.model_new.Socios.Telefono</a></div><div class="ttdeci">string Telefono</div><div class="ttdef"><b>Definition</b> <a href="_socios_8cs_source.html#l00028">Socios.cs:28</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_socios_html_acc9e5a9a7eef15f86c046744b9b040ef"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_socios.html#acc9e5a9a7eef15f86c046744b9b040ef">ProyectoFinal.model_new.Socios.Activo</a></div><div class="ttdeci">bool Activo</div><div class="ttdef"><b>Definition</b> <a href="_socios_8cs_source.html#l00031">Socios.cs:31</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>C:/DAM/Diseño de interficies/proyectos/WPF/PROYECTO_FINAL/ProyectoFinal/ProyectoFinal.model_new/Repositories/<a class="el" href="_socios_repository_8cs_source.html">SociosRepository.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_proyecto_final.html">ProyectoFinal</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1model__new.html">model_new</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1model__new_1_1_repositories.html">Repositories</a></li><li class="navelem"><a href="class_proyecto_final_1_1model__new_1_1_repositories_1_1_socios_repository.html">SociosRepository</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

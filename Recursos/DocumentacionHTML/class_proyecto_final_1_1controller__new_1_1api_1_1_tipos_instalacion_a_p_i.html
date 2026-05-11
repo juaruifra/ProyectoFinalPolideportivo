@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro polideportivo: Referencia de la clase ProyectoFinal.controller_new.api.TiposInstalacionAPI</title>
+<link rel="icon" href="Logo_centro_3.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_centro_3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Centro polideportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestión centro polideportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_proyecto_final_1_1controller__new_1_1api_1_1_tipos_instalacion_a_p_i.html','','class_proyecto_final_1_1controller__new_1_1api_1_1_tipos_instalacion_a_p_i-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase ProyectoFinal.controller_new.api.TiposInstalacionAPI</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>API para gestionar tipos de instalacion.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ac5fa0ecd32119d2201e72b5dedd2874c" id="r_ac5fa0ecd32119d2201e72b5dedd2874c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac5fa0ecd32119d2201e72b5dedd2874c">TiposInstalacionAPI</a> ()</td></tr>
+<tr class="memdesc:ac5fa0ecd32119d2201e72b5dedd2874c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="memitem:a157b34ec71a8fe3ac404fa16b8b4f514" id="r_a157b34ec71a8fe3ac404fa16b8b4f514"><td class="memItemLeft">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_tipos_instalacion.html">TiposInstalacion</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a157b34ec71a8fe3ac404fa16b8b4f514">ObtenerTodos</a> ()</td></tr>
+<tr class="memdesc:a157b34ec71a8fe3ac404fa16b8b4f514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene todos los tipos de instalacion.  <br /></td></tr>
+<tr class="memitem:afe916186643a7b33e165c5ddbbaf3164" id="r_afe916186643a7b33e165c5ddbbaf3164"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afe916186643a7b33e165c5ddbbaf3164">NombreYaExiste</a> (string nombre, int? excluirId=null)</td></tr>
+<tr class="memdesc:afe916186643a7b33e165c5ddbbaf3164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si el nombre ya existe para otro tipo.  <br /></td></tr>
+<tr class="memitem:acb6c33481c736bdb05059d0ad99448be" id="r_acb6c33481c736bdb05059d0ad99448be"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acb6c33481c736bdb05059d0ad99448be">EstaEnUso</a> (int idTipo)</td></tr>
+<tr class="memdesc:acb6c33481c736bdb05059d0ad99448be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si el tipo esta siendo usado por alguna instalacion.  <br /></td></tr>
+<tr class="memitem:afa1fe5ac5942a61cc911564aa91b32a0" id="r_afa1fe5ac5942a61cc911564aa91b32a0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afa1fe5ac5942a61cc911564aa91b32a0">Guardar</a> (<a class="el" href="class_proyecto_final_1_1model__new_1_1_tipos_instalacion.html">TiposInstalacion</a> tipo)</td></tr>
+<tr class="memdesc:afa1fe5ac5942a61cc911564aa91b32a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda o actualiza un tipo de instalacion.  <br /></td></tr>
+<tr class="memitem:a6c4106db5bfb365f69bfc31c5f3699a1" id="r_a6c4106db5bfb365f69bfc31c5f3699a1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6c4106db5bfb365f69bfc31c5f3699a1">Borrar</a> (int idTipo)</td></tr>
+<tr class="memdesc:a6c4106db5bfb365f69bfc31c5f3699a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Borra un tipo de instalacion por su id.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>API para gestionar tipos de instalacion. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html#l00012">12</a> del archivo <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html">TiposInstalacionAPI.cs</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="ac5fa0ecd32119d2201e72b5dedd2874c" name="ac5fa0ecd32119d2201e72b5dedd2874c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5fa0ecd32119d2201e72b5dedd2874c">&#9670;&#160;</a></span>TiposInstalacionAPI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ProyectoFinal.controller_new.api.TiposInstalacionAPI.TiposInstalacionAPI </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html#l00019">19</a> del archivo <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html">TiposInstalacionAPI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>        {</div>
+<div class="line"><span class="lineno">   21</span>            <span class="comment">// Inicializamos el repositorio.</span></div>
+<div class="line"><span class="lineno">   22</span>            _repo = <span class="keyword">new</span> TiposInstalacionRepository();</div>
+<div class="line"><span class="lineno">   23</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a6c4106db5bfb365f69bfc31c5f3699a1" name="a6c4106db5bfb365f69bfc31c5f3699a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c4106db5bfb365f69bfc31c5f3699a1">&#9670;&#160;</a></span>Borrar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.controller_new.api.TiposInstalacionAPI.Borrar </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idTipo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Borra un tipo de instalacion por su id. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idTipo</td><td>Id del tipo a borrar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html#l00088">88</a> del archivo <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html">TiposInstalacionAPI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>        {</div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   91</span>            {</div>
+<div class="line"><span class="lineno">   92</span>                <span class="comment">// Delegamos al repositorio.</span></div>
+<div class="line"><span class="lineno">   93</span>                _repo.Delete(idTipo);</div>
+<div class="line"><span class="lineno">   94</span>            }</div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">   96</span>            {</div>
+<div class="line"><span class="lineno">   97</span>                <span class="comment">// Envolvemos.</span></div>
+<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al borrar el tipo de instalacion&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">   99</span>            }</div>
+<div class="line"><span class="lineno">  100</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acb6c33481c736bdb05059d0ad99448be" name="acb6c33481c736bdb05059d0ad99448be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb6c33481c736bdb05059d0ad99448be">&#9670;&#160;</a></span>EstaEnUso()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.controller_new.api.TiposInstalacionAPI.EstaEnUso </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idTipo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprueba si el tipo esta siendo usado por alguna instalacion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idTipo</td><td>Id del tipo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si esta en uso.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html#l00060">60</a> del archivo <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html">TiposInstalacionAPI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>        {</div>
+<div class="line"><span class="lineno">   62</span>            <span class="comment">// Delegamos al repositorio.</span></div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">return</span> _repo.EstaEnUso(idTipo);</div>
+<div class="line"><span class="lineno">   64</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afa1fe5ac5942a61cc911564aa91b32a0" name="afa1fe5ac5942a61cc911564aa91b32a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa1fe5ac5942a61cc911564aa91b32a0">&#9670;&#160;</a></span>Guardar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.controller_new.api.TiposInstalacionAPI.Guardar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_proyecto_final_1_1model__new_1_1_tipos_instalacion.html">TiposInstalacion</a></td>          <td class="paramname"><span class="paramname"><em>tipo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda o actualiza un tipo de instalacion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tipo</td><td>Tipo a guardar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html#l00070">70</a> del archivo <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html">TiposInstalacionAPI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>        {</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   73</span>            {</div>
+<div class="line"><span class="lineno">   74</span>                <span class="comment">// Delegamos al repositorio.</span></div>
+<div class="line"><span class="lineno">   75</span>                _repo.Save(tipo);</div>
+<div class="line"><span class="lineno">   76</span>            }</div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">   78</span>            {</div>
+<div class="line"><span class="lineno">   79</span>                <span class="comment">// Envolvemos.</span></div>
+<div class="line"><span class="lineno">   80</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al guardar el tipo de instalacion&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">   81</span>            }</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afe916186643a7b33e165c5ddbbaf3164" name="afe916186643a7b33e165c5ddbbaf3164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe916186643a7b33e165c5ddbbaf3164">&#9670;&#160;</a></span>NombreYaExiste()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.controller_new.api.TiposInstalacionAPI.NombreYaExiste </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>nombre</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int?</td>          <td class="paramname"><span class="paramname"><em>excluirId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprueba si el nombre ya existe para otro tipo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nombre</td><td>Nombre a comprobar.</td></tr>
+    <tr><td class="paramname">excluirId</td><td>Id a excluir (edicion).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si duplicado.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html#l00049">49</a> del archivo <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html">TiposInstalacionAPI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>        {</div>
+<div class="line"><span class="lineno">   51</span>            <span class="comment">// Delegamos al repositorio.</span></div>
+<div class="line"><span class="lineno">   52</span>            <span class="keywordflow">return</span> _repo.NombreYaExiste(nombre, excluirId);</div>
+<div class="line"><span class="lineno">   53</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a157b34ec71a8fe3ac404fa16b8b4f514" name="a157b34ec71a8fe3ac404fa16b8b4f514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a157b34ec71a8fe3ac404fa16b8b4f514">&#9670;&#160;</a></span>ObtenerTodos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_tipos_instalacion.html">TiposInstalacion</a> &gt; ProyectoFinal.controller_new.api.TiposInstalacionAPI.ObtenerTodos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene todos los tipos de instalacion. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de tipos.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html#l00029">29</a> del archivo <a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html">TiposInstalacionAPI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>        {</div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   32</span>            {</div>
+<div class="line"><span class="lineno">   33</span>                <span class="comment">// Delegamos al repositorio.</span></div>
+<div class="line"><span class="lineno">   34</span>                <span class="keywordflow">return</span> _repo.GetAll().ToList();</div>
+<div class="line"><span class="lineno">   35</span>            }</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">   37</span>            {</div>
+<div class="line"><span class="lineno">   38</span>                <span class="comment">// Envolvemos la excepcion.</span></div>
+<div class="line"><span class="lineno">   39</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al obtener los tipos de instalacion&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">   40</span>            }</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>C:/DAM/Diseño de interficies/proyectos/WPF/PROYECTO_FINAL/ProyectoFinal/ProyectoFinal.controller_new/API/<a class="el" href="_tipos_instalacion_a_p_i_8cs_source.html">TiposInstalacionAPI.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_proyecto_final.html">ProyectoFinal</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1controller__new.html">controller_new</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1controller__new_1_1api.html">api</a></li><li class="navelem"><a href="class_proyecto_final_1_1controller__new_1_1api_1_1_tipos_instalacion_a_p_i.html">TiposInstalacionAPI</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

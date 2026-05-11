@@ -1,0 +1,6 @@
+var class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_row_change_event =
+[
+    [ "IngresosPorTipoRowChangeEvent", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_row_change_event.html#afb791a5d2fa0b6dc4e4b73eb0019c4b5", null ],
+    [ "Action", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_row_change_event.html#a63664c565e1d71cc730f9f1f1a253edd", null ],
+    [ "Row", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_row_change_event.html#ab4451c12ddc77bcfc187971bbda92a6a", null ]
+];

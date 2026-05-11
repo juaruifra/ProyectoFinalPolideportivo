@@ -1,0 +1,7 @@
+var _reservas_por_fecha_data_set_8_designer_8cs =
+[
+    [ "ProyectoFinal.Reports_new.ReservasPorFechaDataSet", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_data_set.html", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_data_set" ],
+    [ "ProyectoFinal.Reports_new.ReservasPorFechaDataSet.ReservasPorFechaDataTable", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_data_set_1_1_reservas_por_fecha_data_table.html", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_data_set_1_1_reservas_por_fecha_data_table" ],
+    [ "ProyectoFinal.Reports_new.ReservasPorFechaDataSet.ReservasPorFechaRow", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_data_set_1_1_reservas_por_fecha_row.html", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_data_set_1_1_reservas_por_fecha_row" ],
+    [ "ProyectoFinal.Reports_new.ReservasPorFechaDataSet.ReservasPorFechaRowChangeEvent", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_data_set_1_1_reservas_por_fecha_row_change_event.html", "class_proyecto_final_1_1_reports__new_1_1_reservas_por_fecha_data_set_1_1_reservas_por_fecha_row_change_event" ]
+];

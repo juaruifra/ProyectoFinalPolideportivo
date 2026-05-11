@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro polideportivo: Archivo de cÃ³digo fuente C:/DAM/DiseÃ±o de interficies/proyectos/WPF/PROYECTO_FINAL/ProyectoFinal/ProyectoFinal.controller_new/CONTROLLER/InstalacionesController.cs</title>
+<link rel="icon" href="Logo_centro_3.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_centro_3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Centro polideportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">GestiÃ³n centro polideportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_instalaciones_controller_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">InstalacionesController.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_instalaciones_controller_8cs.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_comun.html">Comun</a>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_proyecto_final_1_1controller__new_1_1api.html">ProyectoFinal.controller_new.api</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_proyecto_final_1_1model__new.html">ProyectoFinal.model_new</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_proyecto_final_1_1controller__new_1_1controller.html">ProyectoFinal.controller_new.controller</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html">   13</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#a7a421e57f3201cd84247dc11e6c3518c">InstalacionesController</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">private</span> readonly <a class="code hl_class" href="class_proyecto_final_1_1controller__new_1_1api_1_1_instalaciones_a_p_i.html">InstalacionesAPI</a> _api;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#a7a421e57f3201cd84247dc11e6c3518c">   20</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#a7a421e57f3201cd84247dc11e6c3518c">InstalacionesController</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="comment">// Inicializamos API.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            _api = <span class="keyword">new</span> <a class="code hl_class" href="class_proyecto_final_1_1controller__new_1_1api_1_1_instalaciones_a_p_i.html">InstalacionesAPI</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        }</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#aa1133d9c27ac0fb6011bb5234f526d74">   31</a></span>        <span class="keyword">public</span> List&lt;Instalaciones&gt; <a class="code hl_function" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#aa1133d9c27ac0fb6011bb5234f526d74">ObtenerTodos</a>(<span class="keywordtype">bool</span> soloDisponibles = <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="comment">// Devolvemos listado desde API.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">return</span> _api.ObtenerTodos(soloDisponibles);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#a6a910315f37a72aa466667848778c76b">   44</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#a6a910315f37a72aa466667848778c76b">Guardar</a>(<a class="code hl_class" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">Instalaciones</a> instalacion, ref <span class="keywordtype">string</span> tituloError, ref <span class="keywordtype">string</span> mensajeError)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                <span class="comment">// Validamos.</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">if</span> (!ValidarInstalacion(instalacion, ref tituloError, ref mensajeError))</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <span class="comment">// Guardamos.</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                _api.Guardar(instalacion);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="comment">// Devolvemos error.</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                tituloError = <span class="stringliteral">&quot;Error al guardar&quot;</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                mensajeError = $<span class="stringliteral">&quot;No se pudo guardar la instalación: {ex.Message}&quot;</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#afc802da2d7818d4f3fabfddf768f7d53">   73</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#afc802da2d7818d4f3fabfddf768f7d53">Borrar</a>(<a class="code hl_class" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">Instalaciones</a> instalacion, ref <span class="keywordtype">string</span> tituloError, ref <span class="keywordtype">string</span> mensajeError)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <span class="comment">// Validamos selección.</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">if</span> (instalacion == <span class="keyword">null</span> || instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a89a528c8bdd26c0bb7d800f486c23f69">InstalacionId</a> &lt; 1)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                    tituloError = <span class="stringliteral">&quot;Instalacion no valida&quot;</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                    mensajeError = <span class="stringliteral">&quot;Debe seleccionar una instalacion valida.&quot;</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <span class="comment">// Validamos uso en reservas.</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keywordflow">if</span> (_api.EstaEnUso(instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a89a528c8bdd26c0bb7d800f486c23f69">InstalacionId</a>))</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    tituloError = <span class="stringliteral">&quot;Instalacion en uso&quot;</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    mensajeError = <span class="stringliteral">&quot;No se puede borrar la instalacion porque tiene reservas asociadas.&quot;</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <span class="comment">// Borramos.</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                _api.Borrar(instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a89a528c8bdd26c0bb7d800f486c23f69">InstalacionId</a>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="comment">// Error.</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                tituloError = <span class="stringliteral">&quot;Error al borrar&quot;</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                mensajeError = $<span class="stringliteral">&quot;No se pudo borrar la instalacion: {ex.Message}&quot;</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
+</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> ValidarInstalacion(<a class="code hl_class" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">Instalaciones</a> instalacion, ref <span class="keywordtype">string</span> tituloError, ref <span class="keywordtype">string</span> mensajeError)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="keywordtype">bool</span> ok = <span class="keyword">true</span>; <span class="comment">// Empezamos asumiendo que los datos son correctos.</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="comment">// Validamos que el objeto no sea nulo.</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="keywordflow">if</span> (instalacion == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                tituloError = <span class="stringliteral">&quot;Datos incompletos&quot;</span>; <span class="comment">// Titulo.</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                mensajeError = <span class="stringliteral">&quot;La instalacion no puede ser nula.&quot;</span>; <span class="comment">// Mensaje.</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                ok = <span class="keyword">false</span>; <span class="comment">// Marcamos error.</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="comment">// Validamos que el nombre no este vacio.</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">if</span> (ok &amp;&amp; <span class="keywordtype">string</span>.IsNullOrWhiteSpace(instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a2faab36bf6ee5049929c77bce5ee1999">Nombre</a>))</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                tituloError = <span class="stringliteral">&quot;Nombre requerido&quot;</span>; <span class="comment">// Titulo.</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                mensajeError = <span class="stringliteral">&quot;Debe indicar el nombre de la instalacion.&quot;</span>; <span class="comment">// Mensaje.</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                ok = <span class="keyword">false</span>; <span class="comment">// Marcamos error.</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="comment">// Validamos que el nombre tenga al menos 2 caracteres.</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <span class="keywordflow">if</span> (ok &amp;&amp; instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a2faab36bf6ee5049929c77bce5ee1999">Nombre</a>.Trim().Length &lt; 2)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                tituloError = <span class="stringliteral">&quot;Nombre muy corto&quot;</span>; <span class="comment">// Titulo.</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                mensajeError = <span class="stringliteral">&quot;El nombre debe tener al menos 2 caracteres.&quot;</span>; <span class="comment">// Mensaje.</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                ok = <span class="keyword">false</span>; <span class="comment">// Marcamos error.</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="comment">// Comprobamos nombre único.</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="keywordflow">if</span> (ok &amp;&amp; _api.NombreYaExiste(instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a2faab36bf6ee5049929c77bce5ee1999">Nombre</a>, instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a89a528c8bdd26c0bb7d800f486c23f69">InstalacionId</a> &gt; 0 ? instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a89a528c8bdd26c0bb7d800f486c23f69">InstalacionId</a> : (<span class="keywordtype">int</span>?)<span class="keyword">null</span>))</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                tituloError = <span class="stringliteral">&quot;Nombre duplicado&quot;</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                mensajeError = <span class="stringliteral">&quot;Ya existe una instalación con el mismo nombre.&quot;</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                ok = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="comment">// Validamos tipo.</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            <span class="keywordflow">if</span> (ok &amp;&amp; instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a168be4757685a9645f1becc9d36cf942">TipoInstalacionId</a> &lt; 1)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                tituloError = <span class="stringliteral">&quot;Tipo requerido&quot;</span>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                mensajeError = <span class="stringliteral">&quot;Debe seleccionar un tipo de instalación.&quot;</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                ok = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <span class="comment">// Validamos precio.</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="keywordflow">if</span> (ok &amp;&amp; instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#afacc525730be858af207072b165c3d34">PrecioHora</a> &lt; 0)</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                tituloError = <span class="stringliteral">&quot;Precio no válido&quot;</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                mensajeError = <span class="stringliteral">&quot;El precio por hora no puede ser negativo.&quot;</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                ok = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <span class="keywordflow">return</span> ok; <span class="comment">// Devolvemos el resultado de la validacion.</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
+<div class="ttc" id="aclass_proyecto_final_1_1controller__new_1_1api_1_1_instalaciones_a_p_i_html"><div class="ttname"><a href="class_proyecto_final_1_1controller__new_1_1api_1_1_instalaciones_a_p_i.html">ProyectoFinal.controller_new.api.InstalacionesAPI</a></div><div class="ttdoc">API de instalaciones. Intermediario entre repositorios y controladores.</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_a_p_i_8cs_source.html#l00013">InstalacionesAPI.cs:14</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller_html_a6a910315f37a72aa466667848778c76b"><div class="ttname"><a href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#a6a910315f37a72aa466667848778c76b">ProyectoFinal.controller_new.controller.InstalacionesController.Guardar</a></div><div class="ttdeci">bool Guardar(Instalaciones instalacion, ref string tituloError, ref string mensajeError)</div><div class="ttdoc">Guarda una instalación tras validar.</div><div class="ttdef"><b>Definition</b> <a href="#l00044">InstalacionesController.cs:44</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller_html_a7a421e57f3201cd84247dc11e6c3518c"><div class="ttname"><a href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#a7a421e57f3201cd84247dc11e6c3518c">ProyectoFinal.controller_new.controller.InstalacionesController.InstalacionesController</a></div><div class="ttdeci">InstalacionesController()</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">InstalacionesController.cs:20</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller_html_aa1133d9c27ac0fb6011bb5234f526d74"><div class="ttname"><a href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#aa1133d9c27ac0fb6011bb5234f526d74">ProyectoFinal.controller_new.controller.InstalacionesController.ObtenerTodos</a></div><div class="ttdeci">List&lt; Instalaciones &gt; ObtenerTodos(bool soloDisponibles=false)</div><div class="ttdoc">Obtiene todas las instalaciones.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">InstalacionesController.cs:31</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller_html_afc802da2d7818d4f3fabfddf768f7d53"><div class="ttname"><a href="class_proyecto_final_1_1controller__new_1_1controller_1_1_instalaciones_controller.html#afc802da2d7818d4f3fabfddf768f7d53">ProyectoFinal.controller_new.controller.InstalacionesController.Borrar</a></div><div class="ttdeci">bool Borrar(Instalaciones instalacion, ref string tituloError, ref string mensajeError)</div><div class="ttdoc">Borra una instalación de forma física. Solo se permite si no está en uso (sin reservas asociadas).</div><div class="ttdef"><b>Definition</b> <a href="#l00073">InstalacionesController.cs:73</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">ProyectoFinal.model_new.Instalaciones</a></div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00015">Instalaciones.cs:16</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_a168be4757685a9645f1becc9d36cf942"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a168be4757685a9645f1becc9d36cf942">ProyectoFinal.model_new.Instalaciones.TipoInstalacionId</a></div><div class="ttdeci">int TipoInstalacionId</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00024">Instalaciones.cs:24</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_a2faab36bf6ee5049929c77bce5ee1999"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a2faab36bf6ee5049929c77bce5ee1999">ProyectoFinal.model_new.Instalaciones.Nombre</a></div><div class="ttdeci">string Nombre</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00025">Instalaciones.cs:25</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_a89a528c8bdd26c0bb7d800f486c23f69"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a89a528c8bdd26c0bb7d800f486c23f69">ProyectoFinal.model_new.Instalaciones.InstalacionId</a></div><div class="ttdeci">int InstalacionId</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00023">Instalaciones.cs:23</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_afacc525730be858af207072b165c3d34"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#afacc525730be858af207072b165c3d34">ProyectoFinal.model_new.Instalaciones.PrecioHora</a></div><div class="ttdeci">decimal PrecioHora</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00026">Instalaciones.cs:26</a></div></div>
+<div class="ttc" id="anamespace_comun_html"><div class="ttname"><a href="namespace_comun.html">Comun</a></div><div class="ttdef"><b>Definition</b> <a href="_configuracion_club_8cs_source.html#l00003">ConfiguracionClub.cs:4</a></div></div>
+<div class="ttc" id="anamespace_proyecto_final_1_1controller__new_1_1api_html"><div class="ttname"><a href="namespace_proyecto_final_1_1controller__new_1_1api.html">ProyectoFinal.controller_new.api</a></div><div class="ttdef"><b>Definition</b> <a href="_cuotas_a_p_i_8cs_source.html#l00006">CuotasAPI.cs:7</a></div></div>
+<div class="ttc" id="anamespace_proyecto_final_1_1controller__new_1_1controller_html"><div class="ttname"><a href="namespace_proyecto_final_1_1controller__new_1_1controller.html">ProyectoFinal.controller_new.controller</a></div><div class="ttdef"><b>Definition</b> <a href="_cuotas_controller_8cs_source.html#l00006">CuotasController.cs:7</a></div></div>
+<div class="ttc" id="anamespace_proyecto_final_1_1model__new_html"><div class="ttname"><a href="namespace_proyecto_final_1_1model__new.html">ProyectoFinal.model_new</a></div><div class="ttdef"><b>Definition</b> <a href="_club_polideportivo_d_b_8_context_8cs_source.html#l00010">ClubPolideportivoDB.Context.cs:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_0f43dd7884b3e97e61fc69c1cd840a16.html">DiseÃ±o de interficies</a></li><li class="navelem"><a href="dir_4ad5fcbb8139b2d3b56260bff96da95d.html">proyectos</a></li><li class="navelem"><a href="dir_248e2885106e60593013ff1ffbc34c0a.html">WPF</a></li><li class="navelem"><a href="dir_e46c28d7b0d859d888a6840a1936ce66.html">PROYECTO_FINAL</a></li><li class="navelem"><a href="dir_9d6a3c8c3269c75e19f9b0db4ea95e13.html">ProyectoFinal</a></li><li class="navelem"><a href="dir_7b61d75ec045e76fe18df3ddd3ed11f2.html">ProyectoFinal.controller_new</a></li><li class="navelem"><a href="dir_f855c0ddeb3897ed76531c4bf4f96419.html">CONTROLLER</a></li><li class="navelem"><a href="_instalaciones_controller_8cs.html">InstalacionesController.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

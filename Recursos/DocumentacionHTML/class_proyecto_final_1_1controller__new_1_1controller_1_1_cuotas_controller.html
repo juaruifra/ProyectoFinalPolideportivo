@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro polideportivo: Referencia de la clase ProyectoFinal.controller_new.controller.CuotasController</title>
+<link rel="icon" href="Logo_centro_3.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_centro_3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Centro polideportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestión centro polideportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_proyecto_final_1_1controller__new_1_1controller_1_1_cuotas_controller.html','','class_proyecto_final_1_1controller__new_1_1controller_1_1_cuotas_controller-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase ProyectoFinal.controller_new.controller.CuotasController</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Controlador para gestionar la l�gica de negocio de las cuotas. Incluye validaciones y operaciones sobre ClubPolideportivoDB.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a6d78cf9b67063eedb244b8e7e3991116" id="r_a6d78cf9b67063eedb244b8e7e3991116"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6d78cf9b67063eedb244b8e7e3991116">CuotasController</a> ()</td></tr>
+<tr class="memdesc:a6d78cf9b67063eedb244b8e7e3991116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor: inicializa la API.  <br /></td></tr>
+<tr class="memitem:a1e23d3b3176474dffe74aa3829da09ae" id="r_a1e23d3b3176474dffe74aa3829da09ae"><td class="memItemLeft">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1e23d3b3176474dffe74aa3829da09ae">ObtenerTodos</a> (int? socioId=null, bool soloPendientes=false)</td></tr>
+<tr class="memdesc:a1e23d3b3176474dffe74aa3829da09ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene todas las cuotas con filtros opcionales.  <br /></td></tr>
+<tr class="memitem:a254b69bee83b1c60da16da68ed8448f1" id="r_a254b69bee83b1c60da16da68ed8448f1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a254b69bee83b1c60da16da68ed8448f1">Guardar</a> (<a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> cuota, ref string tituloError, ref string mensajeError)</td></tr>
+<tr class="memdesc:a254b69bee83b1c60da16da68ed8448f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda una cuota (alta o modificaci�n) con validaciones previas.  <br /></td></tr>
+<tr class="memitem:a8ca018132d28ceb1f84b8c030378f0ae" id="r_a8ca018132d28ceb1f84b8c030378f0ae"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8ca018132d28ceb1f84b8c030378f0ae">MarcarPagada</a> (<a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> cuota, ref string tituloError, ref string mensajeError)</td></tr>
+<tr class="memdesc:a8ca018132d28ceb1f84b8c030378f0ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marca una cuota como pagada con fecha de hoy.  <br /></td></tr>
+<tr class="memitem:a88076ca258c82690c33935e10e4d6b76" id="r_a88076ca258c82690c33935e10e4d6b76"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a88076ca258c82690c33935e10e4d6b76">Borrar</a> (<a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> cuota, ref string tituloError, ref string mensajeError)</td></tr>
+<tr class="memdesc:a88076ca258c82690c33935e10e4d6b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Borra fisicamente una cuota con validacion previa. No se puede borrar una cuota ya pagada.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Controlador para gestionar la l�gica de negocio de las cuotas. Incluye validaciones y operaciones sobre ClubPolideportivoDB. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_controller_8cs_source.html#l00012">12</a> del archivo <a class="el" href="_cuotas_controller_8cs_source.html">CuotasController.cs</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="a6d78cf9b67063eedb244b8e7e3991116" name="a6d78cf9b67063eedb244b8e7e3991116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d78cf9b67063eedb244b8e7e3991116">&#9670;&#160;</a></span>CuotasController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ProyectoFinal.controller_new.controller.CuotasController.CuotasController </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor: inicializa la API. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_controller_8cs_source.html#l00020">20</a> del archivo <a class="el" href="_cuotas_controller_8cs_source.html">CuotasController.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>        {</div>
+<div class="line"><span class="lineno">   22</span>            <span class="comment">// Instanciamos la API.</span></div>
+<div class="line"><span class="lineno">   23</span>            _api = <span class="keyword">new</span> CuotasAPI();</div>
+<div class="line"><span class="lineno">   24</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a88076ca258c82690c33935e10e4d6b76" name="a88076ca258c82690c33935e10e4d6b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88076ca258c82690c33935e10e4d6b76">&#9670;&#160;</a></span>Borrar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.controller_new.controller.CuotasController.Borrar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a></td>          <td class="paramname"><span class="paramname"><em>cuota</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref string</td>          <td class="paramname"><span class="paramname"><em>tituloError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref string</td>          <td class="paramname"><span class="paramname"><em>mensajeError</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Borra fisicamente una cuota con validacion previa. No se puede borrar una cuota ya pagada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cuota</td><td>Cuota a borrar.</td></tr>
+    <tr><td class="paramname">tituloError</td><td>Titulo del error (ref).</td></tr>
+    <tr><td class="paramname">mensajeError</td><td>Mensaje del error (ref).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si borra correctamente.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_controller_8cs_source.html#l00114">114</a> del archivo <a class="el" href="_cuotas_controller_8cs_source.html">CuotasController.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>        {</div>
+<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  117</span>            {</div>
+<div class="line"><span class="lineno">  118</span>                <span class="comment">// Validamos que la cuota sea valida.</span></div>
+<div class="line"><span class="lineno">  119</span>                <span class="keywordflow">if</span> (cuota == <span class="keyword">null</span> || cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a8e63fb34004dfd7bb9cffab084ea5194">CuotaId</a> &lt; 1)</div>
+<div class="line"><span class="lineno">  120</span>                {</div>
+<div class="line"><span class="lineno">  121</span>                    tituloError = <span class="stringliteral">&quot;Cuota no valida&quot;</span>;</div>
+<div class="line"><span class="lineno">  122</span>                    mensajeError = <span class="stringliteral">&quot;Debe seleccionar una cuota valida.&quot;</span>;</div>
+<div class="line"><span class="lineno">  123</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  124</span>                }</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>                <span class="comment">// No permitimos borrar cuotas ya pagadas: forman parte del historial.</span></div>
+<div class="line"><span class="lineno">  127</span>                <span class="keywordflow">if</span> (cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#aa48bc7a3d5ede9c6274bb18140b887dc">Pagada</a>)</div>
+<div class="line"><span class="lineno">  128</span>                {</div>
+<div class="line"><span class="lineno">  129</span>                    tituloError = <span class="stringliteral">&quot;Cuota pagada&quot;</span>;</div>
+<div class="line"><span class="lineno">  130</span>                    mensajeError = <span class="stringliteral">&quot;No se puede borrar una cuota que ya esta pagada. Forma parte del historial.&quot;</span>;</div>
+<div class="line"><span class="lineno">  131</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  132</span>                }</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>                <span class="comment">// Borramos.</span></div>
+<div class="line"><span class="lineno">  135</span>                _api.Borrar(cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a8e63fb34004dfd7bb9cffab084ea5194">CuotaId</a>);</div>
+<div class="line"><span class="lineno">  136</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// Exito.</span></div>
+<div class="line"><span class="lineno">  137</span>            }</div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  139</span>            {</div>
+<div class="line"><span class="lineno">  140</span>                <span class="comment">// Error inesperado.</span></div>
+<div class="line"><span class="lineno">  141</span>                tituloError = <span class="stringliteral">&quot;Error al borrar&quot;</span>;</div>
+<div class="line"><span class="lineno">  142</span>                mensajeError = $<span class="stringliteral">&quot;No se pudo borrar la cuota: {ex.Message}&quot;</span>;</div>
+<div class="line"><span class="lineno">  143</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  144</span>            }</div>
+<div class="line"><span class="lineno">  145</span>        }</div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_a8e63fb34004dfd7bb9cffab084ea5194"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a8e63fb34004dfd7bb9cffab084ea5194">ProyectoFinal.model_new.Cuotas.CuotaId</a></div><div class="ttdeci">int CuotaId</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00017">Cuotas.cs:17</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_cuotas_html_aa48bc7a3d5ede9c6274bb18140b887dc"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_cuotas.html#aa48bc7a3d5ede9c6274bb18140b887dc">ProyectoFinal.model_new.Cuotas.Pagada</a></div><div class="ttdeci">bool Pagada</div><div class="ttdef"><b>Definition</b> <a href="_cuotas_8cs_source.html#l00024">Cuotas.cs:24</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a254b69bee83b1c60da16da68ed8448f1" name="a254b69bee83b1c60da16da68ed8448f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a254b69bee83b1c60da16da68ed8448f1">&#9670;&#160;</a></span>Guardar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.controller_new.controller.CuotasController.Guardar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a></td>          <td class="paramname"><span class="paramname"><em>cuota</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref string</td>          <td class="paramname"><span class="paramname"><em>tituloError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref string</td>          <td class="paramname"><span class="paramname"><em>mensajeError</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda una cuota (alta o modificaci�n) con validaciones previas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cuota</td><td>Entidad <a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a>.</td></tr>
+    <tr><td class="paramname">tituloError</td><td>T�tulo del error (ref).</td></tr>
+    <tr><td class="paramname">mensajeError</td><td>Mensaje del error (ref).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si guarda correctamente.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_controller_8cs_source.html#l00045">45</a> del archivo <a class="el" href="_cuotas_controller_8cs_source.html">CuotasController.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>        {</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   48</span>            {</div>
+<div class="line"><span class="lineno">   49</span>                <span class="comment">// Validamos la cuota antes de guardar.</span></div>
+<div class="line"><span class="lineno">   50</span>                <span class="keywordflow">if</span> (!ValidarCuota(cuota, ref tituloError, ref mensajeError))</div>
+<div class="line"><span class="lineno">   51</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// Devolvemos false si no pasa validacion.</span></div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>                <span class="comment">// Guardamos.</span></div>
+<div class="line"><span class="lineno">   54</span>                _api.Guardar(cuota);</div>
+<div class="line"><span class="lineno">   55</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// �xito.</span></div>
+<div class="line"><span class="lineno">   56</span>            }</div>
+<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">   58</span>            {</div>
+<div class="line"><span class="lineno">   59</span>                <span class="comment">// Error inesperado.</span></div>
+<div class="line"><span class="lineno">   60</span>                tituloError = <span class="stringliteral">&quot;Error al guardar&quot;</span>;</div>
+<div class="line"><span class="lineno">   61</span>                mensajeError = $<span class="stringliteral">&quot;No se pudo guardar la cuota: {ex.Message}&quot;</span>;</div>
+<div class="line"><span class="lineno">   62</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   63</span>            }</div>
+<div class="line"><span class="lineno">   64</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8ca018132d28ceb1f84b8c030378f0ae" name="a8ca018132d28ceb1f84b8c030378f0ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ca018132d28ceb1f84b8c030378f0ae">&#9670;&#160;</a></span>MarcarPagada()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.controller_new.controller.CuotasController.MarcarPagada </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a></td>          <td class="paramname"><span class="paramname"><em>cuota</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref string</td>          <td class="paramname"><span class="paramname"><em>tituloError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref string</td>          <td class="paramname"><span class="paramname"><em>mensajeError</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marca una cuota como pagada con fecha de hoy. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cuota</td><td>Cuota a marcar.</td></tr>
+    <tr><td class="paramname">tituloError</td><td>T�tulo del error (ref).</td></tr>
+    <tr><td class="paramname">mensajeError</td><td>Mensaje del error (ref).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si se marca correctamente.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_controller_8cs_source.html#l00073">73</a> del archivo <a class="el" href="_cuotas_controller_8cs_source.html">CuotasController.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>        {</div>
+<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   76</span>            {</div>
+<div class="line"><span class="lineno">   77</span>                <span class="comment">// Validamos que la cuota sea v�lida.</span></div>
+<div class="line"><span class="lineno">   78</span>                <span class="keywordflow">if</span> (cuota == <span class="keyword">null</span> || cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a8e63fb34004dfd7bb9cffab084ea5194">CuotaId</a> &lt; 1)</div>
+<div class="line"><span class="lineno">   79</span>                {</div>
+<div class="line"><span class="lineno">   80</span>                    tituloError = <span class="stringliteral">&quot;Cuota no v�lida&quot;</span>;</div>
+<div class="line"><span class="lineno">   81</span>                    mensajeError = <span class="stringliteral">&quot;Debe seleccionar una cuota v�lida.&quot;</span>;</div>
+<div class="line"><span class="lineno">   82</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   83</span>                }</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>                <span class="comment">// Validamos que no est� ya pagada.</span></div>
+<div class="line"><span class="lineno">   86</span>                <span class="keywordflow">if</span> (cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#aa48bc7a3d5ede9c6274bb18140b887dc">Pagada</a>)</div>
+<div class="line"><span class="lineno">   87</span>                {</div>
+<div class="line"><span class="lineno">   88</span>                    tituloError = <span class="stringliteral">&quot;Cuota ya pagada&quot;</span>;</div>
+<div class="line"><span class="lineno">   89</span>                    mensajeError = <span class="stringliteral">&quot;Esta cuota ya est� marcada como pagada.&quot;</span>;</div>
+<div class="line"><span class="lineno">   90</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   91</span>                }</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>                <span class="comment">// Marcamos como pagada con la fecha de hoy.</span></div>
+<div class="line"><span class="lineno">   94</span>                _api.MarcarPagada(cuota.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_cuotas.html#a8e63fb34004dfd7bb9cffab084ea5194">CuotaId</a>, DateTime.Today);</div>
+<div class="line"><span class="lineno">   95</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// �xito.</span></div>
+<div class="line"><span class="lineno">   96</span>            }</div>
+<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">   98</span>            {</div>
+<div class="line"><span class="lineno">   99</span>                <span class="comment">// Error inesperado.</span></div>
+<div class="line"><span class="lineno">  100</span>                tituloError = <span class="stringliteral">&quot;Error al marcar pagada&quot;</span>;</div>
+<div class="line"><span class="lineno">  101</span>                mensajeError = $<span class="stringliteral">&quot;No se pudo marcar la cuota como pagada: {ex.Message}&quot;</span>;</div>
+<div class="line"><span class="lineno">  102</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  103</span>            }</div>
+<div class="line"><span class="lineno">  104</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1e23d3b3176474dffe74aa3829da09ae" name="a1e23d3b3176474dffe74aa3829da09ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e23d3b3176474dffe74aa3829da09ae">&#9670;&#160;</a></span>ObtenerTodos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_cuotas.html">Cuotas</a> &gt; ProyectoFinal.controller_new.controller.CuotasController.ObtenerTodos </td>
+          <td>(</td>
+          <td class="paramtype">int?</td>          <td class="paramname"><span class="paramname"><em>socioId</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>soloPendientes</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene todas las cuotas con filtros opcionales. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socioId</td><td>Filtro por socio. Null devuelve todas.</td></tr>
+    <tr><td class="paramname">soloPendientes</td><td>Si true, solo devuelve las no pagadas.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de cuotas.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_cuotas_controller_8cs_source.html#l00032">32</a> del archivo <a class="el" href="_cuotas_controller_8cs_source.html">CuotasController.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>        {</div>
+<div class="line"><span class="lineno">   34</span>            <span class="comment">// Delegamos en la API.</span></div>
+<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">return</span> _api.ObtenerTodos(socioId, soloPendientes);</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>C:/DAM/Diseño de interficies/proyectos/WPF/PROYECTO_FINAL/ProyectoFinal/ProyectoFinal.controller_new/CONTROLLER/<a class="el" href="_cuotas_controller_8cs_source.html">CuotasController.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_proyecto_final.html">ProyectoFinal</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1controller__new.html">controller_new</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1controller__new_1_1controller.html">controller</a></li><li class="navelem"><a href="class_proyecto_final_1_1controller__new_1_1controller_1_1_cuotas_controller.html">CuotasController</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

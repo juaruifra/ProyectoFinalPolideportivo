@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro polideportivo: Archivo de código fuente C:/DAM/Diseño de interficies/proyectos/WPF/PROYECTO_FINAL/ProyectoFinal/Comun/Utils.cs</title>
+<link rel="icon" href="Logo_centro_3.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_centro_3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Centro polideportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gestión centro polideportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_utils_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Utils.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_utils_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Linq;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>System.Text;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>System.Text.RegularExpressions;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using </span>System.Threading.Tasks;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span>System.Windows.Forms;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using </span>static System.Windows.Forms.VisualStyles.VisualStyleElement;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_comun.html">Comun</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_comun_1_1_utils.html">   13</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_comun_1_1_utils.html">Utils</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_comun_1_1_utils.html#a82b6bcd4710f0ed4a81a22975efa2a48">   23</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> DialogResult <a class="code hl_function" href="class_comun_1_1_utils.html#a82b6bcd4710f0ed4a81a22975efa2a48">showModal</a>(<span class="keywordtype">string</span> msj, <span class="keywordtype">string</span> tit, <span class="keywordtype">int</span> op = 1)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            DialogResult result = <span class="keyword">new</span> DialogResult();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">switch</span> (op) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                <span class="keywordflow">case</span> 1: <span class="comment">// Mensaje de error</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                    result = MessageBox.Show(msj, tit, MessageBoxButtons.OK, MessageBoxIcon.Error);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keywordflow">case</span> 2: <span class="comment">// Mensaje de exito</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                    result = MessageBox.Show(msj, tit, MessageBoxButtons.OK, MessageBoxIcon.Information);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordflow">case</span> 3: <span class="comment">// Mensaje de confirmacion</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                    result = MessageBox.Show(msj, tit, MessageBoxButtons.YesNo, MessageBoxIcon.Question);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_comun_1_1_utils.html#a60db1e095246d9a1c1d011f32fffeeaf">   50</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_comun_1_1_utils.html#a60db1e095246d9a1c1d011f32fffeeaf">EsEmailValido</a>(<span class="keywordtype">string</span> email)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="comment">// Expresión regular para validar email</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordtype">string</span> patron = <span class="stringliteral">@&quot;^[^@\s]+@[^@\s]+\.[^@\s]+$&quot;</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <span class="keywordflow">return</span> Regex.IsMatch(email, patron, RegexOptions.IgnoreCase);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">catch</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_comun_1_1_utils.html#ae7f98a46e4f8903fa70dd9e40686f8f1">   69</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_comun_1_1_utils.html#ae7f98a46e4f8903fa70dd9e40686f8f1">EsTelefonoValido</a>(<span class="keywordtype">string</span> telefono)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="comment">// Eliminar espacios y guiones</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordtype">string</span> telefonoLimpio = telefono.Replace(<span class="stringliteral">&quot; &quot;</span>, <span class="stringliteral">&quot;&quot;</span>).Replace(<span class="stringliteral">&quot;-&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).Replace(<span class="stringliteral">&quot;+&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="comment">// Validar que contenga solo dígitos y tenga entre 9 y 15 caracteres</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">return</span> Regex.IsMatch(telefonoLimpio, <span class="stringliteral">@&quot;^\d{9,15}$&quot;</span>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_comun_1_1_utils.html#a9dd5baf7226bcc6d4de7295a6cc8a8db">   87</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_comun_1_1_utils.html#a9dd5baf7226bcc6d4de7295a6cc8a8db">FormatearPrecio</a>(decimal precio, <span class="keywordtype">bool</span> mostrarDecimales = <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="comment">// Creamos una cultura personalizada con punto como separador de miles</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            System.Globalization.CultureInfo culturaPersonalizada =</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                (System.Globalization.CultureInfo)System.Globalization.CultureInfo.InvariantCulture.Clone();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="comment">// Configuramos el punto como separador de miles</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            culturaPersonalizada.NumberFormat.NumberGroupSeparator = <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="comment">// Configuramos la coma como separador de decimales (estándar español)</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            culturaPersonalizada.NumberFormat.NumberDecimalSeparator = <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="comment">// Configuramos cantidad de decimales según el parámetro</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">if</span> (mostrarDecimales)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                culturaPersonalizada.NumberFormat.NumberDecimalDigits = 2; <span class="comment">// 2 decimales</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                culturaPersonalizada.NumberFormat.NumberDecimalDigits = 0; <span class="comment">// Sin decimales</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="comment">// Devolvemos el número formateado</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">return</span> precio.ToString(<span class="stringliteral">&quot;N&quot;</span>, culturaPersonalizada);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
+<div class="ttc" id="aclass_comun_1_1_utils_html"><div class="ttname"><a href="class_comun_1_1_utils.html">Comun.Utils</a></div><div class="ttdef"><b>Definition</b> <a href="#l00013">Utils.cs:14</a></div></div>
+<div class="ttc" id="aclass_comun_1_1_utils_html_a60db1e095246d9a1c1d011f32fffeeaf"><div class="ttname"><a href="class_comun_1_1_utils.html#a60db1e095246d9a1c1d011f32fffeeaf">Comun.Utils.EsEmailValido</a></div><div class="ttdeci">static bool EsEmailValido(string email)</div><div class="ttdoc">Validar formato de email.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Utils.cs:50</a></div></div>
+<div class="ttc" id="aclass_comun_1_1_utils_html_a82b6bcd4710f0ed4a81a22975efa2a48"><div class="ttname"><a href="class_comun_1_1_utils.html#a82b6bcd4710f0ed4a81a22975efa2a48">Comun.Utils.showModal</a></div><div class="ttdeci">static DialogResult showModal(string msj, string tit, int op=1)</div><div class="ttdoc">Función para unificar la gestión de los modales con mensajes.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">Utils.cs:23</a></div></div>
+<div class="ttc" id="aclass_comun_1_1_utils_html_a9dd5baf7226bcc6d4de7295a6cc8a8db"><div class="ttname"><a href="class_comun_1_1_utils.html#a9dd5baf7226bcc6d4de7295a6cc8a8db">Comun.Utils.FormatearPrecio</a></div><div class="ttdeci">static string FormatearPrecio(decimal precio, bool mostrarDecimales=false)</div><div class="ttdoc">Formatear precio con punto como separador de miles Ejemplos:</div><div class="ttdef"><b>Definition</b> <a href="#l00087">Utils.cs:87</a></div></div>
+<div class="ttc" id="aclass_comun_1_1_utils_html_ae7f98a46e4f8903fa70dd9e40686f8f1"><div class="ttname"><a href="class_comun_1_1_utils.html#ae7f98a46e4f8903fa70dd9e40686f8f1">Comun.Utils.EsTelefonoValido</a></div><div class="ttdeci">static bool EsTelefonoValido(string telefono)</div><div class="ttdoc">Validar formato de teléfono.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">Utils.cs:69</a></div></div>
+<div class="ttc" id="anamespace_comun_html"><div class="ttname"><a href="namespace_comun.html">Comun</a></div><div class="ttdef"><b>Definition</b> <a href="_configuracion_club_8cs_source.html#l00003">ConfiguracionClub.cs:4</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_0f43dd7884b3e97e61fc69c1cd840a16.html">Diseño de interficies</a></li><li class="navelem"><a href="dir_4ad5fcbb8139b2d3b56260bff96da95d.html">proyectos</a></li><li class="navelem"><a href="dir_248e2885106e60593013ff1ffbc34c0a.html">WPF</a></li><li class="navelem"><a href="dir_e46c28d7b0d859d888a6840a1936ce66.html">PROYECTO_FINAL</a></li><li class="navelem"><a href="dir_9d6a3c8c3269c75e19f9b0db4ea95e13.html">ProyectoFinal</a></li><li class="navelem"><a href="dir_d165820f987c178daf91b21d0e077c21.html">Comun</a></li><li class="navelem"><a href="_utils_8cs.html">Utils.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

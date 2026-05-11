@@ -1,0 +1,28 @@
+var class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table =
+[
+    [ "IngresosPorTipoDataTable", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a83ccdd33d8c1abb0ed6d9e01b573a35e", null ],
+    [ "IngresosPorTipoDataTable", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a0050918f7ac00fac57de3115e0b9d805", null ],
+    [ "AddIngresosPorTipoRow", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a78ef07e7b4222896c8c1c3a376e126b8", null ],
+    [ "AddIngresosPorTipoRow", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a16e5db37e47f543c8aefd6db55ae516b", null ],
+    [ "Clone", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#aa218c9c3df21d3169eaa4f8f3d2e4337", null ],
+    [ "CreateInstance", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#aa39214dd88b009bbec3bcaaf6b8dc6b5", null ],
+    [ "GetRowType", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#abca21364f3396aa3d56f30b8112020a2", null ],
+    [ "NewIngresosPorTipoRow", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a0df6af7c4945514696f24c3d7d45b53a", null ],
+    [ "NewRowFromBuilder", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a444f171efb3e3ea68d566bb063fb410d", null ],
+    [ "OnRowChanged", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a3e119a1a299502506c2409e376404a79", null ],
+    [ "OnRowChanging", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#af8056ff5025c7f543bd6d9260060361a", null ],
+    [ "OnRowDeleted", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a1fca2b78d24a4c0510aaf9dd4fde948b", null ],
+    [ "OnRowDeleting", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#ad5fb45005170cfee93492f338e9034c2", null ],
+    [ "RemoveIngresosPorTipoRow", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#afa08233698547fd1e13dbb8ed9767890", null ],
+    [ "Count", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#aae0ca07cdd9c5a1970d96b19719e4653", null ],
+    [ "MediaPorReservaColumn", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a63465641bcc9b43857913c9e576cecca", null ],
+    [ "NombreTipoColumn", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#afff346d9a15b1f99ce26a7dc8299fda5", null ],
+    [ "NumReservasColumn", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a6c73cb3b932980660e857042e3d3b072", null ],
+    [ "this[int index]", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a5b5cbd41071aa806b2b3f1b17b78f558", null ],
+    [ "TipoInstalacionIdColumn", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a0171d5a098b8b46dc944803b356d5079", null ],
+    [ "TotalIngresosColumn", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a59402d521473d48eef704d94fbd4eabc", null ],
+    [ "IngresosPorTipoRowChanged", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a0daeb828254c18449342ed6ebd984c30", null ],
+    [ "IngresosPorTipoRowChanging", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a8d7c9cbf105fd6673ce734f7674300ee", null ],
+    [ "IngresosPorTipoRowDeleted", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a436728e1e22e4d713de0a1cfe487ce29", null ],
+    [ "IngresosPorTipoRowDeleting", "class_proyecto_final_1_1_reports__new_1_1_ingresos_por_tipo_instalacion_data_set_1_1_ingresos_por_tipo_data_table.html#a9f2ca9bc9419263c2cc2b61518d00e7b", null ]
+];

@@ -110,7 +110,7 @@
                                 Margin="0,0,8,0"
                                 Style="{StaticResource BotonBorrar}"
                                 Click="BtnBorrarSeleccionado_Click"/>
-                        
+
                         <Border Width="1"
                                 Background="#D1D5DB"
                                 Margin="8,0,16,0"/>
@@ -233,13 +233,13 @@
 
                     <StackPanel Grid.Column="0">
                         <!-- Label con boton lupa para abrir el modal de busqueda -->
-                        <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                        <StackPanel Orientation="Horizontal" Height="20">
                             <TextBlock Text="Socio *" FontSize="12" Foreground="#374151" VerticalAlignment="Center"/>
                             <Button x:Name="btnBuscarSocio"
-                                    Content="&#128269;"
-                                    FontSize="14"
-                                    Width="28"
-                                    Height="24"
+                                    Content="🔍"
+                                    FontSize="12"
+                                    Width="22"
+                                    Height="20"
                                     Margin="6,0,0,0"
                                     Padding="0"
                                     Background="Transparent"
@@ -248,10 +248,10 @@
                                     ToolTip="Buscar socio"
                                     Click="BtnBuscarSocio_Click">
                                 <Button.Style>
-                                    <Style TargetType="Button">
+                                    <Style TargetType="{x:Type Button}">
                                         <Setter Property="Template">
                                             <Setter.Value>
-                                                <ControlTemplate TargetType="Button">
+                                                <ControlTemplate TargetType="{x:Type Button}">
                                                     <Border Background="{TemplateBinding Background}"
                                                             CornerRadius="4"
                                                             Padding="2">

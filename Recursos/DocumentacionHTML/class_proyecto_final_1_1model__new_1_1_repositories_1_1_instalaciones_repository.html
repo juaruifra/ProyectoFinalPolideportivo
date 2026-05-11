@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centro polideportivo: Referencia de la clase ProyectoFinal.model_new.Repositories.InstalacionesRepository</title>
+<link rel="icon" href="Logo_centro_3.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_centro_3.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Centro polideportivo<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gesti√≥n centro polideportivo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_proyecto_final_1_1model__new_1_1_repositories_1_1_instalaciones_repository.html','','class_proyecto_final_1_1model__new_1_1_repositories_1_1_instalaciones_repository-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase ProyectoFinal.model_new.Repositories.InstalacionesRepository</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Repositorio para gestionar operaciones CRUD de instalaciones.  
+ <a href="#details">M√°s...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+M√©todos p√∫blicos</h2></td></tr>
+<tr class="memitem:a302a7d22accd65c9c5fee1be680fddfc" id="r_a302a7d22accd65c9c5fee1be680fddfc"><td class="memItemLeft">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">Instalaciones</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a302a7d22accd65c9c5fee1be680fddfc">GetAll</a> (bool soloDisponibles=false)</td></tr>
+<tr class="memdesc:a302a7d22accd65c9c5fee1be680fddfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene todas las instalaciones.  <br /></td></tr>
+<tr class="memitem:a333ba604a8d996c1fcded1ef6c5bdece" id="r_a333ba604a8d996c1fcded1ef6c5bdece"><td class="memItemLeft"><a class="el" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">Instalaciones</a>&#160;</td><td class="memItemRight"><a class="el" href="#a333ba604a8d996c1fcded1ef6c5bdece">GetById</a> (int idInstalacion)</td></tr>
+<tr class="memdesc:a333ba604a8d996c1fcded1ef6c5bdece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene una instalaciÛn por su id.  <br /></td></tr>
+<tr class="memitem:aee1ab49be8e9272773b7ebb5540f4703" id="r_aee1ab49be8e9272773b7ebb5540f4703"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aee1ab49be8e9272773b7ebb5540f4703">Save</a> (<a class="el" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">Instalaciones</a> instalacion)</td></tr>
+<tr class="memdesc:aee1ab49be8e9272773b7ebb5540f4703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda una instalaciÛn (alta o modificaciÛn).  <br /></td></tr>
+<tr class="memitem:a320cd6b5546e50affcd08d49ad9cb556" id="r_a320cd6b5546e50affcd08d49ad9cb556"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a320cd6b5546e50affcd08d49ad9cb556">SetDisponible</a> (int idInstalacion, bool disponible)</td></tr>
+<tr class="memdesc:a320cd6b5546e50affcd08d49ad9cb556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cambia el estado de disponibilidad de una instalaciÛn.  <br /></td></tr>
+<tr class="memitem:a651e0ea6b19677a0819ec2c5c73b07e1" id="r_a651e0ea6b19677a0819ec2c5c73b07e1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a651e0ea6b19677a0819ec2c5c73b07e1">GetTotal</a> (bool soloDisponibles=false)</td></tr>
+<tr class="memdesc:a651e0ea6b19677a0819ec2c5c73b07e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el total de instalaciones.  <br /></td></tr>
+<tr class="memitem:a87a9432041f7a1454672c791cad0f30a" id="r_a87a9432041f7a1454672c791cad0f30a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a87a9432041f7a1454672c791cad0f30a">NombreYaExiste</a> (string nombre, int? idExcluir=null)</td></tr>
+<tr class="memdesc:a87a9432041f7a1454672c791cad0f30a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si ya existe una instalaciÛn con el mismo nombre.  <br /></td></tr>
+<tr class="memitem:aa783fa6a61bc3b175ac1b4ee982cfd47" id="r_aa783fa6a61bc3b175ac1b4ee982cfd47"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa783fa6a61bc3b175ac1b4ee982cfd47">Delete</a> (int instalacionId)</td></tr>
+<tr class="memdesc:aa783fa6a61bc3b175ac1b4ee982cfd47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina fÌsicamente una instalaciÛn. IMPORTANTE: solo debe llamarse si no est· en uso.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base"><td colspan="2">M√©todos protegidos heredados de <a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html">ProyectoFinal.model_new.RepositoryBase</a></td></tr>
+<tr class="memitem:a7430f68f32037460338c89e22e992f8e pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base" id="r_a7430f68f32037460338c89e22e992f8e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html#a7430f68f32037460338c89e22e992f8e">RepositoryBase</a> ()</td></tr>
+<tr class="memdesc:a7430f68f32037460338c89e22e992f8e pro_methods_class_proyecto_final_1_1model__new_1_1_repository_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_class_proyecto_final_1_1model__new_1_1_repository_base"><td colspan="2">Atributos protegidos heredados de <a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html">ProyectoFinal.model_new.RepositoryBase</a></td></tr>
+<tr class="memitem:a69f26be71ed229d514f8b488a94c22d5 pro_attribs_class_proyecto_final_1_1model__new_1_1_repository_base" id="r_a69f26be71ed229d514f8b488a94c22d5"><td class="memItemLeft"><a class="el" href="class_proyecto_final_1_1model__new_1_1_club_polideportivo_d_b_entities.html">ClubPolideportivoDBEntities</a>&#160;</td><td class="memItemRight"><a class="el" href="class_proyecto_final_1_1model__new_1_1_repository_base.html#a69f26be71ed229d514f8b488a94c22d5">Context</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripci√≥n detallada</h2>
+<div class="textblock"><p>Repositorio para gestionar operaciones CRUD de instalaciones. </p>
+
+<p class="definition">Definici√≥n en la l√≠nea <a class="el" href="_instalaciones_repository_8cs_source.html#l00012">12</a> del archivo <a class="el" href="_instalaciones_repository_8cs_source.html">InstalacionesRepository.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentaci√≥n de funciones miembro</h2>
+<a id="aa783fa6a61bc3b175ac1b4ee982cfd47" name="aa783fa6a61bc3b175ac1b4ee982cfd47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa783fa6a61bc3b175ac1b4ee982cfd47">&#9670;&#160;</a></span>Delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.InstalacionesRepository.Delete </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>instalacionId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina fÌsicamente una instalaciÛn. IMPORTANTE: solo debe llamarse si no est· en uso. </p>
+<dl class="params"><dt>Par√°metros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instalacionId</td><td>Id de instalaciÛn.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definici√≥n en la l√≠nea <a class="el" href="_instalaciones_repository_8cs_source.html#l00161">161</a> del archivo <a class="el" href="_instalaciones_repository_8cs_source.html">InstalacionesRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>        {</div>
+<div class="line"><span class="lineno">  163</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  164</span>            {</div>
+<div class="line"><span class="lineno">  165</span>                <span class="comment">// Buscamos la instalaciÛn.</span></div>
+<div class="line"><span class="lineno">  166</span>                var i = Context.Instalaciones.FirstOrDefault(x =&gt; x.InstalacionId == instalacionId);</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>                <span class="comment">// Si no existe, no hacemos nada.</span></div>
+<div class="line"><span class="lineno">  169</span>                <span class="keywordflow">if</span> (i == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>                <span class="comment">// Eliminamos.</span></div>
+<div class="line"><span class="lineno">  172</span>                Context.Instalaciones.Remove(i);</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>                <span class="comment">// Guardamos cambios.</span></div>
+<div class="line"><span class="lineno">  175</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  176</span>            }</div>
+<div class="line"><span class="lineno">  177</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  178</span>            {</div>
+<div class="line"><span class="lineno">  179</span>                <span class="comment">// Envolvemos error.</span></div>
+<div class="line"><span class="lineno">  180</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al borrar la instalaciÛn en la base de datos.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  181</span>            }</div>
+<div class="line"><span class="lineno">  182</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a302a7d22accd65c9c5fee1be680fddfc" name="a302a7d22accd65c9c5fee1be680fddfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a302a7d22accd65c9c5fee1be680fddfc">&#9670;&#160;</a></span>GetAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">Instalaciones</a> &gt; ProyectoFinal.model_new.Repositories.InstalacionesRepository.GetAll </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>soloDisponibles</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene todas las instalaciones. </p>
+<dl class="params"><dt>Par√°metros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soloDisponibles</td><td>Si es true, devuelve solo las disponibles.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de instalaciones.</dd></dl>
+
+<p class="definition">Definici√≥n en la l√≠nea <a class="el" href="_instalaciones_repository_8cs_source.html#l00019">19</a> del archivo <a class="el" href="_instalaciones_repository_8cs_source.html">InstalacionesRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>        {</div>
+<div class="line"><span class="lineno">   21</span>            <span class="comment">// Construimos la consulta incluyendo el tipo para mostrarlo en el grid.</span></div>
+<div class="line"><span class="lineno">   22</span>            var query = Context.Instalaciones</div>
+<div class="line"><span class="lineno">   23</span>                .Include(i =&gt; i.TiposInstalacion)</div>
+<div class="line"><span class="lineno">   24</span>                .AsQueryable();</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>            <span class="comment">// Filtramos si se solicita.</span></div>
+<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">if</span> (soloDisponibles)</div>
+<div class="line"><span class="lineno">   28</span>                query = query.Where(i =&gt; i.Disponible);</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>            <span class="comment">// Ejecutamos la consulta.</span></div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">return</span> query.ToList();</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a333ba604a8d996c1fcded1ef6c5bdece" name="a333ba604a8d996c1fcded1ef6c5bdece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a333ba604a8d996c1fcded1ef6c5bdece">&#9670;&#160;</a></span>GetById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">Instalaciones</a> ProyectoFinal.model_new.Repositories.InstalacionesRepository.GetById </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idInstalacion</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene una instalaciÛn por su id. </p>
+<dl class="params"><dt>Par√°metros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idInstalacion</td><td>Id de la instalaciÛn.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>InstalaciÛn o null.</dd></dl>
+
+<p class="definition">Definici√≥n en la l√≠nea <a class="el" href="_instalaciones_repository_8cs_source.html#l00039">39</a> del archivo <a class="el" href="_instalaciones_repository_8cs_source.html">InstalacionesRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>        {</div>
+<div class="line"><span class="lineno">   41</span>            <span class="comment">// Buscamos por PK.</span></div>
+<div class="line"><span class="lineno">   42</span>            <span class="keywordflow">return</span> Context.Instalaciones</div>
+<div class="line"><span class="lineno">   43</span>                .Include(i =&gt; i.TiposInstalacion)</div>
+<div class="line"><span class="lineno">   44</span>                .FirstOrDefault(i =&gt; i.InstalacionId == idInstalacion);</div>
+<div class="line"><span class="lineno">   45</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a651e0ea6b19677a0819ec2c5c73b07e1" name="a651e0ea6b19677a0819ec2c5c73b07e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a651e0ea6b19677a0819ec2c5c73b07e1">&#9670;&#160;</a></span>GetTotal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProyectoFinal.model_new.Repositories.InstalacionesRepository.GetTotal </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>soloDisponibles</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve el total de instalaciones. </p>
+<dl class="params"><dt>Par√°metros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soloDisponibles</td><td>Si true, cuenta solo disponibles.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Total.</dd></dl>
+
+<p class="definition">Definici√≥n en la l√≠nea <a class="el" href="_instalaciones_repository_8cs_source.html#l00126">126</a> del archivo <a class="el" href="_instalaciones_repository_8cs_source.html">InstalacionesRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>        {</div>
+<div class="line"><span class="lineno">  128</span>            <span class="comment">// Contamos seg˙n filtro.</span></div>
+<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">return</span> soloDisponibles ? Context.Instalaciones.Count(i =&gt; i.Disponible) : Context.Instalaciones.Count();</div>
+<div class="line"><span class="lineno">  130</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a87a9432041f7a1454672c791cad0f30a" name="a87a9432041f7a1454672c791cad0f30a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a9432041f7a1454672c791cad0f30a">&#9670;&#160;</a></span>NombreYaExiste()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProyectoFinal.model_new.Repositories.InstalacionesRepository.NombreYaExiste </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>nombre</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int?</td>          <td class="paramname"><span class="paramname"><em>idExcluir</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprueba si ya existe una instalaciÛn con el mismo nombre. </p>
+<dl class="params"><dt>Par√°metros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nombre</td><td>Nombre a comprobar.</td></tr>
+    <tr><td class="paramname">idExcluir</td><td>Id a excluir (en ediciÛn).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si existe.</dd></dl>
+
+<p class="definition">Definici√≥n en la l√≠nea <a class="el" href="_instalaciones_repository_8cs_source.html#l00138">138</a> del archivo <a class="el" href="_instalaciones_repository_8cs_source.html">InstalacionesRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>        {</div>
+<div class="line"><span class="lineno">  140</span>            <span class="comment">// Normalizamos.</span></div>
+<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrWhiteSpace(nombre)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>            <span class="comment">// Consulta por nombre exacto.</span></div>
+<div class="line"><span class="lineno">  144</span>            var query = Context.Instalaciones.Where(i =&gt; i.Nombre == nombre);</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>            <span class="comment">// Excluimos si editamos.</span></div>
+<div class="line"><span class="lineno">  147</span>            <span class="keywordflow">if</span> (idExcluir.HasValue)</div>
+<div class="line"><span class="lineno">  148</span>                query = query.Where(i =&gt; i.InstalacionId != idExcluir.Value);</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>            <span class="comment">// Existe si hay alguno.</span></div>
+<div class="line"><span class="lineno">  151</span>            <span class="keywordflow">return</span> query.Any();</div>
+<div class="line"><span class="lineno">  152</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aee1ab49be8e9272773b7ebb5540f4703" name="aee1ab49be8e9272773b7ebb5540f4703"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee1ab49be8e9272773b7ebb5540f4703">&#9670;&#160;</a></span>Save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.InstalacionesRepository.Save </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html">Instalaciones</a></td>          <td class="paramname"><span class="paramname"><em>instalacion</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda una instalaciÛn (alta o modificaciÛn). </p>
+<dl class="params"><dt>Par√°metros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instalacion</td><td>InstalaciÛn a guardar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definici√≥n en la l√≠nea <a class="el" href="_instalaciones_repository_8cs_source.html#l00051">51</a> del archivo <a class="el" href="_instalaciones_repository_8cs_source.html">InstalacionesRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>        {</div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   54</span>            {</div>
+<div class="line"><span class="lineno">   55</span>                <span class="comment">// Alta.</span></div>
+<div class="line"><span class="lineno">   56</span>                <span class="keywordflow">if</span> (instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a89a528c8bdd26c0bb7d800f486c23f69">InstalacionId</a> &lt; 1)</div>
+<div class="line"><span class="lineno">   57</span>                {</div>
+<div class="line"><span class="lineno">   58</span>                    <span class="comment">// Insertamos una nueva entidad.</span></div>
+<div class="line"><span class="lineno">   59</span>                    Context.Instalaciones.Add(<span class="keyword">new</span> Instalaciones</div>
+<div class="line"><span class="lineno">   60</span>                    {</div>
+<div class="line"><span class="lineno">   61</span>                        <span class="comment">// Asignamos los campos.</span></div>
+<div class="line"><span class="lineno">   62</span>                        TipoInstalacionId = instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a168be4757685a9645f1becc9d36cf942">TipoInstalacionId</a>,</div>
+<div class="line"><span class="lineno">   63</span>                        Nombre = instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a2faab36bf6ee5049929c77bce5ee1999">Nombre</a>,</div>
+<div class="line"><span class="lineno">   64</span>                        PrecioHora = instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#afacc525730be858af207072b165c3d34">PrecioHora</a>,</div>
+<div class="line"><span class="lineno">   65</span>                        Disponible = instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a8da1c9136bb012a88942dfa90221747f">Disponible</a>,</div>
+<div class="line"><span class="lineno">   66</span>                        Observaciones = instalacion.Observaciones</div>
+<div class="line"><span class="lineno">   67</span>                    });</div>
+<div class="line"><span class="lineno">   68</span>                }</div>
+<div class="line"><span class="lineno">   69</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   70</span>                {</div>
+<div class="line"><span class="lineno">   71</span>                    <span class="comment">// ModificaciÛn.</span></div>
+<div class="line"><span class="lineno">   72</span>                    var i = Context.Instalaciones.FirstOrDefault(x =&gt; x.InstalacionId == instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a89a528c8bdd26c0bb7d800f486c23f69">InstalacionId</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>                    <span class="comment">// Si existe, actualizamos campos.</span></div>
+<div class="line"><span class="lineno">   75</span>                    <span class="keywordflow">if</span> (i != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   76</span>                    {</div>
+<div class="line"><span class="lineno">   77</span>                        i.TipoInstalacionId = instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a168be4757685a9645f1becc9d36cf942">TipoInstalacionId</a>;</div>
+<div class="line"><span class="lineno">   78</span>                        i.Nombre = instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a2faab36bf6ee5049929c77bce5ee1999">Nombre</a>;</div>
+<div class="line"><span class="lineno">   79</span>                        i.PrecioHora = instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#afacc525730be858af207072b165c3d34">PrecioHora</a>;</div>
+<div class="line"><span class="lineno">   80</span>                        i.Disponible = instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a8da1c9136bb012a88942dfa90221747f">Disponible</a>;</div>
+<div class="line"><span class="lineno">   81</span>                        i.Observaciones = instalacion.<a class="code hl_property" href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a28dae8456c142ade02b8d09c118ada12">Observaciones</a>;</div>
+<div class="line"><span class="lineno">   82</span>                    }</div>
+<div class="line"><span class="lineno">   83</span>                }</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>                <span class="comment">// Persistimos cambios.</span></div>
+<div class="line"><span class="lineno">   86</span>                Context.SaveChanges();</div>
+<div class="line"><span class="lineno">   87</span>            }</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">   89</span>            {</div>
+<div class="line"><span class="lineno">   90</span>                <span class="comment">// Propagamos una excepciÛn m·s clara.</span></div>
+<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al guardar la instalaciÛn en la base de datos.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">   92</span>            }</div>
+<div class="line"><span class="lineno">   93</span>        }</div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_a168be4757685a9645f1becc9d36cf942"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a168be4757685a9645f1becc9d36cf942">ProyectoFinal.model_new.Instalaciones.TipoInstalacionId</a></div><div class="ttdeci">int TipoInstalacionId</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00024">Instalaciones.cs:24</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_a28dae8456c142ade02b8d09c118ada12"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a28dae8456c142ade02b8d09c118ada12">ProyectoFinal.model_new.Instalaciones.Observaciones</a></div><div class="ttdeci">string Observaciones</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00028">Instalaciones.cs:28</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_a2faab36bf6ee5049929c77bce5ee1999"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a2faab36bf6ee5049929c77bce5ee1999">ProyectoFinal.model_new.Instalaciones.Nombre</a></div><div class="ttdeci">string Nombre</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00025">Instalaciones.cs:25</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_a89a528c8bdd26c0bb7d800f486c23f69"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a89a528c8bdd26c0bb7d800f486c23f69">ProyectoFinal.model_new.Instalaciones.InstalacionId</a></div><div class="ttdeci">int InstalacionId</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00023">Instalaciones.cs:23</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_a8da1c9136bb012a88942dfa90221747f"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#a8da1c9136bb012a88942dfa90221747f">ProyectoFinal.model_new.Instalaciones.Disponible</a></div><div class="ttdeci">bool Disponible</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00027">Instalaciones.cs:27</a></div></div>
+<div class="ttc" id="aclass_proyecto_final_1_1model__new_1_1_instalaciones_html_afacc525730be858af207072b165c3d34"><div class="ttname"><a href="class_proyecto_final_1_1model__new_1_1_instalaciones.html#afacc525730be858af207072b165c3d34">ProyectoFinal.model_new.Instalaciones.PrecioHora</a></div><div class="ttdeci">decimal PrecioHora</div><div class="ttdef"><b>Definition</b> <a href="_instalaciones_8cs_source.html#l00026">Instalaciones.cs:26</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a320cd6b5546e50affcd08d49ad9cb556" name="a320cd6b5546e50affcd08d49ad9cb556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a320cd6b5546e50affcd08d49ad9cb556">&#9670;&#160;</a></span>SetDisponible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProyectoFinal.model_new.Repositories.InstalacionesRepository.SetDisponible </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idInstalacion</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>disponible</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cambia el estado de disponibilidad de una instalaciÛn. </p>
+<dl class="params"><dt>Par√°metros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idInstalacion</td><td>Id de instalaciÛn.</td></tr>
+    <tr><td class="paramname">disponible</td><td>Nuevo estado.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definici√≥n en la l√≠nea <a class="el" href="_instalaciones_repository_8cs_source.html#l00100">100</a> del archivo <a class="el" href="_instalaciones_repository_8cs_source.html">InstalacionesRepository.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>        {</div>
+<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  103</span>            {</div>
+<div class="line"><span class="lineno">  104</span>                <span class="comment">// Buscamos la instalaciÛn.</span></div>
+<div class="line"><span class="lineno">  105</span>                var i = Context.Instalaciones.FirstOrDefault(x =&gt; x.InstalacionId == idInstalacion);</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>                <span class="comment">// Si existe, cambiamos el flag.</span></div>
+<div class="line"><span class="lineno">  108</span>                <span class="keywordflow">if</span> (i != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  109</span>                {</div>
+<div class="line"><span class="lineno">  110</span>                    i.Disponible = disponible;</div>
+<div class="line"><span class="lineno">  111</span>                    Context.SaveChanges();</div>
+<div class="line"><span class="lineno">  112</span>                }</div>
+<div class="line"><span class="lineno">  113</span>            }</div>
+<div class="line"><span class="lineno">  114</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  115</span>            {</div>
+<div class="line"><span class="lineno">  116</span>                <span class="comment">// Propagamos.</span></div>
+<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Error al cambiar la disponibilidad de la instalaciÛn.&quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  118</span>            }</div>
+<div class="line"><span class="lineno">  119</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>La documentaci√≥n de esta clase est√° generada del siguiente archivo:<ul>
+<li>C:/DAM/Dise√±o de interficies/proyectos/WPF/PROYECTO_FINAL/ProyectoFinal/ProyectoFinal.model_new/Repositories/<a class="el" href="_instalaciones_repository_8cs_source.html">InstalacionesRepository.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_proyecto_final.html">ProyectoFinal</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1model__new.html">model_new</a></li><li class="navelem"><a href="namespace_proyecto_final_1_1model__new_1_1_repositories.html">Repositories</a></li><li class="navelem"><a href="class_proyecto_final_1_1model__new_1_1_repositories_1_1_instalaciones_repository.html">InstalacionesRepository</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
