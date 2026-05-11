@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinal.ReportsView_n
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinal.test", "ProyectoFinal.test\ProyectoFinal.test.csproj", "{4896DF47-CD31-4275-B7C4-B497047C27CB}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ProyectoFinal.instalador", "ProyectoFinal.instalador\ProyectoFinal.instalador.vdproj", "{2C22EF1E-8E18-CD6B-F6AF-291EE5F4C7CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{4896DF47-CD31-4275-B7C4-B497047C27CB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4896DF47-CD31-4275-B7C4-B497047C27CB}.Release|x86.ActiveCfg = Release|x86
 		{4896DF47-CD31-4275-B7C4-B497047C27CB}.Release|x86.Build.0 = Release|x86
+		{2C22EF1E-8E18-CD6B-F6AF-291EE5F4C7CF}.Debug|Any CPU.ActiveCfg = Debug
+		{2C22EF1E-8E18-CD6B-F6AF-291EE5F4C7CF}.Debug|x86.ActiveCfg = Debug
+		{2C22EF1E-8E18-CD6B-F6AF-291EE5F4C7CF}.Release|Any CPU.ActiveCfg = Release
+		{2C22EF1E-8E18-CD6B-F6AF-291EE5F4C7CF}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
